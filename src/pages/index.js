@@ -1,6 +1,7 @@
 import React from 'react'
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 import '../components/paral.css'
+import 'react-hot-loader';
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 const IndexPage = () => (
@@ -57,7 +58,8 @@ const IndexPage = () => (
     />
 
     <ParallaxLayer offset={0} speed={0.1} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <img src={url('server')} style={{ width: '20%' }} alt='server' />
+      <div style={{ width: '20%' }}></div>
+      <div style={{ width: '80%' }}><h1>Welcome to Seong-lae Land</h1></div>
     </ParallaxLayer>
 
     <ParallaxLayer offset={1} speed={0.1} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -69,5 +71,12 @@ const IndexPage = () => (
     </ParallaxLayer>
   </Parallax>
 )
+function make(){
+  var earth = this.earth
+  console.log(earth)
+}
+window.onload = make;
+
+
 
 export default IndexPage
