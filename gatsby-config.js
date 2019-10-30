@@ -4,5 +4,5 @@ module.exports = {
         resolve: `gatsby-transformer-sharp`
       },
       // your another plugins
-    ]
+    ] 
   };
