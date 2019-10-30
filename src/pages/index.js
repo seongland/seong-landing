@@ -2,12 +2,16 @@ import React from 'react'
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 import '../components/paral.css'
 import 'react-hot-loader';
+// todo - enable react tool
+// todo - earth z index
+// todo - three z index
+// todo - css library
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 const IndexPage = () => (
   <Parallax id="paral" ref={ref => (React.parallax = ref)} pages={3}>
     {/* meta - earth */}
-    {/* todo - z index earth */}
+    
     <ParallaxLayer offset={2.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
       <img src={url('earth')} style={{ width: '60%' }} alt='earth' />
     </ParallaxLayer>
@@ -72,11 +76,6 @@ const IndexPage = () => (
     </ParallaxLayer>
   </Parallax>
 )
-function make(){
-  var earth = this.earth
-  console.log(earth)
-}
-window.onload = make;
 
 
 
