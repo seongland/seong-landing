@@ -7,6 +7,7 @@ const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homep
 const IndexPage = () => (
   <Parallax id="paral" ref={ref => (React.parallax = ref)} pages={3}>
     {/* meta - earth */}
+    {/* todo - z index earth */}
     <ParallaxLayer offset={2.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
       <img src={url('earth')} style={{ width: '60%' }} alt='earth' />
     </ParallaxLayer>
