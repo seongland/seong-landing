@@ -6,6 +6,7 @@ import 'react-hot-loader';
 // todo - earth z index
 // todo - three z index
 // todo - css library
+// commit test
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 const IndexPage = () => (
