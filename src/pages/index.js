@@ -78,6 +78,9 @@ const IndexPage = () => (
   </Parallax>
 )
 
-
+function make(){
+  console.log("sdfsdf")
+}
+window.onload = make;
 
 export default IndexPage
