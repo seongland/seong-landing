@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 import Earth from './earth.js'
 import Clouds from './clouds.js'
@@ -21,10 +20,10 @@ const IndexPage = () => (
     {/* meta - wall decoration */}
     <Clouds/>
     {/* meta - satelltie */}
-    <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
+    <ParallaxLayer offset={1.3} speed={-0.3}
+      style={{ pointerEvents: 'none' }}>
       <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} alt='satellite' />
     </ParallaxLayer>
-
     <ParallaxLayer
       offset={2}
       speed={-0.3}
@@ -35,33 +34,36 @@ const IndexPage = () => (
       }}
     />
 
-
-    <ParallaxLayer offset={1} speed={0.1} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <ParallaxLayer offset={1} speed={0.1}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <img src={url('bash')} style={{ width: '40%' }} alt='bash' />
     </ParallaxLayer>
 
-    <ParallaxLayer offset={2} speed={-0} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <ParallaxLayer offset={2} speed={-0}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <img src={url('clients-main')} style={{ width: '40%' }} alt='clients' />
     </ParallaxLayer>
 
     {/* meta - earths */}
-    <ParallaxLayer offset={0} speed={0.1} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <ParallaxLayer offset={0} speed={0.1}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <Earth style={{ width: '80%' }} />
     </ParallaxLayer>
 
-    <ParallaxLayer offset={2.5} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+    <ParallaxLayer offset={2.5} speed={-0.4}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
       <img src={url('earth')} style={{ width: '60%' }} alt='earth' />
     </ParallaxLayer>
 
     {/* meta - contents */}
-    <ParallaxLayer offset={0} speed={0.1} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div style={{ width: '80%', margin: "10%" }}><h1>Welcome to Seong-lae Land</h1></div>
+    <ParallaxLayer offset={0} speed={0.1}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+      <div style={{ width: '80%', margin: "10%", fontFamily: "'Anton', sans-serif", textAlign:"center"}}>
+        <span style={{color: "#fff", fontSize: "10vw" }}>
+          Welcome to <br/> Seong-Land
+        </span>
+      </div>
     </ParallaxLayer>
-    
-  <script async src="https://cdn.jsdelivr.net/npm/perfops-rom"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@material-ui/core@4.6.0/index.min.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   </Parallax>
 ) 
 export default IndexPage
