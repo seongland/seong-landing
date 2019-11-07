@@ -11,11 +11,11 @@ var camera, fillLight, renderer, scene, mobile, width, height, earth;
 camera = scene = renderer = fillLight = void 0;
 
 export default class Earth extends React.Component {
-
     componentDidMount() {
         // meta - Three
         earth = ReactDOM.findDOMNode(this.refs.earth)
         make_earth()
+        window.addEventListener('resize', this.change_earth);
 
         // meta - first make
         function make_earth() {
@@ -28,36 +28,30 @@ export default class Earth extends React.Component {
                 mobile = false
             // set ratio
             if (mobile)
-                height = earth.offsetWidth
+                height = window.innerWidth
             else
-                height = earth.offsetWidth / 2
-
+                height = window.innerWidth / 2
             // set scene
-            width = earth.offsetWidth
+            width = window.innerWidth
             camera = new THREE.PerspectiveCamera(75, width / height, 1, 10000);
             camera.position.x = -300
             camera.position.y = 555
             camera.position.z = 300
             scene = new THREE.Scene();
-
             // set sphere
             geometryBase = new THREE.SphereGeometry(400, 30, 56);
             terranGeom = new THREE.SphereGeometry(398, 25, 30);
             terranHighGeom = new THREE.SphereGeometry(390, 25, 20);
-
             // set material
             baseMat = new THREE.MeshNormalMaterial({
                 flatShading: THREE.FlatShading
             });
-
             material = new THREE.MeshNormalMaterial({
                 flatShading: THREE.FlatShading
             });
-
             highTerranMat = new THREE.MeshNormalMaterial({
                 flatShading: THREE.FlatShading
             });
-
             // make random shape
             geometryBase.vertices.forEach(function (v) {
                 return v[["x", "y", "z"][~~(Math.random() * 3)]] += Math.random() * 5;
@@ -67,26 +61,21 @@ export default class Earth extends React.Component {
                     return v[["x", "y", "z"][~~(Math.random() * 3)]] += Math.random() * 20;
                 });
             });
-
             // add mesh by material and sphere
             base = new THREE.Mesh(geometryBase, baseMat);
             terran = new THREE.Mesh(terranGeom, material);
             highTerran = new THREE.Mesh(terranHighGeom, highTerranMat);
-
             // add mesh
             scene.add(base);
             base.add(terran);
             base.add(highTerran);
-
             // make light
             light = new THREE.DirectionalLight(0xffffff);
             light.position.set(1, 1, 1);
             fillLight = new THREE.AmbientLight(0x2e1527);
-
             // add light
             scene.add(light);
             scene.add(fillLight);
-
             // get renderer
             try {
                 renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -118,39 +107,39 @@ export default class Earth extends React.Component {
         }
     }
 
+    // meta - when window changed
+    change_earth = () => {
+        // check mobile
+        if (window.innerHeight > window.innerWidth)
+            mobile = true
+        else
+            mobile = false
+        // set ratio
+        if (mobile)
+            if (height === window.innerWidth)
+                return
+            else
+                height = window.innerWidth
+        else
+            if (height === window.innerWidth / 2)
+                return
+            else
+                height = window.innerWidth / 2
+        // set scene
+        width = window.innerWidth
+        camera.aspect = width / height
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height);
+        console.log("change finished", camera.position)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.change_earth);
+    }
+
     render() {
         return (
             <div ref="earth"></div>
         );
     }
 }
-
-// meta - when window changed
-function change_earth() {
-    // check mobile
-    if (window.innerHeight > window.innerWidth)
-        mobile = true
-    else
-        mobile = false
-
-    // set ratio
-    if (mobile)
-        if (height === earth.offsetWidth)
-            return
-        else
-            height = earth.offsetWidth
-    else
-        if (height === earth.offsetWidth / 2)
-            return
-        else
-            height = earth.offsetWidth / 2
-
-    // set scene
-    width = earth.offsetWidth
-    camera.aspect = width / height
-    camera.updateProjectionMatrix();
-    renderer.setSize(width, height);
-
-    console.log(camera.position)
-}
-window.onresize = change_earth;
