@@ -1,12 +1,15 @@
 import React from 'react'
+
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
+import Earth from './earth.js'
+
 import '../components/paral.css'
 import 'react-hot-loader';
+
 // todo - enable react tool
 // todo - earth z index
 // todo - three z index
 // todo - css library
-// commit test
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 const IndexPage = () => (
@@ -64,7 +67,7 @@ const IndexPage = () => (
     />
 
     <ParallaxLayer offset={0} speed={0.1} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div style={{ width: '20%' }}></div>
+      <Earth/>
       <div style={{ width: '80%' }}><h1>Welcome to Seong-lae Land</h1></div>
     </ParallaxLayer>
 
@@ -76,11 +79,5 @@ const IndexPage = () => (
       <img src={url('clients-main')} style={{ width: '40%' }} alt='clients' />
     </ParallaxLayer>
   </Parallax>
-)
-
-function make(){
-  console.log("sdfsdf")
-}
-window.onload = make;
-
+) 
 export default IndexPage
