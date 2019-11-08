@@ -28,12 +28,16 @@ export default class Earth extends React.Component {
             else
                 mobile = false
             // set ratio
-            if (mobile)
+            if (mobile){
                 height = window.innerWidth
-            else
-                height = window.innerWidth / 2
+                width = window.innerWidth
+            }
+            else{
+                height = window.innerHeight
+                width = window.innerHeight
+            }
             // set scene
-            width = window.innerWidth
+            
             camera = new THREE.PerspectiveCamera(75, width / height, 1, 10000);
             camera.position.x = -300
             camera.position.y = 555
@@ -100,6 +104,7 @@ export default class Earth extends React.Component {
             renderer.setPixelRatio(window.devicePixelRatio);
             renderer.setSize(width, height);
             earth.appendChild(renderer.domElement);
+            renderer.domElement.style.outline = 'none'
             animate = function () {
                 base.rotation.y += 0.002;
                 controls.update()
@@ -120,17 +125,22 @@ export default class Earth extends React.Component {
             mobile = false
         // set ratio
         if (mobile)
-            if (height === window.innerWidth)
+            if (width === window.innerWidth)
                 return
-            else
+            else{
                 height = window.innerWidth
+                width = window.innerWidth
+            }
         else
             if (height === window.innerWidth / 2)
                 return
-            else
+            else{
                 height = window.innerWidth / 2
+                width = height
+            }
+                
         // set scene
-        width = window.innerWidth
+        
         camera.aspect = width / height
         camera.updateProjectionMatrix();
         renderer.setSize(width, height);
