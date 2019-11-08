@@ -1,10 +1,13 @@
 import React from 'react'
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
+
+// meta - components
 import Earth from './earth.js'
 import Clouds from './clouds.js'
-
+import Meta from './meta.js'
 import '../components/paral.css'
+import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 import 'react-hot-loader';
+
 
 // todo - enable react tool
 // todo - earth z index
@@ -14,6 +17,7 @@ import 'react-hot-loader';
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 const IndexPage = () => (
   <Parallax ref={ref => (React.parallax = ref)} pages={3}>
+    <Meta/>
     <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundColor: '#303032', backgroundSize: 'cover',}} />
     <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover', opacity: 0.5 }} />
     <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
@@ -84,14 +88,14 @@ const IndexPage = () => (
     </ParallaxLayer>
 
     {/* meta - earths */}
-    <ParallaxLayer offset={0} speed={0.1}
+    <ParallaxLayer offset={0} speed={0.7}
       style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <Earth style={{ width: '80%' }} />
     </ParallaxLayer>
 
     <ParallaxLayer offset={2.5} speed={-0.4}
       style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <img src={url('earth')} style={{ width: '60%' }} alt='earth' />
+      <img src={url('earth')} style={{ width: '60%'  }} alt='earth' />
     </ParallaxLayer>
 
     {/* meta - contents */}
