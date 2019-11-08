@@ -1002,15 +1002,15 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@hot-loader/react-dom@^16.10.2":
-  version "16.10.2"
-  resolved "https://registry.yarnpkg.com/@hot-loader/react-dom/-/react-dom-16.10.2.tgz#91920442252acac6f343eef5df41aca333f7dcea"
-  integrity sha512-vbrSDuZMoE1TXiDNAVCSAcIS6UX55Fa9KF0MD0wQgOaOIPZs/C6CtEDUcnNFEwTQ5ciIULcp+96lQlSuANNagA==
+"@hot-loader/react-dom@^16.11.0":
+  version "16.11.0"
+  resolved "https://registry.yarnpkg.com/@hot-loader/react-dom/-/react-dom-16.11.0.tgz#c0b483923b289db5431516f56ee2a69448ebf9bd"
+  integrity sha512-cIOVB8YgT4EVCNiXK+gGuYl6adW/TKlW3N7GvgY5QgpL2NTWagF/oJxVscHSdR3O7NjJsoxdseB5spqwCHNIhA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.16.2"
+    scheduler "^0.17.0"
 
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
   version "24.9.0"
@@ -1471,6 +1471,52 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
+
+"@react-spring/animated@9.0.0-canary.808.8.4a87fcb":
+  version "9.0.0-canary.808.8.4a87fcb"
+  resolved "https://registry.yarnpkg.com/@react-spring/animated/-/animated-9.0.0-canary.808.8.4a87fcb.tgz#b664ebb4afb263e5a942b48a81a615f92129fbb7"
+  integrity sha512-btqfvXlqpRbYVJ1X9c2LCaLKxBMdCEH/nH+RIoR9bhd1/64xNDb5nw+FDuJLLq9gY/fMzt1914kYU8RqolpMSg==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    "@react-spring/shared" "9.0.0-canary.808.8.4a87fcb"
+
+"@react-spring/core@9.0.0-canary.808.8.4a87fcb":
+  version "9.0.0-canary.808.8.4a87fcb"
+  resolved "https://registry.yarnpkg.com/@react-spring/core/-/core-9.0.0-canary.808.8.4a87fcb.tgz#bae726aa6f6a08015a5d3977dff1d6b96b32e153"
+  integrity sha512-qaEBkn0Ox3hL+H79N0Nrqsq1sdRathxvAUSzfItwWPcb+iVDvZFT9XHpVDyuGuCs+osschfPB2zMhbXr4NdqYQ==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    "@react-spring/animated" "9.0.0-canary.808.8.4a87fcb"
+    "@react-spring/shared" "9.0.0-canary.808.8.4a87fcb"
+    use-memo-one "^1.1.0"
+
+"@react-spring/parallax@^9.0.0-canary.808.8.4a87fcb":
+  version "9.0.0-canary.808.8.4a87fcb"
+  resolved "https://registry.yarnpkg.com/@react-spring/parallax/-/parallax-9.0.0-canary.808.8.4a87fcb.tgz#64c52cb8893b4ffd6098dc29d24b8f7d6d024b73"
+  integrity sha512-0s0tRead7YLk60BWH1jGw11YQuMeFk6NieSaspak2M0+Uez62mb9ZfJrROrR6myYolDhXtYELQ+qhucNf3bKPw==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    "@react-spring/shared" "9.0.0-canary.808.8.4a87fcb"
+    "@react-spring/web" "9.0.0-canary.808.8.4a87fcb"
+    use-memo-one "^1.1.0"
+
+"@react-spring/shared@9.0.0-canary.808.8.4a87fcb":
+  version "9.0.0-canary.808.8.4a87fcb"
+  resolved "https://registry.yarnpkg.com/@react-spring/shared/-/shared-9.0.0-canary.808.8.4a87fcb.tgz#4d94a34a8ddf5f263466c5eebef04621b6846624"
+  integrity sha512-mMROW57OcLKtLacyeOGqGxSHtxIxVkesQrAyfnkHs5/oWYTHo6rJ9KLIDYJDrEK4LmKk4nBLxLrh2VA1n9MDMQ==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    fluids "^0.1.0"
+
+"@react-spring/web@9.0.0-canary.808.8.4a87fcb":
+  version "9.0.0-canary.808.8.4a87fcb"
+  resolved "https://registry.yarnpkg.com/@react-spring/web/-/web-9.0.0-canary.808.8.4a87fcb.tgz#6e39d9d46430f5b0c6c3db60a3b24da5837f32f2"
+  integrity sha512-RG4VQpCOZ+mTe6E6q0q3Wwk0aqxn2sCBLxpbQTmCoGraQYeTTuM0FEN9FZN2E3ni7gIb8Es+udZzrpZFKOJGEg==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    "@react-spring/animated" "9.0.0-canary.808.8.4a87fcb"
+    "@react-spring/core" "9.0.0-canary.808.8.4a87fcb"
+    "@react-spring/shared" "9.0.0-canary.808.8.4a87fcb"
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
@@ -2320,6 +2366,15 @@ array-unique@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/array-unique/-/array-unique-0.3.2.tgz#a894b75d4bc4f6cd679ef3244a9fd8f46ae2d428"
   integrity sha1-qJS3XUvE9s1nnvMkSp/Y9Gri1Cg=
+
+array.prototype.flatmap@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/array.prototype.flatmap/-/array.prototype.flatmap-1.2.2.tgz#28d621d351c19a62b84331b01669395ef6cef4c4"
+  integrity sha512-ZZtPLE74KNE+0XcPv/vQmcivxN+8FhwOLvt2udHauO0aDEpsXDQrmd5HuJGpgPVyaV8HvkDPWnJ2iaem0oCKtA==
+  dependencies:
+    define-properties "^1.1.3"
+    es-abstract "^1.15.0"
+    function-bind "^1.1.1"
 
 arraybuffer.slice@~0.0.7:
   version "0.0.7"
@@ -6142,6 +6197,11 @@ flatten@^1.0.2:
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
   integrity sha1-2uRqnXj74lKSJYzB54CkHZXAN4I=
 
+fluids@^0.1.0:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/fluids/-/fluids-0.1.4.tgz#17b638cfe3c96d595943477fe6fa95c5088549eb"
+  integrity sha512-sh5sLL1Ai7yyHDAcgXBdg03oiQtwp3eK0PaLkABcT4UCpSBp9+42PmitX88GmoXT6HsA5du0CmpfT5BqOzPOuw==
+
 flush-write-stream@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.1.1.tgz#8dd7d873a1babc207d94ead0c2e0e44276ebf2e8"
@@ -6432,10 +6492,10 @@ gatsby-plugin-manifest@^2.2.26:
     semver "^5.7.1"
     sharp "^0.23.2"
 
-gatsby-plugin-offline@^3.0.17:
-  version "3.0.17"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-3.0.17.tgz#578cc008b53639a4c4f3a0d811fba0b027cb6c53"
-  integrity sha512-5oGJ/5eSiYHsmFGRjdR5vyPXD4MLDpPGMTflJCCB1436zF+go0/C36Rt4VFnQuFaT1KpCRioS01+Gxj4zWaIyg==
+gatsby-plugin-offline@^3.0.18:
+  version "3.0.18"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-3.0.18.tgz#442d4e1c181028e81c0ebaa31132d6e2d240954c"
+  integrity sha512-NJLEavSMtz15L7ydGpFeJhkWgLjky0lZPNTLFGb2dNAHX7VBcM+hQzuld6tSpcY65QEMVyv0wB+JvYSfPjj5uw==
   dependencies:
     "@babel/runtime" "^7.6.3"
     cheerio "^1.0.0-rc.3"
@@ -6556,10 +6616,10 @@ gatsby-transformer-sharp@^2.3.2:
     semver "^5.7.1"
     sharp "^0.23.2"
 
-gatsby@^2.17.7:
-  version "2.17.7"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.17.7.tgz#8aa71868044a42e27dc0314f5c99bac8777e0ff5"
-  integrity sha512-gAqV+ZIdF2Tj55Rpt1Vmm0tTUsvdN+TgcA2R1MdsoAZ9VdALKpCNFJWe1EDB761qmjp8PGpHg9X2RMmxwrsq7Q==
+gatsby@^2.17.10:
+  version "2.17.10"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.17.10.tgz#ad2a946d08c61b2bb99636e36c85ffc27c639f4e"
+  integrity sha512-xrKfc67UIMAkVtJj4fS3MK0KUiLvkOfuTZBp6GRXVxMZXuREem3uFnnYD//n+vGHSlYk6c0R1NJ9+2lJClTG2Q==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.6.4"
@@ -6575,6 +6635,7 @@ gatsby@^2.17.7:
     "@typescript-eslint/eslint-plugin" "^2.6.0"
     "@typescript-eslint/parser" "^2.6.0"
     address "1.1.2"
+    array.prototype.flatmap "^1.2.2"
     autoprefixer "^9.7.0"
     axios "^0.19.0"
     babel-core "7.0.0-bridge.0"
@@ -6631,7 +6692,7 @@ gatsby@^2.17.7:
     glob "^7.1.5"
     got "8.3.2"
     graphql "^14.5.8"
-    graphql-compose "^6.3.6"
+    graphql-compose "^6.3.7"
     graphql-playground-middleware-express "^1.7.12"
     invariant "^2.2.4"
     is-relative "^1.0.0"
@@ -7012,10 +7073,10 @@ graceful-fs@^4.1.10, graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.
   resolved "https://registry.yarnpkg.com/graceful-readlink/-/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
   integrity sha1-TK+tdrxi8C+gObL5Tpo906ORpyU=
 
-graphql-compose@^6.3.6:
-  version "6.3.6"
-  resolved "https://registry.yarnpkg.com/graphql-compose/-/graphql-compose-6.3.6.tgz#04787745bac26bcce2a80dde4d6872db2590f4f2"
-  integrity sha512-R+kOLAICndxinZI4dtRAloIyZGJFmXSHOElptO/G0CInKfvLELE2XpD05d7iXNmZk99riTW1CEVQrHZvVK2Pdg==
+graphql-compose@^6.3.7:
+  version "6.3.7"
+  resolved "https://registry.yarnpkg.com/graphql-compose/-/graphql-compose-6.3.7.tgz#a252076818260d861bc01d5a8d1fcfc90cda3eff"
+  integrity sha512-OxfhSPZS2Uz+P9U6FUllJmGGY2T4jrKhnX0x5XFcyQO4ubjQeoHQbAgRyqKqePhIKGqQWFwm2w40/HJC0tt7rA==
   dependencies:
     graphql-type-json "^0.2.4"
     object-path "^0.11.4"
@@ -12962,14 +13023,6 @@ scheduler@^0.15.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-scheduler@^0.16.2:
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.16.2.tgz#f74cd9d33eff6fc554edfb79864868e4819132c1"
-  integrity sha512-BqYVWqwz6s1wZMhjFvLfVR5WXP7ZY32M/wYPo04CcuPM7XZEbV2TBNW7Z0UkguPTl0dWMA59VbNXxK6q+pHItg==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-
 scheduler@^0.17.0:
   version "0.17.0"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.17.0.tgz#7c9c673e4ec781fac853927916d1c426b6f3ddfe"
@@ -14108,10 +14161,10 @@ text-table@0.2.0, text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
-three@^0.109.0:
-  version "0.109.0"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.109.0.tgz#611c9ef860d10bd107695cead6c6abcd2422e5fd"
-  integrity sha512-XT99T3Hvgh2CEvwPdHYEunNE+clLK6KiT1U8En7YOgIqTUw4MrLeIc8zxQAJ6wbP8hhJaY5+Cff3jwBPpBa0gA==
+three@^0.110.0:
+  version "0.110.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.110.0.tgz#8719591de1336269113ee79f4268ba247b2324f8"
+  integrity sha512-wlurH8XBO9Sd5VIw8nBa+taLR20kqaI4e9FiuMh6tqK8eOS2q2R+ZoUyufbyDTVTHhs8GiTbv0r2CMLkwerFJg==
 
 throat@^4.0.0:
   version "4.1.0"
@@ -14583,6 +14636,11 @@ url@^0.11.0:
   dependencies:
     punycode "1.3.2"
     querystring "0.2.0"
+
+use-memo-one@^1.1.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/use-memo-one/-/use-memo-one-1.1.1.tgz#39e6f08fe27e422a7d7b234b5f9056af313bd22c"
+  integrity sha512-oFfsyun+bP7RX8X2AskHNTxu+R3QdE/RC5IefMbqptmACAA/gfol1KDD5KRzPsGMa62sWxGZw+Ui43u6x4ddoQ==
 
 use@^3.1.0:
   version "3.1.1"

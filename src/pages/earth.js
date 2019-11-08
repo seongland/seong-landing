@@ -2,17 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as THREE from 'three'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-// todo - three poligon
-// todo - move text to earth center
-// todo - hide all page until render
+
 // todo - select nice font
-window.THREE = THREE
+// todo - remove blue line
+// todo - build
+
 var camera, fillLight, renderer, scene, mobile, width, height, earth;
 camera = scene = renderer = fillLight = void 0;
 
 export default class Earth extends React.Component {
     componentDidMount() {
         // meta - Three
+        window.THREE = THREE
         earth = ReactDOM.findDOMNode(this.refs.earth)
         make_earth()
         window.addEventListener('resize', this.change_earth);
@@ -78,7 +79,10 @@ export default class Earth extends React.Component {
             scene.add(fillLight);
             // get renderer
             try {
-                renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+                renderer = new THREE.WebGLRenderer({
+                    alpha: true,
+                    antialias: true
+                });
             } catch (error) {
                 renderer = new THREE.CanvasRenderer();
                 alert("come back in chrome or firefox! or enable webgl", error);
