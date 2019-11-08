@@ -3,8 +3,10 @@ import React from 'react'
 // meta - components
 import Earth from './earth.js'
 import Clouds from './clouds.js'
+import Intro from './First/intro'
 import Meta from './meta.js'
 import '../components/paral.css'
+
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 import 'react-hot-loader';
 
@@ -101,11 +103,7 @@ const IndexPage = () => (
     {/* meta - contents */}
     <ParallaxLayer offset={0} speed={0.1}
       style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-      <div style={{ width: '80%', margin: "10%", fontFamily: "'Anton', sans-serif", textAlign: "center" }}>
-        <span style={{ color: "#fff", fontSize: "10vw" }}>
-          Welcome to <br /> Seong-Land
-        </span>
-      </div>
+        <Intro/>
     </ParallaxLayer>
   </Parallax>
 )
