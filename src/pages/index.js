@@ -10,7 +10,7 @@ import '../components/paral.css'
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 import 'react-hot-loader';
 
-
+// todo - scroll then chanage parallax page
 // todo - enable react tool
 // todo - earth z index
 // todo - three z index
@@ -79,6 +79,23 @@ const IndexPage = () => (
       }}
     />
 
+    {/* meta - earths */}
+    <ParallaxLayer offset={0} speed={0.7}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Earth style={{ width: '80%' }} />
+    </ParallaxLayer>
+
+    <ParallaxLayer offset={2.2} speed={0.4}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <img src={url('earth')} style={{ width: '60%'  }} alt='earth' />
+    </ParallaxLayer>
+
+    {/* meta - contents */}
+    <ParallaxLayer offset={0} speed={0.1}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+        <Intro/>
+    </ParallaxLayer>
+
     <ParallaxLayer offset={1} speed={0.1}
       style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <img src={url('bash')} style={{ width: '40%' }} alt='bash' />
@@ -89,22 +106,6 @@ const IndexPage = () => (
       <img src={url('clients-main')} style={{ width: '40%' }} alt='clients' />
     </ParallaxLayer>
 
-    {/* meta - earths */}
-    <ParallaxLayer offset={0} speed={0.7}
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <Earth style={{ width: '80%' }} />
-    </ParallaxLayer>
-
-    <ParallaxLayer offset={2.5} speed={-0.4}
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <img src={url('earth')} style={{ width: '60%'  }} alt='earth' />
-    </ParallaxLayer>
-
-    {/* meta - contents */}
-    <ParallaxLayer offset={0} speed={0.1}
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-        <Intro/>
-    </ParallaxLayer>
   </Parallax>
 )
 export default IndexPage
