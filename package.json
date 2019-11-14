@@ -14,7 +14,6 @@
     "gatsby-source-filesystem": "^2.1.35",
     "gatsby-transformer-sharp": "^2.3.2",
     "proton-engine": "^4.0.7",
-    "raf-manager": "^0.3.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
