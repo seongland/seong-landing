@@ -107,7 +107,6 @@ export default class Earth extends React.Component {
                 requestAnimationFrame(animate);
                 return renderer.render(scene, camera);
             };
-            console.log('finishied')
             return animate();
         }
     }
