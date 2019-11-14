@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom';
 import * as THREE from 'three'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-// todo - select nice font
-// todo - remove blue line
-// todo - build
-
 var camera, fillLight, renderer, scene, mobile, width, height, earth;
 camera = scene = renderer = fillLight = void 0;
 
@@ -99,8 +95,8 @@ export default class Earth extends React.Component {
             controls.maxPolarAngle = Math.PI / 5;
             controls.minPolarAngle = Math.PI / 5;
             controls.update();
-
-            // render
+            
+            // renderer
             renderer.setPixelRatio(window.devicePixelRatio);
             renderer.setSize(width, height);
             earth.appendChild(renderer.domElement);

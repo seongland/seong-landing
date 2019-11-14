@@ -1,27 +1,24 @@
+// meta - React
 import React from 'react'
+import 'react-hot-loader';
 
-// meta - components
-import Earth from './earth.js'
+// meta - Components
+import Earth from './First/earth.js'
+import Protons from './First/protons.js'
 import Clouds from './clouds.js'
 import Intro from './First/intro'
 import Meta from './meta.js'
-import '../components/paral.css'
-
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
-import 'react-hot-loader';
 
-// todo - scroll then chanage parallax page
-// todo - enable react tool
-// todo - earth z index
-// todo - three z index
-// todo - css library
+// meta - Other
+import '../components/paral.css'
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 const IndexPage = () => (
   <Parallax ref={ref => (React.parallax = ref)} pages={3}>
-    <Meta/>
-    <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundColor: '#303032', backgroundSize: 'cover',}} />
-    <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover', opacity: 0.5 }} />
+    <Meta />
+    <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundColor: 'rgb(46,46,46)', backgroundSize: 'cover' }} />
+    
     <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
     <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
 
@@ -64,6 +61,29 @@ const IndexPage = () => (
       <img src={url('cloud')}
         style={{ display: 'block', width: '15%', marginLeft: '75%' }} alt='cloud' />
     </ParallaxLayer>
+
+    {/* meta - First */}
+
+    <ParallaxLayer offset={0} speed={0.1}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Protons style={{ width: '100%' }} />
+    </ParallaxLayer>
+
+    <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover'}} />
+
+    <ParallaxLayer offset={0} speed={0.1}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Earth style={{ width: '80%' }} />
+    </ParallaxLayer>
+
+    {/* meta - Second */}
+
+    {/* meta - Third */}
+    <ParallaxLayer offset={2.2} speed={0.4}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <img src={url('earth')} style={{ width: '60%' }} alt='earth' />
+    </ParallaxLayer>
+
     {/* meta - satelltie */}
     <ParallaxLayer offset={1.3} speed={-0.3}
       style={{ pointerEvents: 'none' }}>
@@ -79,21 +99,10 @@ const IndexPage = () => (
       }}
     />
 
-    {/* meta - earths */}
-    <ParallaxLayer offset={0} speed={0.7}
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <Earth style={{ width: '80%' }} />
-    </ParallaxLayer>
-
-    <ParallaxLayer offset={2.2} speed={0.4}
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <img src={url('earth')} style={{ width: '60%'  }} alt='earth' />
-    </ParallaxLayer>
-
     {/* meta - contents */}
-    <ParallaxLayer offset={0} speed={0.1}
+    <ParallaxLayer offset={0} speed={0.7}
       style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
-        <Intro/>
+      <Intro />
     </ParallaxLayer>
 
     <ParallaxLayer offset={1} speed={0.1}
@@ -105,7 +114,6 @@ const IndexPage = () => (
       style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <img src={url('clients-main')} style={{ width: '40%' }} alt='clients' />
     </ParallaxLayer>
-
   </Parallax>
 )
 export default IndexPage
