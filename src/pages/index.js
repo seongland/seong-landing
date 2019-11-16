@@ -18,12 +18,32 @@ const IndexPage = () => (
   <Parallax ref={ref => (React.parallax = ref)} pages={3}>
     <Meta />
     <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundColor: 'rgb(46,46,46)', backgroundSize: 'cover' }} />
-    
-    <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
-    <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
 
+    {/* meta - First */}
+
+    <ParallaxLayer offset={0} speed={0.1}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Protons style={{ width: '100%' }} />
+    </ParallaxLayer>
+
+    <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover' }} />
+
+    <ParallaxLayer offset={0} speed={0.1}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Earth style={{ width: '80%' }} />
+    </ParallaxLayer>
+
+    {/* meta - Second */}
+    <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#807080', opacity: 0.7 }} />
+    <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE', opacity: 1 }} />
+
+    {/* meta - Third */}
+    <ParallaxLayer offset={2.2} speed={0.4}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <img src={url('earth')} style={{ width: '60%' }} alt='earth' />
+    </ParallaxLayer>
     {/* meta - wall decoration */}\
-    <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
+        <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
       <img src={url('cloud')}
         style={{ display: 'block', width: '20%', marginLeft: '55%' }} alt='cloud' />
       <img src={url('cloud')}
@@ -62,27 +82,6 @@ const IndexPage = () => (
         style={{ display: 'block', width: '15%', marginLeft: '75%' }} alt='cloud' />
     </ParallaxLayer>
 
-    {/* meta - First */}
-
-    <ParallaxLayer offset={0} speed={0.1}
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <Protons style={{ width: '100%' }} />
-    </ParallaxLayer>
-
-    <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: url('stars', true), backgroundSize: 'cover'}} />
-
-    <ParallaxLayer offset={0} speed={0.1}
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <Earth style={{ width: '80%' }} />
-    </ParallaxLayer>
-
-    {/* meta - Second */}
-
-    {/* meta - Third */}
-    <ParallaxLayer offset={2.2} speed={0.4}
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <img src={url('earth')} style={{ width: '60%' }} alt='earth' />
-    </ParallaxLayer>
 
     {/* meta - satelltie */}
     <ParallaxLayer offset={1.3} speed={-0.3}

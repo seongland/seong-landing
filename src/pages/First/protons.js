@@ -55,14 +55,14 @@ export default class Protons extends React.Component {
       emitter.addInitialize(new Proton.Life(1.5, 3));
       emitter.addInitialize(
         new Proton.Velocity(
-          new Proton.Span(canvas.width / 300, canvas.width / 900),
+          new Proton.Span(canvas.width / 300, canvas.width / 300),
           new Proton.Span(-300, 300),
           "polar"
         )
       );
       emitter.addBehaviour(new Proton.RandomDrift(30, 30, 0.05));
       emitter.addBehaviour(
-        new Proton.Color("ff0000", "random", Infinity, Proton.easeOutQuart)
+        new Proton.Color("ffffff", "random", Infinity, Proton.easeOutQuart)
       );
       emitter.addBehaviour(new Proton.Scale(1, 0.7));
       emitter.p.x = canvas.width / 2;
@@ -72,7 +72,7 @@ export default class Protons extends React.Component {
       proton.addEmitter(emitter);
       renderer = new Proton.CanvasRenderer(canvas);
       renderer.onProtonUpdate = () => {
-        context.fillStyle = "rgba(53, 53, 53, 0.1)";
+        context.fillStyle = "rgba(53, 53, 53, 0.4)";
         context.fillRect(0, 0, canvas.width, canvas.height);
       };
       proton.addRenderer(renderer);
