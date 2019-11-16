@@ -16,7 +16,6 @@ export default class Earth extends React.Component {
 
         // meta - first make
         function make_earth() {
-            console.log('make start')
             var animate, base, baseMat, geometryBase, highTerran, highTerranMat, light, material, terran, terranGeom, terranHighGeom;
             // check mobile
             if (window.innerHeight > window.innerWidth)
@@ -139,7 +138,6 @@ export default class Earth extends React.Component {
         camera.aspect = width / height
         camera.updateProjectionMatrix();
         renderer.setSize(width, height);
-        console.log("change finished", camera.position)
     }
 
     componentWillUnmount() {
