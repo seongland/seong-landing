@@ -17,7 +17,7 @@ const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homep
 const IndexPage = () => (
   <Parallax ref={ref => (React.parallax = ref)} pages={3}>
     <Meta />
-    <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundColor: 'rgb(46,46,46)', backgroundSize: 'cover' }} />
+    <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundColor: 'rgb(52,52,52)', backgroundSize: 'cover' }} />
 
     {/* meta - First */}
 
