@@ -122,7 +122,7 @@ export default class Earth extends React.Component {
 
   // meta - when window changed
   change_earth = () => {
-    this.set_ratio()
+    this.setRatio()
     camera.aspect = width / height
     camera.updateProjectionMatrix();
     renderer.setSize(width, height);
