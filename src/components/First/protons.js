@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Stats from "stats.js";
 import Proton from "proton-engine";
 import { RAFManager } from './manager.js' 
 
-let stats, canvas, context, proton, renderer, emitter, velocity, span;
+let canvas, context, proton, renderer, emitter, velocity, span;
 
 export default class Protons extends React.Component {
   componentDidMount() {
@@ -16,15 +15,12 @@ export default class Protons extends React.Component {
 
   make=() =>{
     this.initCanvas();
-    this.initStats();
     this.createProton();
     render();
 
     function render() {
       RAFManager.add(() => {
-        stats.begin();
         proton.update();
-        stats.end();
       });
     }
   }
@@ -41,15 +37,6 @@ export default class Protons extends React.Component {
       emitter.p.x = canvas.width / 2;
       emitter.p.y = canvas.height / 2;
     };
-  }
-
-  initStats=()=> {
-    stats = new Stats();
-    stats.setMode(2);
-    stats.domElement.style.position = "absolute";
-    stats.domElement.style.left = "0px";
-    stats.domElement.style.top = "0px";
-    document.body.appendChild(stats.domElement);
   }
 
   createProton=() =>{

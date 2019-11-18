@@ -1,4 +1,4 @@
-export var RAFManager = {
+var RAFManager = {
   timer: 0,
   state: 'stop',
   animations: [],
@@ -72,3 +72,5 @@ export var RAFManager = {
     }
   }
 };
+
+export {RAFManager}
