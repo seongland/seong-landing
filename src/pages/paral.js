@@ -1,6 +1,6 @@
 // meta - React
 import React from 'react'
-import 'react-hot-loader';
+import 'react-hot-loader'
 
 // meta - Components
 import Earth from '../components/First/earth.js'

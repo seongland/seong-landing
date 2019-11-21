@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-var intro, mobile
+import React from 'react'
+import ReactDOM from 'react-dom'
+let intro, mobile
 
 export default class Intro extends React.Component {
     componentDidMount() {
         // meta - Three
         intro = ReactDOM.findDOMNode(this.refs.intro)
-        window.addEventListener('resize', this.change_font);
+        window.addEventListener('resize', this.change_font)
         this.change_font()
     }
     // meta - first make
@@ -25,7 +25,7 @@ export default class Intro extends React.Component {
     }
 
     componentWillUnmount() {
-        window.removeEventListener('resize', this.change_earth);
+        window.removeEventListener('resize', this.change_earth)
     }
 
     render() {
@@ -35,6 +35,6 @@ export default class Intro extends React.Component {
                     Welcome to <br /> Seong-Land
                 </span>
             </div>
-        );
+        )
     }
 }

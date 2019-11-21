@@ -1,11 +1,11 @@
 
 import React from 'react'
-import 'react-hot-loader';
+import 'react-hot-loader'
 import '../components/paral.css'
-import ogtag from "../images/ogtag.png"
-import { Helmet as OG } from 'react-helmet';
-import Paral from './paral.js';
+import Paral from './paral.js'
 import favicon from '../images/favicon.png'
+import ogtag from "../images/ogtag.png"
+import { Helmet as OG } from 'react-helmet'
 
 const IndexPage = () => (
   <div>
