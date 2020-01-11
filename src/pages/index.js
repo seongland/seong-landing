@@ -8,9 +8,7 @@ import { Helmet as OG } from "react-helmet"
 
 const IndexPage = () => (
   <div>
-    <OG
-      link={[{ rel: "shortcut icon", type: "image/png", href: `${favicon}` }]}
-    >
+    <OG link={[{ rel: "shortcut icon", type: "image/png", href: `${favicon}` }]} >
       <meta charSet="utf-8" />
       <title>Seong-Land</title>
       <meta property="fb:app_id" content="419108182355029" />
