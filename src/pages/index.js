@@ -26,4 +26,5 @@ const IndexPage = () => (
     <Paral />
   </div>
 )
+
 export default IndexPage
