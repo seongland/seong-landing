@@ -1,8 +1,8 @@
 
 import React from 'react'
 import 'react-hot-loader'
-import '../components/paral.css'
-import Paral from './paral.js'
+import '../components/paral/paral.css'
+import Paral from '../components/paral/index.js'
 import favicon from '../images/favicon.png'
 import ogtag from "../images/ogtag.png"
 import { Helmet as OG } from 'react-helmet'
