@@ -1,5 +1,6 @@
 import { render } from "react-dom"
 import React, { useState } from "react"
+import ReactDOM from 'react-dom'
 import { useSprings, animated, interpolate } from "react-spring"
 import { useGesture } from "react-use-gesture"
 import "./cards.css"
@@ -33,7 +34,6 @@ function Deck() {
       args: [index],
       down,
       delta: [xDelta],
-      distance,
       direction: [xDir],
       velocity,
     }) => {
@@ -81,16 +81,12 @@ function Deck() {
   ))
 }
 
-render(<Deck />, document.getElementById("root"))
-
 export default class Cards extends React.Component {
   componentDidMount() {
-    render(<Deck />, ReactDOM.findDOMNode(this.refs.cards))\
+    render(<Deck />, ReactDOM.findDOMNode(this.refs.cards))
   }
 
   render() {
-    return (
-      <div ref="cards"></div>
-    )
+    return <div ref="cards"></div>
   }
 }
