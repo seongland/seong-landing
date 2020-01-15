@@ -18,6 +18,7 @@ const url = (name, wrap = false) =>
   }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
     wrap ? ")" : ""
   }`
+
 const Paral = () => (
   <Parallax ref={ref => (React.parallax = ref)} pages={3}>
     <ParallaxLayer
