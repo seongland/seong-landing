@@ -17,6 +17,7 @@ export default class Intro extends React.Component {
             mobile = true
         else
             mobile = false
+
         // set ratio
         if (mobile)
             intro.style.fontSize = '18vw'
