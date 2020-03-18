@@ -67,7 +67,8 @@ const Paral = () => (
       speed={1}
       style={{ backgroundColor: "#87BCDE", opacity: 1 }}
     />
-    {/* meta - Third */}
+
+    {/* @meta - Third */}
     <ParallaxLayer
       offset={2.2}
       speed={0.4}
@@ -79,6 +80,7 @@ const Paral = () => (
     >
       <img src={url("earth")} style={{ width: "60%" }} alt="earth" />
     </ParallaxLayer>
+
     {/* meta - wall decoration */}\
     <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
       <img
@@ -165,6 +167,7 @@ const Paral = () => (
         backgroundImage: url("clients", true),
       }}
     />
+
     {/* meta - contents */}
     <ParallaxLayer
       offset={0}

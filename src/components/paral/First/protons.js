@@ -5,6 +5,10 @@ import { RAFManager } from './manager.js'
 
 let canvas, context, proton, renderer, emitter, velocity, span
 
+const radius = [3, 5]
+const mass = 100
+const life = [1, 1.2]
+
 export default class Protons extends React.Component {
   componentDidMount() {
     // meta - Three
@@ -13,7 +17,7 @@ export default class Protons extends React.Component {
     this.make()
   }
 
-  make=() =>{
+  make = () => {
     this.initCanvas()
     this.createProton()
     render()
@@ -25,7 +29,7 @@ export default class Protons extends React.Component {
     }
   }
 
-  initCanvas=() =>{
+  initCanvas = () =>{
     canvas = document.getElementById("canvas")
     canvas.width = window.innerWidth
     canvas.height = 3 * canvas.width
@@ -39,16 +43,16 @@ export default class Protons extends React.Component {
     }
   }
 
-  createProton=() =>{
+  createProton = () =>{
     proton = new Proton()
     emitter = new Proton.Emitter()
     emitter.rate = new Proton.Rate(
       new Proton.Span(10, 30),
       new Proton.Span(0.1, 0.3)
     )
-    emitter.addInitialize(new Proton.Mass(100))
-    emitter.addInitialize(new Proton.Radius(3, 12))
-    emitter.addInitialize(new Proton.Life(1, 1.2))
+    emitter.addInitialize(new Proton.Mass(mass))
+    emitter.addInitialize(new Proton.Radius(...radius))
+    emitter.addInitialize(new Proton.Life(...life))
     span = new Proton.Span()
     this.change_span()
     
@@ -59,9 +63,6 @@ export default class Protons extends React.Component {
     )
     emitter.addInitialize(velocity)
     emitter.addBehaviour(new Proton.RandomDrift(30, 30, 0.05))
-    emitter.addBehaviour(
-      new Proton.Color("ffffff", "random", Infinity, Proton.easeOutQuart)
-    )
     emitter.addBehaviour(new Proton.Scale(1, 0.7))
     emitter.p.x = canvas.width / 2
     emitter.p.y = canvas.height / 2
