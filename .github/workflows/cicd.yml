@@ -28,6 +28,7 @@ jobs:
         path: public
 
   depolyment:
+    needs: make-artifact
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using password
@@ -35,9 +36,10 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+        password: ${{ secrets.   }}
         port: ${{ secrets.PORT }}
         script: |
-          whoami
           cd /var/www/react
-          ls -al
+          git pull
+          yarn
+          yarn build
