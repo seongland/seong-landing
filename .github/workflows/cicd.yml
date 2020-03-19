@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  make artifact:
+  make-artifact:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -27,7 +27,7 @@ jobs:
         name: make artiface
         path: public
 
-  Depolyment:
+  depolyment:
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using password
