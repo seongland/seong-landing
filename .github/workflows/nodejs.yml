@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  cd:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -26,7 +26,6 @@ jobs:
       with:
         name: make artiface
         path: public
-
 
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.0.7
