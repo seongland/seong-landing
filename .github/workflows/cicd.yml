@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  make-artifact:
+  deployment:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -27,8 +27,20 @@ jobs:
         name: make artiface
         path: public
 
-  depolyment:
-    needs: make-artifact
+    - name: get-key
+      run: |
+        mkdir ~/.ssh
+        chmod 700 ~/.ssh
+        touch ~/.ssh/known_hosts
+        chmod 644 ~/.ssh/known_hosts
+        ssh-keyscan -H ssh.seonglae.com >> ~/.ssh/known_hosts
+        sudo echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
+        sudo chmod 600 ~/.ssh/id_rsa
+        rsync  -avz -e ssh ${ secrets.DIST_DIR }/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.TARGET }} --delete
+
+
+  check:
+    needs: deployment
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using password
@@ -39,7 +51,6 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-          cd /var/www/react
-          git pull
-          yarn
-          yarn build
+          cd ${{ secrets.TARGET }}
+          ls
+          whoami
