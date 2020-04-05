@@ -5,7 +5,7 @@ import { RAFManager } from './manager.js'
 
 let canvas, context, proton, renderer, emitter, velocity, span
 
-const radius = [3, 5]
+const radius = [1, 3]
 const mass = 100
 const life = [1, 1.2]
 
@@ -47,7 +47,7 @@ export default class Protons extends React.Component {
     proton = new Proton()
     emitter = new Proton.Emitter()
     emitter.rate = new Proton.Rate(
-      new Proton.Span(10, 10),
+      new Proton.Span(5, 10),
       new Proton.Span(0.1, 0.3)
     )
     emitter.addInitialize(new Proton.Mass(mass))
