@@ -20,7 +20,7 @@ export default class Earth extends React.Component {
     this.makeScene()
     this.makeRenderer()
     this.makeControl()
-    ReactDOM.findDOMNode(this.refs.earth).appendChild(renderer.domElement)
+    ReactDOM.findDOMNode(this.refs.earthT).appendChild(renderer.domElement)
 
     const animate = function () {
       base.rotation.y += 0.002
@@ -144,7 +144,7 @@ export default class Earth extends React.Component {
 
   render() {
     return (
-      <div ref="earth"></div>
+      <div ref="earthT"></div>
     )
   }
 }

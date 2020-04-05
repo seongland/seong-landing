@@ -47,7 +47,7 @@ export default class Protons extends React.Component {
     proton = new Proton()
     emitter = new Proton.Emitter()
     emitter.rate = new Proton.Rate(
-      new Proton.Span(10, 30),
+      new Proton.Span(10, 10),
       new Proton.Span(0.1, 0.3)
     )
     emitter.addInitialize(new Proton.Mass(mass))

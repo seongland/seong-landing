@@ -3,7 +3,8 @@ import React from "react"
 import "react-hot-loader"
 
 // meta - Components
-import Earth from "./First/earth.js"
+import EarthT from "./First/earthT.js"
+import EarthB from "./First/earthB.js"
 import Protons from "./First/protons.js"
 import Clouds from "./clouds.js"
 import Intro from "./First/intro"
@@ -19,7 +20,7 @@ const url = (name, wrap = false) =>
     wrap ? ")" : ""
   }`
 
-const Paral = () => (
+export default () => (
   <Parallax ref={ref => (React.parallax = ref)} pages={3}>
     <ParallaxLayer
       offset={0}
@@ -27,7 +28,7 @@ const Paral = () => (
       factor={3}
       style={{ backgroundColor: "rgb(52,52,52)", backgroundSize: "cover" }}
     />
-    {/* meta - First */}
+    {/* @meta - First */}
     <ParallaxLayer
       offset={0}
       speed={0.1}
@@ -54,9 +55,9 @@ const Paral = () => (
         justifyContent: "center",
       }}
     >
-      <Earth style={{ width: "80%" }} />
+      <EarthT/>
     </ParallaxLayer>
-    {/* meta - Second */}
+    {/* @meta - Second */}
     <ParallaxLayer
       offset={1}
       speed={1}
@@ -78,10 +79,10 @@ const Paral = () => (
         justifyContent: "center",
       }}
     >
-      <img src={url("earth")} style={{ width: "60%" }} alt="earth" />
+      <EarthB/>
     </ParallaxLayer>
 
-    {/* meta - wall decoration */}\
+    {/* @meta - wall decoration */}\
     <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
       <img
         src={url("cloud")}
@@ -150,25 +151,6 @@ const Paral = () => (
         alt="cloud"
       />
     </ParallaxLayer>
-    {/* meta - satelltie */}
-    <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: "none" }}>
-      <img
-        src={url("satellite4")}
-        style={{ width: "15%", marginLeft: "70%" }}
-        alt="satellite"
-      />
-    </ParallaxLayer>
-    <ParallaxLayer
-      offset={2}
-      speed={-0.3}
-      style={{
-        backgroundSize: "80%",
-        backgroundPosition: "center",
-        backgroundImage: url("clients", true),
-      }}
-    />
-
-    {/* meta - contents */}
     <ParallaxLayer
       offset={0}
       speed={0.7}
@@ -181,28 +163,5 @@ const Paral = () => (
     >
       <Intro />
     </ParallaxLayer>
-    <ParallaxLayer
-      offset={1}
-      speed={0.1}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <img src={url("bash")} style={{ width: "40%" }} alt="bash" />
-    </ParallaxLayer>
-    <ParallaxLayer
-      offset={2}
-      speed={-0}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <img src={url("clients-main")} style={{ width: "40%" }} alt="clients" />
-    </ParallaxLayer>
   </Parallax>
 )
-export default Paral
