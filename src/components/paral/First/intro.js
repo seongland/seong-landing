@@ -19,8 +19,8 @@ export default class Intro extends React.Component {
     else mobile = false
 
     // set ratio
-    if (mobile) intro.style.fontSize = "18vw"
-    else intro.style.fontSize = "10vw"
+    if (mobile) intro.style.fontSize = "9vw"
+    else intro.style.fontSize = "5vw"
   }
 
   componentWillUnmount() {
@@ -48,13 +48,9 @@ export default class Intro extends React.Component {
             "Get my Awesome Apps",
             "Get my Awesome Apps"
           ]}
-          typeSpeed={50}
-          backSpeed={40}
+          typeSpeed={60}
+          backSpeed={50}
         />
-
-        <typed typeSpeed={40} backSpeed={50} attr="placeholder" loop>
-          <input type="text" />
-        </typed>
       </div>
     )
   }

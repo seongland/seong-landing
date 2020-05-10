@@ -3,11 +3,12 @@ import React from "react"
 import "react-hot-loader"
 
 // meta - Components
-import EarthT from "./First/earthT.js"
-import EarthB from "./First/earthB.js"
-import Protons from "./First/protons.js"
+import EarthT from "./First/earthT"
+import EarthB from "./First/earthB"
+import Protons from "./First/protons"
 import Clouds from "./clouds.js"
 import Intro from "./First/intro"
+import Cards from "./Third/cards"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 
 // meta - Other
@@ -80,6 +81,18 @@ export default () => (
       }}
     >
       <EarthB/>
+    </ParallaxLayer>
+
+    <ParallaxLayer
+      offset={1.0}
+      speed={1}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Cards/>
     </ParallaxLayer>
 
     {/* @meta - wall decoration */}\
