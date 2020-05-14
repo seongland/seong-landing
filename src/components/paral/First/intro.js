@@ -38,15 +38,25 @@ export default class Intro extends React.Component {
         }}
       >
         <Typed
-          loop
           style={{ color: "#fff" }}
           strings={[
             "Welcome to Seong-Land",
             "Welcome to Seong-Land",
             "Visit my Other Lands",
             "Visit my Other Lands",
-            "Get my Awesome Apps",
-            "Get my Awesome Apps"
+            "info.seonglae.com",
+            "life.seonglae.com",
+            "SNS also",
+            "SNS also",
+            "Github",
+            "Facebook",
+            "LinkedIn",
+            "...",
+            "All the things are below",
+            "All the things are below",
+            "Anyway, Welcome",
+            "Anyway, Welcome",
+            "Here is Seong-Land"
           ]}
           typeSpeed={60}
           backSpeed={50}

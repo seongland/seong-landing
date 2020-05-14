@@ -49,7 +49,7 @@ export default () => (
     />
     <ParallaxLayer
       offset={0}
-      speed={0.1}
+      speed={-0.1}
       style={{
         display: "flex",
         alignItems: "center",
@@ -72,8 +72,8 @@ export default () => (
 
     {/* @meta - Third */}
     <ParallaxLayer
-      offset={2.2}
-      speed={0.4}
+      offset={2.3}
+      speed={2}
       style={{
         display: "flex",
         alignItems: "center",
@@ -85,11 +85,11 @@ export default () => (
 
     <ParallaxLayer
       offset={1.0}
-      speed={1}
+      speed={2}
       style={{
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "center"
       }}
     >
       <Cards/>

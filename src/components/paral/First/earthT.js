@@ -42,8 +42,8 @@ export default class Earth extends React.Component {
       if (width === window.innerWidth)
         return
       else {
-        height = window.innerWidth
-        width = window.innerWidth
+        height = window.innerWidth * 2/3
+        width = window.innerWidth * 2/3
         return
       }
     if (height === window.innerWidth / 2)
