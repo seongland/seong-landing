@@ -42,21 +42,18 @@ export default class Intro extends React.Component {
           strings={[
             "Welcome to Seong-Land",
             "Welcome to Seong-Land",
-            "Visit my Other Lands",
-            "Visit my Other Lands",
-            "info.seonglae.com",
-            "life.seonglae.com",
-            "SNS also",
-            "SNS also",
+            "My information is in",
+            "My information is in",
             "Github",
             "Facebook",
             "LinkedIn",
             "...",
             "All the things are below",
             "All the things are below",
+            "Not yet",
             "Anyway, Welcome",
             "Anyway, Welcome",
-            "Here is Seong-Land"
+            "It's Seong-Land"
           ]}
           typeSpeed={60}
           backSpeed={50}

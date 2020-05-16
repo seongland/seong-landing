@@ -83,17 +83,6 @@ export default () => (
       <EarthB/>
     </ParallaxLayer>
 
-    <ParallaxLayer
-      offset={1.0}
-      speed={2}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-      }}
-    >
-      <Cards/>
-    </ParallaxLayer>
 
     {/* @meta - wall decoration */}\
     <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
@@ -164,6 +153,19 @@ export default () => (
         alt="cloud"
       />
     </ParallaxLayer>
+      
+    <ParallaxLayer
+      offset={1.0}
+      speed={2}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+      }}
+    >
+      <Cards/>
+    </ParallaxLayer>
+
     <ParallaxLayer
       offset={0}
       speed={0.7}
