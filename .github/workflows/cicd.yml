@@ -47,15 +47,15 @@ jobs:
         sudo chmod 600 ~/.ssh/id_rsa
         rsync  -avz -e ssh ${{ secrets.DIST_DIR }}/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.TARGET }} --delete
     
-    now:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - uses: amondnet/now-deployment@v2
-          with:
-            zeit-token: ${{ secrets.ZEIT_TOKEN }} # Required
-            now-org-id: ${{ secrets.ORG_ID}}  #Required
-            now-project-id: ${{ secrets.PROJECT_ID}} #Required
+  now:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: amondnet/now-deployment@v2
+        with:
+          zeit-token: ${{ secrets.ZEIT_TOKEN }} # Required
+          now-org-id: ${{ secrets.ORG_ID}}  #Required
+          now-project-id: ${{ secrets.PROJECT_ID}} #Required
 
 
   check:
