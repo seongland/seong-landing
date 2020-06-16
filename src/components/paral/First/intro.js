@@ -48,12 +48,12 @@ export default class Intro extends React.Component {
             "Facebook",
             "LinkedIn",
             "...",
-            "All the things are below",
-            "All the things are below",
+            "All that things are below",
+            "All that things are below",
             "Not yet",
-            "Anyway, Welcome",
-            "Anyway, Welcome",
-            "It's Seong-Land"
+            "Anyhow, Welcome",
+            "Anyhow, Welcome",
+            "Seong-Land"
           ]}
           typeSpeed={60}
           backSpeed={50}
