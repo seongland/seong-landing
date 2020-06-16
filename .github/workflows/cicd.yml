@@ -45,7 +45,7 @@ jobs:
         ssh-keyscan -H ssh.seonglae.com >> ~/.ssh/known_hosts
         sudo echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
         sudo chmod 600 ~/.ssh/id_rsa
-        rsync  -avz -e ssh ${{ secrets.DIST_DIR }}/ ${{ secrets.USERNAME }}@${{ secrets.HOST }}:${{ secrets.TARGET }} --delete
+        gsutil rsync -R public gs://seonglae.com
     
   now:
     runs-on: ubuntu-latest
