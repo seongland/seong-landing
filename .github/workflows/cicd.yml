@@ -25,7 +25,7 @@ jobs:
           ${{ runner.OS }}-build-
           ${{ runner.OS }}-
 
-    - name: Install npm dependencies
+    - name: Install npm dependencies]
       run: yarn
 
     - name: Run build task
@@ -36,15 +36,15 @@ jobs:
         name: make artiface
         path: public
 
+    - name: Authenticate on GCS
+      uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      with:
+        version: '270.0.0'
+        service_account_email: ${{ secrets.GKE_EMAIL }}
+        service_account_key: ${{ secrets.GKE_KEY }}
+
     - name: get-key
       run: |
-        mkdir ~/.ssh
-        chmod 700 ~/.ssh
-        touch ~/.ssh/known_hosts
-        chmod 644 ~/.ssh/known_hosts
-        ssh-keyscan -H ssh.seonglae.com >> ~/.ssh/known_hosts
-        sudo echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_rsa
-        sudo chmod 600 ~/.ssh/id_rsa
         gsutil rsync -R public gs://seonglae.com
     
   now:
