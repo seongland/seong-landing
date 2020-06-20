@@ -8,7 +8,7 @@ Seonglae Land React
 - [anota](https://anota.seonglae.com)
 
 # How Did I Make
-three.js
-proton.js
-react-spring - parallax
-gatsby
+- three.js
+- proton.js
+- react-spring - parallax
+- gatsby
