@@ -20,7 +20,7 @@ jobs:
       uses: actions/cache@v1
       with:
         path: node_modules
-        key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.OS }}-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.OS }}-build-
           ${{ runner.OS }}-
@@ -56,20 +56,3 @@ jobs:
           zeit-token: ${{ secrets.ZEIT_TOKEN }} # Required
           now-org-id: ${{ secrets.ORG_ID}}  #Required
           now-project-id: ${{ secrets.PROJECT_ID}} #Required
-
-
-  check:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        script: |
-          cd ${{ secrets.TARGET }}
-          ls
-          whoami
