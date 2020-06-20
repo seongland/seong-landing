@@ -10,7 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
@@ -50,8 +51,10 @@ jobs:
   now:
     runs-on: ubuntu-latest
     steps:
+    - uses: amondnet/now-deployment@v2
+
     - name: Cache node modules
-    - uses: actions/cache@v1
+      uses: actions/cache@v1
       with:
         path: node_modules
         key: ${{ runner.OS }}-${{ hashFiles('**/yarn.lock') }}
@@ -60,8 +63,7 @@ jobs:
           ${{ runner.OS }}-
 
     - name: Now deployment
-    - uses: actions/checkout@v2
-    - uses: amondnet/now-deployment@v2
+      uses: actions/checkout@v2
       with:
         zeit-token: ${{ secrets.ZEIT_TOKEN }} # Required
         now-org-id: ${{ secrets.ORG_ID}}  #Required
