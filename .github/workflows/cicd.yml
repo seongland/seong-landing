@@ -50,6 +50,16 @@ jobs:
   now:
     runs-on: ubuntu-latest
     steps:
+      - name: Cache node modules
+      - uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
+
+      - name: Now deployment
       - uses: actions/checkout@v2
       - uses: amondnet/now-deployment@v2
         with:
