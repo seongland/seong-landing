@@ -16,9 +16,9 @@ import "./paral.css"
 
 const url = (name, wrap = false) =>
   `${
-    wrap ? "url(" : ""
+  wrap ? "url(" : ""
   }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-    wrap ? ")" : ""
+  wrap ? ")" : ""
   }`
 
 export default () => (
@@ -56,7 +56,7 @@ export default () => (
         justifyContent: "center",
       }}
     >
-      <EarthT/>
+      <EarthT />
     </ParallaxLayer>
     {/* @meta - Second */}
     <ParallaxLayer
@@ -80,7 +80,7 @@ export default () => (
         justifyContent: "center",
       }}
     >
-      <EarthB/>
+      <EarthB />
     </ParallaxLayer>
 
 
@@ -153,7 +153,7 @@ export default () => (
         alt="cloud"
       />
     </ParallaxLayer>
-      
+
     <ParallaxLayer
       offset={1.0}
       speed={2}
@@ -163,7 +163,7 @@ export default () => (
         justifyContent: "center"
       }}
     >
-      <Cards/>
+      <Cards />
     </ParallaxLayer>
 
     <ParallaxLayer
