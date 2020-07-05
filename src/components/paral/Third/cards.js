@@ -79,11 +79,17 @@ function Deck() {
         <div>
           <iframe
             style={{
-              WebkitUserSelect: "none", border: "2px solid #ebebeb", height: "600px", width: "100%"
+              height: "45vh",
+              width: "80%",
+              marginLeft: "10%",
+              marginRight: "10%",
+              border: "none",
             }}
             src="https://vizydrop.com/shared/drop/5e3ea0f1b56e7c81523f39aa?authkey=85cc6617d521fe9b38a9"
           ></iframe>
-          {cards[i]}
+          <div style={{ width: "80%", marginLeft: "10%", marginRight: "10% " }}>
+            {cards[i]}
+          </div>
         </div>
       </animated.div>
     </animated.div>
