@@ -78,7 +78,7 @@ function Deck() {
         <div>
           <iframe
             style={{
-              height: "43vh",
+              height: "50vh",
               width: "80%",
               marginLeft: "10%",
               marginRight: "10%",
@@ -86,17 +86,6 @@ function Deck() {
             }}
             src={cards[i]}
           ></iframe>
-        </div>
-        <div
-          style={{
-            width: "20vh",
-            fontStyle: "bold",
-            padding: "1vh",
-            margin: "0 15vh 0 15vh",
-            textAlign: "center", bordeRadius: "5px"
-            , background: "#fff",
-            boxShadow: "1px 1px 2px #d9d9d9, 2px -2px 4px #fff"
-          }}>SWEEP
         </div>
       </animated.div>
     </animated.div>
