@@ -5,12 +5,13 @@ import { useSprings, animated, interpolate } from "react-spring"
 import { useDrag } from "react-use-gesture"
 import "./cards.css"
 
-const cards = ["https://github.com/sungle3737",
+const cards = [
+  "https://github.com/sungle3737",
   "https://www.linkedin.com/in/sungle3737",
-  "https://info.seonglae.com"
-  , "https://life.seonglae.com",
+  "https://info.seonglae.com",
+  "https://life.seonglae.com",
   "https://vizydrop.com/shared/drop/5e2dafccac25e35dc0c0f4d5?authkey=0ed82d6370bab993d792",
-  , "https://vizydrop.com/shared/drop/5e3ea0f1b56e7c81523f39aa?authkey=85cc6617d521fe9b38a9"
+  "https://vizydrop.com/shared/drop/5e3ea0f1b56e7c81523f39aa?authkey=85cc6617d521fe9b38a9",
 ]
 
 const to = (i) => ({
