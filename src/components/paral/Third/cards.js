@@ -5,8 +5,14 @@ import { useSprings, animated, interpolate } from "react-spring"
 import { useDrag } from "react-use-gesture"
 import "./cards.css"
 
-const cards = ["", "github.com/sungle3737", "https://www.linkedin.com/in/sungle3737/", "", "", "info.seonglae.com"]
-
+const cards = [
+  "",
+  "github.com/sungle3737",
+  "https://www.linkedin.com/in/sungle3737/",
+  "",
+  "",
+  "info.seonglae.com",
+]
 
 const to = (i) => ({
   x: 0,
@@ -67,9 +73,18 @@ function Deck() {
       <animated.div
         {...bind(i)}
         style={{
-          transform: interpolate([rot, scale], trans)
+          transform: interpolate([rot, scale], trans),
         }}
-      ><div>{cards[i]}</div>
+      >
+        <div>
+          <iframe
+            style={{
+              WebkitUserSelect: "none", border: "2px solid #ebebeb", height: "600px", width: "100%"
+            }}
+            src="https://vizydrop.com/shared/drop/5e3ea0f1b56e7c81523f39aa?authkey=85cc6617d521fe9b38a9"
+          ></iframe>
+          {cards[i]}
+        </div>
       </animated.div>
     </animated.div>
   ))
