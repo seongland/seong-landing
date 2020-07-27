@@ -1,0 +1,14 @@
+[
+  {
+    "origin": [
+      "https://cors-anywhere.herokuapp.com "
+    ],
+    "method": [
+      "GET"
+    ],
+    "responseHeader": [
+      "Content-Type"
+    ],
+    "maxAgeSeconds": 3600
+  }
+]
