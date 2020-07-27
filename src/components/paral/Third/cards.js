@@ -4,7 +4,7 @@ import ReactDOM from "react-dom"
 import { useSprings, animated, interpolate } from "react-spring"
 import { useDrag } from "react-use-gesture"
 import "./cards.css"
-import { ReactTinyLink } from 'react-tiny-link'
+// import { ReactTinyLink } from 'react-tiny-link'
 
 const cards = [
   "https://vizydrop.com/shared/drop/5e2dafccac25e35dc0c0f4d5?authkey=0ed82d6370bab993d792",
@@ -12,7 +12,8 @@ const cards = [
   "https://github.com/sungle3737",
   "https://www.linkedin.com/in/sungle3737",
   "https://info.seonglae.com",
-  "https://life.seonglae.com"
+  "https://life.seonglae.com",
+  "https://seonglae.com"
 ]
 
 const to = (i) => ({
@@ -79,22 +80,24 @@ function Deck() {
       >
         <div>
           {
-            cards[i].includes("vizydrop") ?
-              <iframe
-                style={{
-                  height: "50vh",
-                  width: "80%",
-                  marginLeft: "10%",
-                  marginRight: "10%",
-                  border: "none",
-                }}
-                src={cards[i]}
-              ></iframe> :
-              <ReactTinyLink
-                cardSize="large"
-                showGraphic={true}
-                url={cards[i]}
-              />
+            // cards[i].includes("vizydrop") 
+            // ?
+            <iframe
+              style={{
+                height: "50vh",
+                width: "80%",
+                marginLeft: "10%",
+                marginRight: "10%",
+                border: "none",
+              }}
+              src={cards[i]}
+            ></iframe>
+            // :
+            // <ReactTinyLink
+            //   cardSize="large"
+            //   showGraphic={true}
+            //   url={cards[i]}
+            // />
           }
         </div>
       </animated.div>
