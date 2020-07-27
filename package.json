@@ -18,7 +18,7 @@
     "react-helmet": "^5.2.1",
     "react-scripts": "^3.2.0",
     "react-spring": "^8.0.27",
-    "react-tiny-link": "^3.5.0",
+    "react-tiny-link": "^3.6.0",
     "react-typed": "^1.2.0",
     "react-use-gesture": "^7.0.15",
     "three": "^0.110.0"
