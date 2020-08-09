@@ -12,8 +12,7 @@ const cards = [
   "https://github.com/sungle3737",
   "https://www.linkedin.com/in/sungle3737",
   "https://info.seonglae.com",
-  "https://life.seonglae.com",
-  "https://seonglae.com"
+  "https://life.seonglae.com"
 ]
 
 const to = (i) => ({
