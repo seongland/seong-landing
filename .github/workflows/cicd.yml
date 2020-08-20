@@ -21,6 +21,7 @@ jobs:
 
       - name: deploy
         run: |
+          gcloud config set app/stop_previous_version true
           gcloud app deploy
 
   now:
