@@ -18,7 +18,11 @@ jobs:
           service_account_email: ${{ secrets.GKE_EMAIL }}
           service_account_key: ${{ secrets.GKE_KEY }}
 
-      - name: get-key
+      - name: set project
+        run: |
+          gcloud config set project nth-rarity-204509
+
+      - name: deploy
         run: |
           gcloud app deploy
 
