@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,10 +17,7 @@ jobs:
         with:
           service_account_email: ${{ secrets.GKE_EMAIL }}
           service_account_key: ${{ secrets.GKE_KEY }}
-
-      - name: set project
-        run: |
-          gcloud config set project nth-rarity-204509
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
 
       - name: deploy
         run: |
