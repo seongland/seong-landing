@@ -44,5 +44,4 @@ jobs:
           service_account_key: ${{ secrets.GKE_KEY }}
 
       - name: get-key
-        run: |
-          gcloud app deploy
+        run: gsutil rsync -R public gs://seonglae.com
