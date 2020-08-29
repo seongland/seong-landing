@@ -42,6 +42,8 @@ export default class Intro extends React.Component {
           strings={[
             "Welcome to Seong-Land",
             "Welcome to Seong-Land",
+            "Spin the earth",
+            "Spin the earth",
             "My information is in",
             "My information is in",
             "Github",
