@@ -23,15 +23,3 @@ jobs:
         run: |
           gcloud config set app/stop_previous_version true
           gcloud app deploy
-
-  now:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Now deployment
-        uses: amondnet/now-deployment@v2
-        with:
-          zeit-token: ${{ secrets.ZEIT_TOKEN }} # Required
-          now-org-id: ${{ secrets.ORG_ID}} #Required
-          now-project-id: ${{ secrets.PROJECT_ID}} #Required
