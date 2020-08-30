@@ -44,8 +44,10 @@ export default class Intro extends React.Component {
             "Welcome to Seong-Land",
             "Spin the earth",
             "Spin the earth",
-            "My information is in",
-            "My information is in",
+            "Swipe cards",
+            "Swipe cards",
+            "And My information is in",
+            "And My information is in",
             "Github",
             "Facebook",
             "LinkedIn",
@@ -53,8 +55,8 @@ export default class Intro extends React.Component {
             "All that things are below",
             "All that things are below",
             "Not yet",
-            "Anyhow, Welcome",
-            "Anyhow, Welcome",
+            "Anyway, Welcome",
+            "Anyway, Welcome",
             "Seong-Land"
           ]}
           typeSpeed={60}
