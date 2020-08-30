@@ -1,4 +1,7 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl: `https://www.seonglae.com`,
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -10,6 +13,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.seonglae.com',
+        sitemap: 'https://www.seonglae.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
+    `gatsby-plugin-sitemap`
   ]
   // your another plugins
 }
