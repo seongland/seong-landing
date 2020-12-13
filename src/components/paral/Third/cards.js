@@ -90,7 +90,7 @@ function Deck() {
               style={{
                 background:
                   "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
-                width: "50vh",
+                width: "80vw",
                 height: "30vh",
                 cursor: "pointer",
               }}
@@ -177,7 +177,7 @@ function Deck() {
                     fontSize: "25px",
                   }}
                 >
-                  Seonglae Cho
+                  Seonglae
                 </label>
                 <label
                   style={{

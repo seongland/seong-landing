@@ -98,7 +98,7 @@ function Deck() {
             <Card
               style={{
                 background: `linear-gradient(to right, ${colors[i][0]},${colors[i][1]}, ${colors[i][2]})`,
-                width: "50vh",
+                width: "80vw",
                 height: "30vh",
                 cursor: "pointer",
               }}
@@ -192,7 +192,7 @@ function Deck() {
                     fontSize: "25px",
                   }}
                 >
-                  Seonglae Cho
+                  Seonglae
                 </label>
                 <label
                   style={{
