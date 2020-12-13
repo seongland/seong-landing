@@ -8,7 +8,9 @@ import EarthB from "./First/earthB"
 import Protons from "./First/protons"
 import Clouds from "./clouds.js"
 import Intro from "./First/intro"
-import Cards from "./Third/cards"
+import Cards2 from "./Second/cards"
+import Cards3 from "./Third/cards"
+import Cards4 from "./Forth/cards"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 
 // meta - Other
@@ -16,13 +18,13 @@ import "./paral.css"
 
 const url = (name, wrap = false) =>
   `${
-  wrap ? "url(" : ""
+    wrap ? "url(" : ""
   }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-  wrap ? ")" : ""
+    wrap ? ")" : ""
   }`
 
 export default () => (
-  <Parallax ref={ref => (React.parallax = ref)} pages={3}>
+  <Parallax ref={(ref) => (React.parallax = ref)} pages={3}>
     <ParallaxLayer
       offset={0}
       speed={0}
@@ -69,7 +71,6 @@ export default () => (
       speed={1}
       style={{ backgroundColor: "#87BCDE", opacity: 1 }}
     />
-
     {/* @meta - Third */}
     <ParallaxLayer
       offset={2.3}
@@ -82,8 +83,6 @@ export default () => (
     >
       <EarthB />
     </ParallaxLayer>
-
-
     {/* @meta - wall decoration */}\
     <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
       <img
@@ -153,19 +152,40 @@ export default () => (
         alt="cloud"
       />
     </ParallaxLayer>
-
+    // cards
     <ParallaxLayer
       offset={1.0}
       speed={2}
       style={{
         display: "flex",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
       }}
     >
-      <Cards />
+      <Cards2 />
     </ParallaxLayer>
-
+    <ParallaxLayer
+      offset={1.95}
+      speed={1}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Cards3 />
+    </ParallaxLayer>
+    <ParallaxLayer
+      offset={2.0}
+      speed={3}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Cards4 />
+    </ParallaxLayer>
     <ParallaxLayer
       offset={0}
       speed={0.7}

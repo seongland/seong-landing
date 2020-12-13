@@ -6,9 +6,16 @@ import { useDrag } from "react-use-gesture"
 import "../cards.css"
 import Card from "react-animated-3d-card"
 
-const cards = [
-  "https://vizydrop.com/shared/drop/5e2dafccac25e35dc0c0f4d5?authkey=0ed82d6370bab993d792",
-  "https://vizydrop.com/shared/drop/5e3ea0f1b56e7c81523f39aa?authkey=85cc6617d521fe9b38a9",
+const cards = ["https://github.com/sungle3737", "https://doc.seongland.com"]
+
+const colors = [
+  ["#0f0c29", "#302b63", "#24243e"],
+  ["#020202", "#333333", "#222222"],
+]
+
+const texts = [
+  ["My", "Programming", "History"],
+  ["Personal", "Wiki"],
 ]
 
 const to = (i) => ({
@@ -88,15 +95,13 @@ function Deck() {
           ) : (
             <Card
               style={{
-                background:
-                  "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
+                background: `linear-gradient(to right, ${colors[i][0]},${colors[i][1]}, ${colors[i][2]})`,
                 width: "50vh",
                 height: "30vh",
                 cursor: "pointer",
               }}
               onClick={(e) => {
-                console.log(e)
-                window.open(cards[i])
+                if (!window.dragging) window.open(cards[i])
               }}
             >
               <div>
@@ -133,12 +138,17 @@ function Deck() {
                     fontFamily: "Fira Code",
                     color: "white",
                   }}
-                  onClick={console.log("prova")}
                 >
-                  <label>Document</label>
-                  <label style={{ marginLeft: "30px" }}>of</label>
-                  <label style={{ marginLeft: "30px" }}>Seongland</label>
-                  <label style={{ marginLeft: "30px" }}></label>
+                  <label style={{ fontWeight: "bold" }}>{texts[i][0]}</label>
+                  <label style={{ marginLeft: "15px", fontWeight: "bold" }}>
+                    {texts[i][1]}
+                  </label>
+                  <label style={{ marginLeft: "15px", fontWeight: "bold" }}>
+                    {texts[i][2]}
+                  </label>
+                  <label style={{ marginLeft: "15px", fontWeight: "bold" }}>
+                    {texts[i][3]}
+                  </label>
                 </div>
               </div>
               <div>
@@ -189,7 +199,7 @@ function Deck() {
                     fontSize: "25px",
                   }}
                 >
-                  Never
+                  4ever
                 </label>
               </div>
             </Card>
