@@ -7,9 +7,18 @@ import "../cards.css"
 import Card from "react-animated-3d-card"
 
 const cards = [
-  "https://vizydrop.com/shared/drop/5e2dafccac25e35dc0c0f4d5?authkey=0ed82d6370bab993d792",
-  "https://vizydrop.com/shared/drop/5e3ea0f1b56e7c81523f39aa?authkey=85cc6617d521fe9b38a9",
+  "https://www.linkedin.com/in/sungle3737",
+  "https://www.instagram.com/seonglaecho",
+  "https://www.facebook.com/profile.php?id=100006296858033",
 ]
+
+const colors = [
+  ["#0033bb", "#0022aa", "#2233ee", "#ffffff"],
+  ["purple", "#ee1153", "orange", "#ffffff"],
+  ["#0066dd", "#0066ff", "#4455ff", "#ffffff"],
+]
+
+const texts = [["LinkedIn"], ["Instagram"], ["Facebook"]]
 
 const to = (i) => ({
   x: 0,
@@ -88,15 +97,13 @@ function Deck() {
           ) : (
             <Card
               style={{
-                background:
-                  "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
+                background: `linear-gradient(to right, ${colors[i][0]},${colors[i][1]}, ${colors[i][2]})`,
                 width: "50vh",
                 height: "30vh",
                 cursor: "pointer",
               }}
               onClick={(e) => {
-                console.log(e)
-                window.open(cards[i])
+                if (!window.dragging) window.open(cards[i])
               }}
             >
               <div>
@@ -115,6 +122,9 @@ function Deck() {
                     right: "25px",
                     top: "25px",
                     height: "50px",
+                    filter: `brightness(${
+                      colors[i][1] === "#ffffff" ? 0.5 : 1
+                    })`,
                   }}
                   src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/visa.png"
                 ></img>
@@ -131,20 +141,25 @@ function Deck() {
                   style={{
                     fontSize: "30px",
                     fontFamily: "Fira Code",
-                    color: "white",
+                    color: colors[i][3],
                   }}
-                  onClick={console.log("prova")}
                 >
-                  <label>Document</label>
-                  <label style={{ marginLeft: "30px" }}>of</label>
-                  <label style={{ marginLeft: "30px" }}>Seongland</label>
-                  <label style={{ marginLeft: "30px" }}></label>
+                  <label style={{ fontWeight: "bold" }}>{texts[i][0]}</label>
+                  <label style={{ marginLeft: "15px", fontWeight: "bold" }}>
+                    {texts[i][1]}
+                  </label>
+                  <label style={{ marginLeft: "15px", fontWeight: "bold" }}>
+                    {texts[i][2]}
+                  </label>
+                  <label style={{ marginLeft: "15px", fontWeight: "bold" }}>
+                    {texts[i][3]}
+                  </label>
                 </div>
               </div>
               <div>
                 <label
                   style={{
-                    color: "white",
+                    color: colors[i][3],
                     position: "absolute",
                     bottom: "60px",
                     left: "25px",
@@ -155,7 +170,7 @@ function Deck() {
                 </label>
                 <label
                   style={{
-                    color: "white",
+                    color: colors[i][3],
                     position: "absolute",
                     bottom: "60px",
                     right: "25px",
@@ -169,7 +184,7 @@ function Deck() {
               <div>
                 <label
                   style={{
-                    color: "white",
+                    color: colors[i][3],
                     position: "absolute",
                     bottom: "25px",
                     left: "25px",
@@ -181,7 +196,7 @@ function Deck() {
                 </label>
                 <label
                   style={{
-                    color: "white",
+                    color: colors[i][3],
                     position: "absolute",
                     bottom: "25px",
                     right: "25px",
@@ -189,7 +204,7 @@ function Deck() {
                     fontSize: "25px",
                   }}
                 >
-                  Never
+                  4ever
                 </label>
               </div>
             </Card>

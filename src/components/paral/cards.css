@@ -39,17 +39,18 @@ body {
   background-size: auto 85%;
   background-repeat: no-repeat;
   background-position: center center;
-  min-width: 35vh;
+  min-width: 50vh;
   max-width: 80%;
   min-height: 30vh;
   max-height: 50%;
   will-change: transform;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 12.5px 40px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
 }
 
-.react_tinylink_card{
+.react_tinylink_card {
   margin-top: 10% !important;
+  margin-bottom: 10% !important;
   margin-left: 10% !important;
   margin-right: 10% !important;
 }
