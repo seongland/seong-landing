@@ -24,7 +24,7 @@ export default class Intro extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.change_earth)
+    window.removeEventListener("resize", this.changeEarth)
   }
 
   render() {
@@ -57,7 +57,7 @@ export default class Intro extends React.Component {
             "Not yet",
             "Anyway, Welcome",
             "Anyway, Welcome",
-            "Seong-Land"
+            "Seong-Land",
           ]}
           typeSpeed={60}
           backSpeed={50}

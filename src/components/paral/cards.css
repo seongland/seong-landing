@@ -2,6 +2,8 @@
   box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Malgun+Gothic');
+
 html,
 body {
   overscroll-behavior-y: contain;
@@ -35,17 +37,26 @@ body {
 }
 
 #card>div>div {
-  background-color: rgba(255, 255, 255, 1);
   background-size: auto 85%;
   background-repeat: no-repeat;
   background-position: center center;
-  min-width: 80vw;
-  max-width: 60%;
-  min-height: 30vh;
-  max-height: 70%;
+  max-width: 80vw;
+  max-height: 80vh;
   will-change: transform;
   border-radius: 20px;
+}
+
+#card>div>div.card {
+  background-color: rgba(255, 255, 255, 0);
+  min-width: 40vw;
+  min-height: 25vw;
+}
+
+#card>div>div.iframe {
+  background-color: rgba(255, 255, 255, 1);
+  min-width: 70vw;
   box-shadow: 0 12.5px 40px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
+  min-height: 60vh;
 }
 
 .react_tinylink_card {

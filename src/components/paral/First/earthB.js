@@ -1,6 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import * as THREE from 'three'
+import React from "react"
+import ReactDOM from "react-dom"
+import * as THREE from "three"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
 let controls, camera, renderer, scene, width, height, base
@@ -9,7 +9,7 @@ camera = scene = renderer = void 0
 export default class Earth extends React.Component {
   componentDidMount() {
     this.makeEarth()
-    window.addEventListener('resize', this.change_earth)
+    window.addEventListener("resize", this.changeEarth)
   }
 
   // meta - first make
@@ -32,22 +32,19 @@ export default class Earth extends React.Component {
   }
 
   checkMobile = () => {
-    if (window.innerHeight > window.innerWidth)
-      return true
+    if (window.innerHeight > window.innerWidth) return true
     return false
   }
 
   setRatio = () => {
     if (this.checkMobile())
-      if (width === window.innerWidth)
-        return
+      if (width === window.innerWidth) return
       else {
         height = window.innerWidth
         width = window.innerWidth
         return
       }
-    if (height === window.innerWidth / 2)
-      return
+    if (height === window.innerWidth / 2) return
     height = window.innerWidth / 2
     width = height
   }
@@ -60,7 +57,18 @@ export default class Earth extends React.Component {
   }
 
   makeScene = () => {
-    let baseMat, geometryBase, highTerran, highTerranMat, terranMat, terran, terranGeom, terranHighGeom, fillLight, light, round, all
+    let baseMat,
+      geometryBase,
+      highTerran,
+      highTerranMat,
+      terranMat,
+      terran,
+      terranGeom,
+      terranHighGeom,
+      fillLight,
+      light,
+      round,
+      all
     scene = new THREE.Scene()
     geometryBase = new THREE.SphereGeometry(400, 30, 56)
     terranGeom = new THREE.SphereGeometry(398, 25, 30)
@@ -68,28 +76,28 @@ export default class Earth extends React.Component {
 
     // todo - foreacc whynot
     all = [baseMat, terranMat, highTerranMat]
-    all.forEach(function (m){
+    all.forEach(function (m) {
       m = new THREE.MeshNormalMaterial({
-        flatShading: THREE.FlatShading
+        flatShading: THREE.FlatShading,
       })
     })
     baseMat = new THREE.MeshNormalMaterial({
-      flatShading: THREE.FlatShading
+      flatShading: THREE.FlatShading,
     })
     terranMat = new THREE.MeshNormalMaterial({
-      flatShading: THREE.FlatShading
+      flatShading: THREE.FlatShading,
     })
     highTerranMat = new THREE.MeshNormalMaterial({
-      flatShading: THREE.FlatShading
+      flatShading: THREE.FlatShading,
     })
 
     round = [terranHighGeom.vertices, terranGeom.vertices]
     geometryBase.vertices.forEach(function (v) {
-      return v[["x", "y", "z"][~~(Math.random() * 3)]] += Math.random() * 5
+      return (v[["x", "y", "z"][~~(Math.random() * 3)]] += Math.random() * 5)
     })
     round.forEach(function (g) {
       return g.forEach(function (v) {
-        return v[["x", "y", "z"][~~(Math.random() * 3)]] += Math.random() * 20
+        return (v[["x", "y", "z"][~~(Math.random() * 3)]] += Math.random() * 20)
       })
     })
     base = new THREE.Mesh(geometryBase, baseMat)
@@ -109,7 +117,7 @@ export default class Earth extends React.Component {
     try {
       renderer = new THREE.WebGLRenderer({
         alpha: true,
-        antialias: true
+        antialias: true,
       })
     } catch (error) {
       renderer = new THREE.CanvasRenderer()
@@ -117,7 +125,7 @@ export default class Earth extends React.Component {
     }
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.setSize(width, height)
-    renderer.domElement.style.outline = 'none'
+    renderer.domElement.style.outline = "none"
   }
 
   makeControl = () => {
@@ -131,7 +139,7 @@ export default class Earth extends React.Component {
   }
 
   // meta - when window changed
-  change_earth = () => {
+  changeEarth = () => {
     this.setRatio()
     camera.aspect = width / height
     camera.updateProjectionMatrix()
@@ -139,12 +147,10 @@ export default class Earth extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.change_earth)
+    window.removeEventListener("resize", this.changeEarth)
   }
 
   render() {
-    return (
-      <div ref="earthB"></div>
-    )
+    return <div ref="earthB"></div>
   }
 }

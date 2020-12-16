@@ -69,132 +69,21 @@ function Deck() {
     >
       <animated.div
         {...bind(i)}
+        className="iframe"
         style={{
           transform: interpolate([rot, scale], trans),
         }}
       >
-        <div>
-          {cards[i].includes("vizydrop") ? (
-            <iframe
-              style={{
-                height: "50vh",
-                width: "80%",
-                marginLeft: "10%",
-                marginRight: "10%",
-                border: "none",
-              }}
-              src={cards[i]}
-            ></iframe>
-          ) : (
-            <Card
-              style={{
-                background:
-                  "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
-                width: "80vw",
-                height: "30vh",
-                cursor: "pointer",
-              }}
-              onClick={(e) => {
-                console.log(e)
-                window.open(cards[i])
-              }}
-            >
-              <div>
-                <img
-                  style={{
-                    position: "absolute",
-                    left: "25px",
-                    top: "25px",
-                    height: "50px",
-                  }}
-                  src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png"
-                ></img>
-                <img
-                  style={{
-                    position: "absolute",
-                    right: "25px",
-                    top: "25px",
-                    height: "50px",
-                  }}
-                  src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/visa.png"
-                ></img>
-              </div>
-              <div
-                style={{
-                  height: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: "30px",
-                    fontFamily: "Fira Code",
-                    color: "white",
-                  }}
-                  onClick={console.log("prova")}
-                >
-                  <label>Document</label>
-                  <label style={{ marginLeft: "30px" }}>of</label>
-                  <label style={{ marginLeft: "30px" }}>Seongland</label>
-                  <label style={{ marginLeft: "30px" }}></label>
-                </div>
-              </div>
-              <div>
-                <label
-                  style={{
-                    color: "white",
-                    position: "absolute",
-                    bottom: "60px",
-                    left: "25px",
-                    opacity: 0.5,
-                  }}
-                >
-                  Card holder
-                </label>
-                <label
-                  style={{
-                    color: "white",
-                    position: "absolute",
-                    bottom: "60px",
-                    right: "25px",
-                    opacity: 0.5,
-                  }}
-                >
-                  Expires
-                </label>
-              </div>
-
-              <div>
-                <label
-                  style={{
-                    color: "white",
-                    position: "absolute",
-                    bottom: "25px",
-                    left: "25px",
-                    opacity: 1,
-                    fontSize: "25px",
-                  }}
-                >
-                  Seonglae
-                </label>
-                <label
-                  style={{
-                    color: "white",
-                    position: "absolute",
-                    bottom: "25px",
-                    right: "25px",
-                    opacity: 1,
-                    fontSize: "25px",
-                  }}
-                >
-                  Never
-                </label>
-              </div>
-            </Card>
-          )}
-        </div>
+        <iframe
+          style={{
+            width: "80%",
+            height: " 80vh",
+            marginLeft: "10%",
+            marginRight: "10%",
+            border: "none",
+          }}
+          src={cards[i]}
+        ></iframe>
       </animated.div>
     </animated.div>
   ))
