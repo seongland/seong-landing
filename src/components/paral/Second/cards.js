@@ -72,133 +72,68 @@ export default class Cards extends React.Component {
           style={{
             transform: interpolate(
               [x, y],
-              (x, y) => `translate3d(${x}vw,${y}vw,0)`
+              (x, y) => `translate3d(${x}px,${y}px,0)`
             ),
           }}
         >
           <animated.div
             {...bind(i)}
-            style={{
-              transform: interpolate([rot, scale], trans),
-            }}
+            style={{ transform: interpolate([rot, scale], trans) }}
           >
             <Card
               style={{
                 background: `linear-gradient(to right, ${colors[i][0]},${colors[i][1]}, ${colors[i][2]})`,
-                width: window.innerHeight > window.innerWidth ? "80vw" : "40vw",
-                height:
-                  window.innerHeight > window.innerWidth ? "50vw" : "25vw",
-                cursor: "pointer",
               }}
-              onClick={(e) => {
-                if (!window.dragging) window.open(cards[i])
-              }}
+              onClick={() => (window.dragging ? "" : window.open(cards[i]))}
             >
               <div>
                 <img
-                  style={{
-                    position: "absolute",
-                    left: "2vw",
-                    top: "2vw",
-                    height: "4vw",
-                  }}
+                  className="left top mark absolute"
                   src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png"
-                ></img>
+                />
                 <img
+                  className="right top mark absolute"
                   style={{
-                    position: "absolute",
-                    right: "2vw",
-                    top: "2vw",
-                    height: "4vw",
                     filter: `brightness(${
                       colors[i][1] === "#ffffff" ? 0.5 : 1
                     })`,
                   }}
                   src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/visa.png"
-                ></img>
+                />
               </div>
-              <div
-                style={{
-                  height: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <div
-                  className="card-title"
-                  style={{
-                    fontSize:
-                      window.innerHeight > window.innerWidth ? "5vw" : "2vw",
-                    fontFamily: "Malgun Gothic",
-                    color: colors[i][3],
-                  }}
-                >
-                  <label style={{ fontWeight: "bold" }}>{texts[i][0]}</label>
-                  <label style={{ marginLeft: "1.5vw", fontWeight: "bold" }}>
-                    {texts[i][1]}
-                  </label>
-                  <label style={{ marginLeft: "1.5vw", fontWeight: "bold" }}>
-                    {texts[i][2]}
-                  </label>
-                  <label style={{ marginLeft: "1.5vw", fontWeight: "bold" }}>
-                    {texts[i][3]}
-                  </label>
+              <div className="card-title-wrapper">
+                <div className="card-title" style={{ color: colors[i][3] }}>
+                  <label>{texts[i][0]}</label>
+                  <label style={{ marginLeft: "1.5vw" }}>{texts[i][1]}</label>
+                  <label style={{ marginLeft: "1.5vw" }}>{texts[i][2]}</label>
+                  <label style={{ marginLeft: "1.5vw" }}>{texts[i][3]}</label>
                 </div>
               </div>
-              <div>
-                <label
-                  style={{
-                    color: colors[i][3],
-                    position: "absolute",
-                    bottom: "4vw",
-                    left: "2vw",
-                    fontSize: "1vw",
-                    opacity: 0.5,
-                  }}
-                >
-                  Card holder
-                </label>
-                <label
-                  style={{
-                    color: colors[i][3],
-                    position: "absolute",
-                    bottom: "4vw",
-                    right: "2vw",
-                    fontSize: "1vw",
-                    opacity: 0.5,
-                  }}
-                >
-                  Expires
-                </label>
-              </div>
 
-              <div>
-                <label
-                  style={{
-                    color: colors[i][3],
-                    position: "absolute",
-                    bottom: "2vw",
-                    left: "2vw",
-                    opacity: 1,
-                    fontSize: "1.5vw",
-                  }}
-                >
-                  SEONGLAE
-                </label>
-                <label
-                  style={{
-                    color: colors[i][3],
-                    position: "absolute",
-                    bottom: "2vw",
-                    right: "2vw",
-                    opacity: 1,
-                    fontSize: "1.5vw",
-                  }}
-                >
-                  4EVER
-                </label>
-              </div>
+              <label
+                className="property left absolute"
+                style={{ color: colors[i][3] }}
+              >
+                Card holder
+              </label>
+              <label
+                className="property right absolute"
+                style={{ color: colors[i][3] }}
+              >
+                Expires
+              </label>
+              <label
+                className="absolute bottom left value"
+                style={{ color: colors[i][3] }}
+              >
+                SEONGLAE
+              </label>
+              <label
+                className="absolute bottom right value"
+                style={{ color: colors[i][3] }}
+              >
+                4EVER
+              </label>
             </Card>
           </animated.div>
         </animated.div>
@@ -208,6 +143,6 @@ export default class Cards extends React.Component {
   }
 
   render() {
-    return <div id="card" ref="cards"></div>
+    return <div id="card" ref="cards" />
   }
 }
