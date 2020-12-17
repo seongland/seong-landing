@@ -2,7 +2,95 @@
   box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Malgun+Gothic');
+.card-title-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title {
+  font-size: 2vw;
+  font-family: "Malgun Gothic";
+  font-weight: bold;
+}
+
+.card-title.vertical {
+  font-size: 5vw;
+}
+
+.parallax-card-layers {
+  width: 40vw;
+  height: 25vw;
+}
+
+.parallax-card-layers.vertical {
+  width: 80vw;
+  height: 50vw;
+}
+
+.property {
+  bottom: 4vw;
+  font-size: 1vw;
+  opacity: 0.5;
+}
+
+.property.vertical {
+  bottom: 8vw;
+  font-size: 2vw;
+}
+
+.value {
+  font-size: 1.5vw;
+}
+
+.value.vertical {
+  font-size: 3vw;
+}
+
+.left {
+  left: 2vw;
+}
+
+.bottom {
+  bottom: 2vw;
+}
+
+.right {
+  right: 2vw;
+}
+
+.top {
+  top: 2vw;
+}
+
+.mark {
+  height: 4vw;
+}
+
+.left.vertical {
+  left: 4vw;
+}
+
+.bottom.vertical {
+  bottom: 4vw;
+}
+
+.right.vertical {
+  right: 4vw;
+}
+
+.top.vertical {
+  top: 4vw;
+}
+
+.mark.vertical {
+  height: 8vw;
+}
+
+.absolute {
+  position: absolute
+}
 
 html,
 body {
@@ -43,7 +131,7 @@ body {
   max-width: 80vw;
   max-height: 80vh;
   will-change: transform;
-  border-radius: 20px;
+  border-radius: 5vw;
 }
 
 #card>div>div.card {
