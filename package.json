@@ -2,7 +2,7 @@
   "name": "react-portfolio",
   "private": false,
   "description": "seong-land",
-  "version": "0.2.0",
+  "version": "1.0.1",
   "author": "seonglae cho <sungle3737@gmail.com>",
   "dependencies": {
     "@loadable/component": "^5.13.1",
@@ -27,7 +27,7 @@
     "three": "^0.110.0"
   },
   "engines": {
-    "node": "14.15.1"
+    "node": "14.*.*"
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^16.11.0"
@@ -36,7 +36,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
-    "start": "gatsby develop -p 8080",
+    "start": "gatsby develop -p 8080 -H 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "g-serve": "gatsby serve"
   },
