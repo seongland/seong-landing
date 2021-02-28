@@ -1,14 +1,16 @@
 # portfolio
 
-Seonglae Land React
-[Notion To Do Page](https://www.notion.so/seongland/React-f5cea60b97764daca316202077e45b1d)
+# Service
+- https://seongland.com
 
-# How Did I Make
-
-- three.js
-- proton.js
-- react-spring - parallax
+## service setup
+- cloudflare dns
+- gcp load balancer
+- gcp bucket
 - gatsby
+- react
+- three.js
+
 
 # Build
 
