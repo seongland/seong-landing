@@ -7,19 +7,16 @@ import "../cards.css"
 import Card from "react-animated-3d-card"
 import { to, from, trans } from "../../../module"
 
-const cards = ["https://github.com/sungle3737", "https://doc.seongland.com"]
+const cards = ["https://point.seongland.com"]
 
-const colors = [
-  ["#0f0c29", "#302b63", "#24243e", "#fff"],
-  ["#020202", "#333333", "#222222", "#fff"],
-]
+const backgrounds = ["/pointland.png", "/pointland.png"]
 
 const texts = [
   [
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#443388">
       <path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z" />
     </svg>,
-    "Github",
+    "Pointland",
   ],
   [
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
@@ -36,7 +33,7 @@ export default class Cards extends React.Component {
   componentDidMount() {
     function Deck() {
       const [gone] = useState(() => new Set())
-      const [props, set] = useSprings(cards.length, (i) => ({
+      const [props, set] = useSprings(cards.length, i => ({
         ...to(i),
         from: from(i),
       }))
@@ -52,7 +49,7 @@ export default class Cards extends React.Component {
           const trigger = velocity > 0.2
           const dir = xDir < 0 ? -1 : 1
           if (!down && trigger) gone.add(index)
-          set((i) => {
+          set(i => {
             if (index !== i) return
             const isGone = gone.has(index)
             const x = isGone
@@ -74,7 +71,7 @@ export default class Cards extends React.Component {
             }
           })
           if (!down && gone.size === cards.length)
-            setTimeout(() => gone.clear() || set((i) => to(i)), 600)
+            setTimeout(() => gone.clear() || set(i => to(i)), 600)
         }
       )
 
@@ -95,7 +92,7 @@ export default class Cards extends React.Component {
           >
             <Card
               style={{
-                background: `linear-gradient(to right, ${colors[i][0]},${colors[i][1]}, ${colors[i][2]})`,
+                background: `${backgrounds[i]}`,
               }}
               onClick={() => (window.dragging ? "" : window.open(cards[i]))}
             >
@@ -106,45 +103,20 @@ export default class Cards extends React.Component {
                 />
                 <img
                   className="right top mark absolute"
-                  style={{
-                    filter: `brightness(${
-                      colors[i][1] === "#ffffff" ? 0.5 : 1
-                    })`,
-                  }}
                   src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/visa.png"
                 />
               </div>
               <div className="card-title-wrapper">
-                <div className="card-title" style={{ color: colors[i][3] }}>
+                <div className="card-title">
                   <label>{texts[i][0]}</label>
                   <label>{texts[i][1]}</label>
                 </div>
               </div>
 
-              <label
-                className="property left absolute"
-                style={{ color: colors[i][3] }}
-              >
-                Card holder
-              </label>
-              <label
-                className="property right absolute"
-                style={{ color: colors[i][3] }}
-              >
-                Expires
-              </label>
-              <label
-                className="absolute bottom left value"
-                style={{ color: colors[i][3] }}
-              >
-                SEONGLAE
-              </label>
-              <label
-                className="absolute bottom right value"
-                style={{ color: colors[i][3] }}
-              >
-                4EVER
-              </label>
+              <label className="property left absolute">Card holder</label>
+              <label className="property right absolute">Expires</label>
+              <label className="absolute bottom left value">SEONGLAE</label>
+              <label className="absolute bottom right value">4EVER</label>
             </Card>
           </animated.div>
         </animated.div>
