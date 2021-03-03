@@ -96,16 +96,11 @@ export default class Earth extends React.Component {
       terranHighGeom.attributes.position.array,
       terranGeom.attributes.position.array,
     ]
-    for (const index in geometryBase.attributes.position.array) {
-      if (index % 3 === 0)
-        geometryBase.attributes.position.array[index + ~~(Math.random() * 3)] +=
-          Math.random() * 5
-    }
+    for (const index in geometryBase.attributes.position.array)
+      geometryBase.attributes.position.array[index] += Math.random() * 5
     for (const position of round)
-      for (const index in position) {
-        if (index % 3 === 0)
-          position[index + ~~(Math.random() * 3)] += Math.random() * 20
-      }
+      for (const index in position) position[index] += Math.random() * 20
+
     base = new THREE.Mesh(geometryBase, baseMat)
     terran = new THREE.Mesh(terranGeom, terranMat)
     highTerran = new THREE.Mesh(terranHighGeom, highTerranMat)
