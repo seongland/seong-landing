@@ -71,7 +71,6 @@ export default class Earth extends React.Component {
       all
     scene = new THREE.Scene()
     geometryBase = new THREE.SphereGeometry(400, 30, 56)
-    console.log(geometryBase)
     terranGeom = new THREE.SphereGeometry(398, 25, 30)
     terranHighGeom = new THREE.SphereGeometry(390, 25, 20)
 
