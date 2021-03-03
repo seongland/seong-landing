@@ -70,14 +70,15 @@ export default class Earth extends React.Component {
       round,
       all
     scene = new THREE.Scene()
+    scene = new THREE.Scene()
     geometryBase = new THREE.SphereGeometry(400, 30, 56)
+    console.log(geometryBase)
     terranGeom = new THREE.SphereGeometry(398, 25, 30)
     terranHighGeom = new THREE.SphereGeometry(390, 25, 20)
 
-    // todo - foreacc whynot
     all = [baseMat, terranMat, highTerranMat]
-    all.forEach(function (m) {
-      m = new THREE.MeshNormalMaterial({
+    all.forEach(material => {
+      material = new THREE.MeshNormalMaterial({
         flatShading: THREE.FlatShading,
       })
     })
@@ -91,15 +92,20 @@ export default class Earth extends React.Component {
       flatShading: THREE.FlatShading,
     })
 
-    round = [terranHighGeom.vertices, terranGeom.vertices]
-    geometryBase.vertices.forEach(function (v) {
-      return (v[["x", "y", "z"][~~(Math.random() * 3)]] += Math.random() * 5)
-    })
-    round.forEach(function (g) {
-      return g.forEach(function (v) {
-        return (v[["x", "y", "z"][~~(Math.random() * 3)]] += Math.random() * 20)
-      })
-    })
+    round = [
+      terranHighGeom.attributes.position.array,
+      terranGeom.attributes.position.array,
+    ]
+    for (const index in geometryBase.attributes.position.array) {
+      if (index % 3 === 0)
+        geometryBase.attributes.position.array[index + ~~(Math.random() * 3)] +=
+          Math.random() * 5
+    }
+    for (const position of round)
+      for (const index in position) {
+        if (index % 3 === 0)
+          position[index + ~~(Math.random() * 3)] += Math.random() * 20
+      }
     base = new THREE.Mesh(geometryBase, baseMat)
     terran = new THREE.Mesh(terranGeom, terranMat)
     highTerran = new THREE.Mesh(terranHighGeom, highTerranMat)
