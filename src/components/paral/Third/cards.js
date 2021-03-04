@@ -22,8 +22,7 @@ const to = (i) => ({
 const from = (i) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
 
 const trans = (r, s) =>
-  `perspective(1500px) rotateX(10deg) rotateY(${
-    r / 10
+  `perspective(1500px) rotateX(10deg) rotateY(${r / 10
   }deg) rotateZ(${r}deg) scale(${s})`
 
 function Deck() {
