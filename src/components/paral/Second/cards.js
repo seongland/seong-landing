@@ -55,8 +55,8 @@ export default class Cards extends React.Component {
             const x = isGone
               ? (200 + window.innerWidth) * dir
               : down
-              ? xDelta
-              : 0
+                ? xDelta
+                : 0
             const rot = xDelta / 100 + (isGone ? dir * 10 * velocity : 0)
             const scale = down ? 1.1 : 1
             return {
@@ -99,11 +99,11 @@ export default class Cards extends React.Component {
               <div>
                 <img
                   className="left top mark absolute"
-                  src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png"
+                  src="/chip.png"
                 />
                 <img
                   className="right top mark absolute"
-                  src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/visa.png"
+                  src="/visa.png"
                 />
               </div>
               <div className="card-title-wrapper">

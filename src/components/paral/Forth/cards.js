@@ -179,14 +179,14 @@ export default class Cards extends React.Component {
             <div>
               <img
                 className="left top mark absolute"
-                src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png"
+                src="/chip.png"
               />
               <img
                 className="right top mark absolute"
                 style={{
                   filter: `brightness(${colors[i][1] === "#ffffff" ? 0.5 : 1})`,
                 }}
-                src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/visa.png"
+                src="/visa.png"
               />
             </div>
             <div className="card-title-wrapper">
