@@ -8,7 +8,7 @@ import { to, from, trans } from "../../../module"
 
 const cards = ["https://status.seongland.com", "https://point.seongland.com"]
 
-const backgrounds = ["https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg", "/pointland.png"]
+const backgrounds = ["https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg", "/pointland.gif"]
 
 const fills = ["white", "black"]
 
