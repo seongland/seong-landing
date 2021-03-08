@@ -31,10 +31,7 @@ export default class Earth extends React.Component {
     return animate()
   }
 
-  checkMobile = () => {
-    if (window.innerHeight > window.innerWidth) return true
-    return false
-  }
+  checkMobile = () => window.innerHeight > window.innerWidth
 
   setRatio = () => {
     if (this.checkMobile())
