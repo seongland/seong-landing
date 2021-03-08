@@ -6,18 +6,25 @@ import { useDrag } from "react-use-gesture"
 import "../cards.css"
 import { to, from, trans } from "../../../module"
 
-const cards = ["https://status.seongland.com", "https://point.seongland.com"]
+const cards = ["https://status.seongland.com", "https://live.seongland.com", "https://point.seongland.com", "https://github.com/seongland/intuiter"]
 
-const backgrounds = ["https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg", "/pointland.gif"]
+const backgrounds = ["https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg", "/live.png", "/pointland.gif", "/intuiter.png"]
 
-const fills = ["white", "black"]
+const fills = ["white", "black", "black", "white"]
+const ratio = ["200%", "75%", "150%", "75%"]
 
 const texts = [
   [
-    "Status", "Of all my subdomains"
+    "Status", "all of my subdomains"
   ],
   [
-    "Pointland", "Web Metaverse"
+    "Live", "of seongland broadcast"
+  ],
+  [
+    "Pointland", "web metaverse"
+  ],
+  [
+    "Intuiter", "raise your productivity"
   ],
 ]
 
@@ -99,7 +106,7 @@ export default class Cards extends React.Component {
               style={{
                 background: `url("${backgrounds[i]}")`,
                 backgroundPosition: "center center",
-                backgroundSize: "auto 200%",
+                backgroundSize: `auto ${ratio[i]}`,
                 backgroundRepeat: "no-repeat",
               }}>
               <div className="card-title">
