@@ -8,12 +8,12 @@ import Card from "react-animated-3d-card"
 import { to, from, trans } from "../../../module"
 
 const cards = [
+  "https://soundcloud.com/fpryrgna75q0",
   "https://www.instagram.com/seonglaecho",
   "https://www.facebook.com/profile.php?id=100006296858033",
   "https://www.linkedin.com/in/seonglae",
   "https://github.com/sungle3737",
   "https://doc.seongland.com",
-  "https://soundcloud.com/fpryrgna75q0",
 ]
 
 const colors = [
