@@ -55,8 +55,8 @@ export default () => {
       <Text />
       <Products />
       <Stats />
-      <Infos />
       <EarthB />
+      <Infos />
     </Parallax>
   )
 }
