@@ -5,8 +5,6 @@ import "react-hot-loader"
 // meta - Components
 import EarthT from "./First/earthT"
 import EarthB from "./First/earthB"
-import Protons from "./First/protons"
-import Clouds from "./clouds.js"
 import Intro from "./First/intro"
 import Cards2 from "./Second/cards"
 import Cards3 from "./Third/cards"
