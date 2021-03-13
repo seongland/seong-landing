@@ -6,26 +6,28 @@ import { useDrag } from "react-use-gesture"
 import "../cards.css"
 import { to, from, trans } from "../../../module"
 
-const cards = ["https://status.seongland.com", "https://live.seongland.com", "https://point.seongland.com", "https://github.com/seongland/intuiter"]
+const cards = [
+  "https://status.seongland.com",
+  "https://live.seongland.com",
+  "https://point.seongland.com",
+  "https://github.com/seongland/intuiter",
+]
 
-const backgrounds = ["https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg", "/live.png", "/pointland.gif", "/intuiter.png"]
+const backgrounds = [
+  "https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg",
+  "/live.png",
+  "/pointland.jpg",
+  "/intuiter.png",
+]
 
 const fills = ["white", "black", "black", "white"]
 const ratio = ["200%", "75%", "150%", "75%"]
 
 const texts = [
-  [
-    "Status", "all of my subdomains"
-  ],
-  [
-    "Live", "of seongland broadcast"
-  ],
-  [
-    "Pointland", "web metaverse"
-  ],
-  [
-    "Intuiter", "raise your productivity"
-  ],
+  ["Status", "all of my subdomains"],
+  ["Live", "of seongland broadcast"],
+  ["Pointland", "web metaverse"],
+  ["Intuiter", "raise your productivity"],
 ]
 
 export default class Cards extends React.Component {
@@ -54,8 +56,8 @@ export default class Cards extends React.Component {
             const x = isGone
               ? (200 + window.innerWidth) * dir
               : down
-                ? xDelta
-                : 0
+              ? xDelta
+              : 0
             const rot = xDelta / 100 + (isGone ? dir * 10 * velocity : 0)
             const scale = down ? 1.1 : 1
             return {
@@ -82,7 +84,7 @@ export default class Cards extends React.Component {
             transform: interpolate(
               [x, y],
               (x, y) => `translate3d(${x}px,${y}px,0)`
-            )
+            ),
           }}
         >
           <animated.div
@@ -102,25 +104,35 @@ export default class Cards extends React.Component {
               else window.location.href = cards[i]
             }}
           >
-            <div className="card-title-wrapper"
+            <div
+              className="card-title-wrapper"
               style={{
                 background: `url("${backgrounds[i]}")`,
                 backgroundPosition: "center center",
                 backgroundSize: `auto ${ratio[i]}`,
                 backgroundRepeat: "no-repeat",
-              }}>
+              }}
+            >
               <div className="card-title">
-                <label style={{
-                  color: `${fills[i] === 'black' ? 'white' : 'black'}`,
-                }}>{texts[i][0]}</label>
-                <div style={{
-                  fontSize: "1vw",
-                  color: `${fills[i] === 'black' ? 'white' : 'black'}`,
-                }}>{texts[i][1]}</div>
+                <label
+                  style={{
+                    color: `${fills[i] === "black" ? "white" : "black"}`,
+                  }}
+                >
+                  {texts[i][0]}
+                </label>
+                <div
+                  style={{
+                    fontSize: "1vw",
+                    color: `${fills[i] === "black" ? "white" : "black"}`,
+                  }}
+                >
+                  {texts[i][1]}
+                </div>
               </div>
             </div>
           </animated.div>
-        </animated.div >
+        </animated.div>
       ))
     }
     render(<Deck />, ReactDOM.findDOMNode(this.refs.cards))
