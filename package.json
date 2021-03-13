@@ -2,7 +2,7 @@
   "name": "react-portfolio",
   "private": false,
   "description": "seong-land",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "author": "seonglae cho <sungle3737@gmail.com>",
   "dependencies": {
     "@loadable/component": "^5.13.1",
