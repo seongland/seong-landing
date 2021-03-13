@@ -22,9 +22,7 @@ export default () => {
       window.removeEventListener("resize", applyVertical)
     }
   })
-  const [offset, setOffset] = useState(
-    window.innerHeight > window.innerWidth ? 2.8 : 2.99
-  )
+  const [offset, setOffset] = useState(3)
 
   function applyVertical() {
     setOffset(window.innerHeight > window.innerWidth ? 2.8 : 2.99)
