@@ -1,12 +1,9 @@
-import { render } from "react-dom"
 import React from "react"
-import ReactDOM from "react-dom"
 import { animated, interpolate } from "react-spring"
-import "../cards.css"
-import { trans, Deck } from "../../../module"
+import { trans } from "../module"
 import Card from "react-animated-3d-card"
 
-const cards = [
+export const urls = [
   "https://soundcloud.com/fpryrgna75q0",
   "https://www.instagram.com/seonglaecho",
   "https://www.facebook.com/profile.php?id=100006296858033",
@@ -86,19 +83,7 @@ const texts = [
   ],
 ]
 
-const classes = [
-  "card-title",
-  "value",
-  "property",
-  "mark",
-  "left",
-  "right",
-  "bottom",
-  "top",
-  "parallax-card-layers",
-]
-
-const deck = (props, bind) =>
+export const infos = (props, bind) =>
   props.map(({ x, y, rot, scale }, i) => (
     <animated.div
       key={i}
@@ -121,8 +106,8 @@ const deck = (props, bind) =>
           isStatic={true}
           onClick={e => {
             if (window.dragging) return
-            if (e.ctrlKey) window.open(cards[i])
-            else window.location.href = cards[i]
+            if (e.ctrlKey) window.open(urls[i])
+            else window.location.href = urls[i]
           }}
         >
           <div>
@@ -170,32 +155,3 @@ const deck = (props, bind) =>
       </animated.div>
     </animated.div>
   ))
-
-const isVertical = () => {
-  if (window.innerHeight > window.innerWidth) return true
-  return false
-}
-
-function applyVertical() {
-  const vertical = isVertical()
-  for (const className of classes)
-    for (const element of document.getElementsByClassName(className))
-      if (vertical) element.classList.add("vertical")
-      else element.classList.remove("vertical")
-}
-
-export default class Cards extends React.Component {
-  componentDidMount() {
-    render(
-      <Deck deck={deck} cards={cards} />,
-      ReactDOM.findDOMNode(this.refs.cards)
-    )
-    window.addEventListener("resize", applyVertical)
-    setTimeout(() => applyVertical())
-  }
-
-  componentWillUnmount = () =>
-    window.removeEventListener("resize", this.changeCards)
-
-  render = () => <div id="card" ref="cards" />
-}

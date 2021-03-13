@@ -18,7 +18,7 @@ export const trans = (r, s) =>
   }deg) rotateZ(${r}deg) scale(${s})`
 
 export function Deck(prop) {
-  const cards = prop.cards
+  const cards = prop.urls
   const [gone] = useState(() => new Set())
   const [props, set] = useSprings(cards.length, i => ({
     ...to(i),

@@ -1,15 +1,12 @@
-import { render } from "react-dom"
 import React from "react"
-import ReactDOM from "react-dom"
 import { animated, interpolate } from "react-spring"
-import "../cards.css"
-import { trans, Deck } from "../../../module"
+import { trans } from "../module/"
 
-const cards = [
+export const urls = [
   "https://vizydrop.com/shared/drop/5e3ea0f1b56e7c81523f39aa?authkey=85cc6617d521fe9b38a9",
 ]
 
-const deck = (props, bind) =>
+export const stats = (props, bind) =>
   props.map(({ x, y, rot, scale }, i) => (
     <animated.div
       key={i}
@@ -35,17 +32,8 @@ const deck = (props, bind) =>
             marginRight: "10%",
             border: "none",
           }}
-          src={cards[i]}
+          src={urls[i]}
         ></iframe>
       </animated.div>
     </animated.div>
   ))
-
-export default class Cards extends React.Component {
-  componentDidMount = () =>
-    render(
-      <Deck deck={deck} cards={cards} />,
-      ReactDOM.findDOMNode(this.refs.cards)
-    )
-  render = () => <div id="card" ref="cards" />
-}

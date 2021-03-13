@@ -1,11 +1,8 @@
-import { render } from "react-dom"
 import React from "react"
-import ReactDOM from "react-dom"
 import { animated, interpolate } from "react-spring"
-import "../cards.css"
-import { trans, Deck } from "../../../module"
+import { trans } from "../module/"
 
-const cards = [
+export const urls = [
   "https://status.seongland.com",
   "https://live.seongland.com",
   "https://point.seongland.com",
@@ -29,7 +26,7 @@ const texts = [
   ["Intuiter", "raise your productivity"],
 ]
 
-const deck = (props, bind) =>
+export const products = (props, bind) =>
   props.map(({ x, y, rot, scale }, i) => (
     <animated.div
       key={i}
@@ -54,8 +51,8 @@ const deck = (props, bind) =>
           transform: interpolate([rot, scale], trans),
         }}
         onClick={e => {
-          if (e.ctrlKey) window.open(cards[i])
-          else window.location.href = cards[i]
+          if (e.ctrlKey) window.open(products[i])
+          else window.location.href = products[i]
         }}
       >
         <div
@@ -88,12 +85,3 @@ const deck = (props, bind) =>
       </animated.div>
     </animated.div>
   ))
-
-export default class Cards extends React.Component {
-  componentDidMount = () =>
-    render(
-      <Deck deck={deck} cards={cards} />,
-      ReactDOM.findDOMNode(this.refs.cards)
-    )
-  render = () => <div id="card" ref="cards" />
-}
