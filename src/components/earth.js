@@ -20,16 +20,15 @@ export default class Earth extends React.Component {
   }
 
   // meta - first make
-  makeEarth = () => {
-    window.THREE = THREE
+  makeEarth() {
     this.setRatio()
     this.makeCamera()
     this.makeScene()
     this.makeRenderer()
     this.makeControl()
-    ReactDOM.findDOMNode(this.refs.earth).appendChild(renderer.domElement)
+    ReactDOM.findDOMNode(this.refs.earth).appendChild(this.renderer.domElement)
 
-    const animate = function () {
+    const animate = () => {
       this.base.rotation.y += 0.002
       this.controls.update()
       requestAnimationFrame(animate)
@@ -40,20 +39,20 @@ export default class Earth extends React.Component {
 
   checkMobile = () => window.innerHeight > window.innerWidth
 
-  setRatio = () => {
+  setRatio() {
     if (this.checkMobile())
       if (this.width === window.innerWidth) return
       else {
-        height = window.innerWidth * this.props.ratios[0]
+        this.height = window.innerWidth * this.props.ratios[0]
         this.width = window.innerWidth * this.props.ratios[0]
         return
       }
-    if (height === window.innerWidth * this.props.ratios[1]) return
+    if (this.height === window.innerWidth * this.props.ratios[1]) return
     this.height = window.innerWidth * this.props.ratios[1]
     this.width = this.height
   }
 
-  makeCamera = () => {
+  makeCamera() {
     this.camera = new THREE.PerspectiveCamera(
       75,
       this.width / this.height,
@@ -65,7 +64,7 @@ export default class Earth extends React.Component {
     this.camera.position.z = 300
   }
 
-  makeScene = () => {
+  makeScene() {
     let baseMat,
       geometryBase,
       highTerran,
@@ -108,7 +107,7 @@ export default class Earth extends React.Component {
     for (const position of round)
       for (const index in position) position[index] += Math.random() * 20
 
-    base = new THREE.Mesh(geometryBase, baseMat)
+    this.base = new THREE.Mesh(geometryBase, baseMat)
     terran = new THREE.Mesh(terranGeom, terranMat)
     highTerran = new THREE.Mesh(terranHighGeom, highTerranMat)
     light = new THREE.DirectionalLight(0xffffff)
@@ -121,14 +120,14 @@ export default class Earth extends React.Component {
     this.scene.add(fillLight)
   }
 
-  makeRenderer = () => {
+  makeRenderer() {
     try {
-      renderer = new THREE.WebGLRenderer({
+      this.renderer = new THREE.WebGLRenderer({
         alpha: true,
         antialias: true,
       })
     } catch (error) {
-      renderer = new THREE.CanvasRenderer()
+      this.renderer = new THREE.CanvasRenderer()
       alert("come back in chrome or whale! or enable webgl", error)
     }
     this.renderer.setPixelRatio(window.devicePixelRatio)
@@ -136,8 +135,8 @@ export default class Earth extends React.Component {
     this.renderer.domElement.style.outline = "none"
   }
 
-  makeControl = () => {
-    this.controls = new OrbitControls(camera, renderer.domElement)
+  makeControl() {
+    this.controls = new OrbitControls(this.camera, this.renderer.domElement)
     this.controls.enableZoom = false
     this.controls.enablePan = false
     this.controls.enableDamping = true
@@ -147,11 +146,11 @@ export default class Earth extends React.Component {
   }
 
   // meta - when window changed
-  changeEarth = () => {
+  changeEarth() {
     this.setRatio()
-    this.camera.aspect = width / height
+    this.camera.aspect = this.width / this.height
     this.camera.updateProjectionMatrix()
-    this.renderer.setSize(width, height)
+    this.renderer.setSize(this.width, this.height)
   }
 
   componentWillUnmount() {
