@@ -14,6 +14,126 @@ import { urls as infoURLs, infos } from "../../config/infos"
 // meta - Other
 import "./paral.css"
 
+export default () => {
+  useEffect(() => {
+    window.addEventListener("resize", applyVertical)
+    setTimeout(() => applyVertical())
+    return function cleanup() {
+      window.removeEventListener("resize", applyVertical)
+    }
+  })
+  return (
+    <Parallax ref={ref => (React.parallax = ref)} pages={3}>
+      <Cover />
+      <Stars />
+      <EarthT />
+      <Text />
+      <Products />
+      <Stats />
+      <Infos />
+      <EarthB />
+    </Parallax>
+  )
+}
+
+const Cover = () => (
+  <ParallaxLayer
+    factor={4}
+    style={{ backgroundColor: "rgb(32,32,32)", backgroundSize: "cover" }}
+  />
+)
+const Stars = () => (
+  <ParallaxLayer
+    factor={3}
+    style={{
+      backgroundImage: 'url("/stars.svg")',
+      backgroundSize: "cover",
+    }}
+  />
+)
+
+const Text = () => (
+  <ParallaxLayer
+    speed={0.7}
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      pointerEvents: "none",
+    }}
+  >
+    <Intro />
+  </ParallaxLayer>
+)
+
+const EarthT = () => (
+  <ParallaxLayer
+    speed={-0.1}
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <Earth ratios={[2 / 3, 1 / 2]} />
+  </ParallaxLayer>
+)
+const EarthB = () => (
+  <ParallaxLayer
+    offset={window.innerHeight > window.innerWidth ? 2.8 : 2.99}
+    speed={2}
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <Earth ratios={[1, 1]} />
+  </ParallaxLayer>
+)
+
+const Infos = () => (
+  <ParallaxLayer
+    offset={2.0}
+    speed={3}
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <Cards deck={infos} urls={infoURLs} />
+  </ParallaxLayer>
+)
+
+const Products = () => (
+  <ParallaxLayer
+    offset={1.0}
+    speed={2}
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <Cards deck={products} urls={productURLs} />
+  </ParallaxLayer>
+)
+
+const Stats = () => (
+  <ParallaxLayer
+    offset={1.95}
+    speed={1}
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <Cards deck={stats} urls={statURLs} />
+  </ParallaxLayer>
+)
+
 const classes = [
   "card-title",
   "value",
@@ -37,111 +157,4 @@ function applyVertical() {
     for (const element of document.getElementsByClassName(className))
       if (vertical) element.classList.add("vertical")
       else element.classList.remove("vertical")
-}
-
-export default function () {
-  useEffect(() => {
-    window.addEventListener("resize", applyVertical)
-    setTimeout(() => applyVertical())
-
-    return function cleanup() {
-      window.removeEventListener("resize", applyVertical)
-    }
-  })
-
-  return (
-    <Parallax ref={ref => (React.parallax = ref)} pages={3}>
-      <ParallaxLayer
-        offset={0}
-        speed={0}
-        factor={4}
-        style={{ backgroundColor: "rgb(32,32,32)", backgroundSize: "cover" }}
-      />
-      {/* Start */}
-      <ParallaxLayer
-        offset={0}
-        speed={0}
-        factor={3}
-        style={{
-          backgroundImage: 'url("/stars.svg")',
-          backgroundSize: "cover",
-        }}
-      />
-      {/* Top Earth */}
-      <ParallaxLayer
-        offset={0}
-        speed={-0.1}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Earth ratios={[2 / 3, 1 / 2]} />
-      </ParallaxLayer>
-      {/* Bottom Earth */}
-      <ParallaxLayer
-        offset={window.innerHeight > window.innerWidth ? 2.8 : 2.99}
-        speed={2}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Earth ratios={[1, 1]} />
-      </ParallaxLayer>
-
-      {/* Second Card */}
-      <ParallaxLayer
-        offset={1.0}
-        speed={2}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Cards deck={products} urls={productURLs} />
-      </ParallaxLayer>
-
-      {/* Third Card */}
-      <ParallaxLayer
-        offset={1.95}
-        speed={1}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Cards deck={stats} urls={statURLs} />
-      </ParallaxLayer>
-
-      {/* Forth Card */}
-      <ParallaxLayer
-        offset={2.0}
-        speed={3}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Cards deck={infos} urls={infoURLs} />
-      </ParallaxLayer>
-      <ParallaxLayer
-        offset={0}
-        speed={0.7}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          pointerEvents: "none",
-        }}
-      >
-        <Intro />
-      </ParallaxLayer>
-    </Parallax>
-  )
 }
