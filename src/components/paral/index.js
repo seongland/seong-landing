@@ -19,25 +19,17 @@ export default () => (
     <ParallaxLayer
       offset={0}
       speed={0}
-      factor={3}
+      factor={4}
       style={{ backgroundColor: "rgb(32,32,32)", backgroundSize: "cover" }}
     />
-    {/* @meta - First */}
-    <ParallaxLayer
-      offset={0}
-      speed={0.1}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    ></ParallaxLayer>
+    {/* Start */}
     <ParallaxLayer
       offset={0}
       speed={0}
       factor={3}
       style={{ backgroundImage: 'url("/stars.svg")', backgroundSize: "cover" }}
     />
+    {/* Top Earth */}
     <ParallaxLayer
       offset={0}
       speed={-0.1}
@@ -49,7 +41,7 @@ export default () => (
     >
       <EarthT />
     </ParallaxLayer>
-    {/* @meta - Third */}
+    {/* Bottom Earth */}
     <ParallaxLayer
       offset={window.innerHeight > window.innerWidth ? 2.8 : 2.99}
       speed={2}
@@ -61,7 +53,8 @@ export default () => (
     >
       <EarthB />
     </ParallaxLayer>
-    {/* @meta - wall decoration */}\ // cards
+
+    {/* Second Card */}
     <ParallaxLayer
       offset={1.0}
       speed={2}
@@ -73,6 +66,8 @@ export default () => (
     >
       <Cards2 />
     </ParallaxLayer>
+
+    {/* Third Card */}
     <ParallaxLayer
       offset={1.95}
       speed={1}
@@ -84,6 +79,8 @@ export default () => (
     >
       <Cards3 />
     </ParallaxLayer>
+
+    {/* Forth Card */}
     <ParallaxLayer
       offset={2.0}
       speed={3}
