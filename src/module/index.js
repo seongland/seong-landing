@@ -1,4 +1,4 @@
-export const to = (i) => ({
+export const to = i => ({
   x: 0,
   y: i * -4,
   scale: 1,
@@ -6,7 +6,7 @@ export const to = (i) => ({
   delay: i * 100,
 })
 
-export const from = (i) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
+export const from = i => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
 
 export const trans = (r, s) =>
   `perspective(1500px) rotateX(10deg) rotateY(${
