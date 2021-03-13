@@ -7,11 +7,11 @@ import "../cards.css"
 import Card from "react-animated-3d-card"
 
 const cards = [
-  "https://vizydrop.com/shared/drop/5e2dafccac25e35dc0c0f4d5?authkey=0ed82d6370bab993d792",
+  // "https://vizydrop.com/shared/drop/5e2dafccac25e35dc0c0f4d5?authkey=0ed82d6370bab993d792",
   "https://vizydrop.com/shared/drop/5e3ea0f1b56e7c81523f39aa?authkey=85cc6617d521fe9b38a9",
 ]
 
-const to = (i) => ({
+const to = i => ({
   x: 0,
   y: i * -4,
   scale: 1,
@@ -19,7 +19,7 @@ const to = (i) => ({
   delay: i * 100,
 })
 
-const from = (i) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
+const from = i => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
 
 const trans = (r, s) =>
   `perspective(1500px) rotateX(10deg) rotateY(${
@@ -28,7 +28,7 @@ const trans = (r, s) =>
 
 function Deck() {
   const [gone] = useState(() => new Set())
-  const [props, set] = useSprings(cards.length, (i) => ({
+  const [props, set] = useSprings(cards.length, i => ({
     ...to(i),
     from: from(i),
   }))
@@ -38,7 +38,7 @@ function Deck() {
       const trigger = velocity > 0.2
       const dir = xDir < 0 ? -1 : 1
       if (!down && trigger) gone.add(index)
-      set((i) => {
+      set(i => {
         if (index !== i) return
         const isGone = gone.has(index)
         const x = isGone ? (200 + window.innerWidth) * dir : down ? xDelta : 0
@@ -53,7 +53,7 @@ function Deck() {
         }
       })
       if (!down && gone.size === cards.length)
-        setTimeout(() => gone.clear() || set((i) => to(i)), 600)
+        setTimeout(() => gone.clear() || set(i => to(i)), 600)
     }
   )
 

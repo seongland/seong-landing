@@ -2,9 +2,7 @@ name: CI/CD Bucket
 
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    branches: [release]
 
 jobs:
   build:
@@ -43,5 +41,5 @@ jobs:
           service_account_email: ${{ secrets.GKE_EMAIL }}
           service_account_key: ${{ secrets.GKE_KEY }}
 
-      - name: get-key
-        run: gsutil rsync -R public gs://seonglae.com
+      - name: Depoly to Bucket
+        run: gsutil -m cp -r public/* gs://seonglae.com
