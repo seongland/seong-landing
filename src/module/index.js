@@ -13,9 +13,7 @@ export const to = i => ({
 export const from = i => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
 
 export const trans = (r, s) =>
-  `perspective(1500px) rotateX(10deg) rotateY(${
-    r / 10
-  }deg) rotateZ(${r}deg) scale(${s})`
+  `perspective(1500px) rotateX(10deg) rotateY(${r / 100}deg)  scale(${s})`
 
 export function Deck(prop) {
   const cards = prop.urls

@@ -42,18 +42,15 @@ export const products = (props, bind) =>
         {...bind(i)}
         style={{
           background: `${fills[i]}`,
-          width: "60%",
-          height: " 60vh",
+          width: "100vw",
+          height: " 50vh",
           marginLeft: "20%",
           marginRight: "20%",
           border: "none",
           overflow: "hidden",
           transform: interpolate([rot, scale], trans),
         }}
-        onClick={e => {
-          if (e.ctrlKey) window.open(products[i])
-          else window.location.href = products[i]
-        }}
+        onClick={() => window.open(urls[i])}
       >
         <div
           className="card-title-wrapper"

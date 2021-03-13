@@ -104,10 +104,9 @@ export const infos = (props, bind) =>
             background: `linear-gradient(to right, ${colors[i][0]},${colors[i][1]}, ${colors[i][2]})`,
           }}
           isStatic={true}
-          onClick={e => {
+          onClick={() => {
             if (window.dragging) return
-            if (e.ctrlKey) window.open(urls[i])
-            else window.location.href = urls[i]
+            window.open(urls[i])
           }}
         >
           <div>
