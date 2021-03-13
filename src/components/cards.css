@@ -125,7 +125,7 @@ body {
 }
 
 #card>div>div {
-  box-shadow: 10px 10px 20px 20px #24242499;
+  box-shadow: 1vw 1vw 2vw 2vw #20202099;
   background-size: auto 85%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -154,5 +154,3 @@ body {
   margin-left: 10% !important;
   margin-right: 10% !important;
 }
-
-@import url('https://fonts.googleapis.com/css?family=MalgunGothic&display=swap');
