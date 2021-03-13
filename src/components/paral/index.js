@@ -1,5 +1,5 @@
 // meta - React
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import "react-hot-loader"
 
 // meta - Components
@@ -22,6 +22,33 @@ export default () => {
       window.removeEventListener("resize", applyVertical)
     }
   })
+  const [offset, setOffset] = useState(
+    window.innerHeight > window.innerWidth ? 2.8 : 2.99
+  )
+
+  function applyVertical() {
+    setOffset(window.innerHeight > window.innerWidth ? 2.8 : 2.99)
+    const vertical = isVertical()
+    for (const className of classes)
+      for (const element of document.getElementsByClassName(className))
+        if (vertical) element.classList.add("vertical")
+        else element.classList.remove("vertical")
+  }
+
+  const EarthB = () => (
+    <ParallaxLayer
+      offset={offset}
+      speed={2}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Earth ratios={[1, 1]} />
+    </ParallaxLayer>
+  )
+
   return (
     <Parallax ref={ref => (React.parallax = ref)} pages={3}>
       <Cover />
@@ -76,19 +103,6 @@ const EarthT = () => (
     }}
   >
     <Earth ratios={[2 / 3, 1 / 2]} />
-  </ParallaxLayer>
-)
-const EarthB = () => (
-  <ParallaxLayer
-    offset={window.innerHeight > window.innerWidth ? 2.8 : 2.99}
-    speed={2}
-    style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    }}
-  >
-    <Earth ratios={[1, 1]} />
   </ParallaxLayer>
 )
 
@@ -149,12 +163,4 @@ const classes = [
 const isVertical = () => {
   if (window.innerHeight > window.innerWidth) return true
   return false
-}
-
-function applyVertical() {
-  const vertical = isVertical()
-  for (const className of classes)
-    for (const element of document.getElementsByClassName(className))
-      if (vertical) element.classList.add("vertical")
-      else element.classList.remove("vertical")
 }
