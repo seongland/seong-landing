@@ -4,10 +4,8 @@ import ReactDOM from "react-dom"
 import { useSprings, animated, interpolate } from "react-spring"
 import { useDrag } from "react-use-gesture"
 import "../cards.css"
-import Card from "react-animated-3d-card"
 
 const cards = [
-  // "https://vizydrop.com/shared/drop/5e2dafccac25e35dc0c0f4d5?authkey=0ed82d6370bab993d792",
   "https://vizydrop.com/shared/drop/5e3ea0f1b56e7c81523f39aa?authkey=85cc6617d521fe9b38a9",
 ]
 
@@ -77,7 +75,7 @@ function Deck() {
         <iframe
           style={{
             width: "80%",
-            height: " 80vh",
+            height: " 70vh",
             marginLeft: "10%",
             marginRight: "10%",
             border: "none",
