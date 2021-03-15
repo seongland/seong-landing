@@ -15,6 +15,15 @@
   font-weight: bold;
 }
 
+.card-subtitle {
+  font-size: 1vw;
+}
+
+
+.card-subtitle.vertical {
+  font-size: 3vw;
+}
+
 .card-title.vertical {
   font-size: 5vw;
 }

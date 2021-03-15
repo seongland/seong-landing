@@ -148,6 +148,7 @@ const Stats = () => (
 
 const classes = [
   "card-title",
+  "card-subtitle",
   "value",
   "property",
   "mark",
