@@ -110,8 +110,13 @@ export const infos = (props, bind) =>
           }}
         >
           <div>
-            <img className="left top mark absolute" src="/chip.png" />
             <img
+              alt="chip"
+              className="left top mark absolute"
+              src="/chip.png"
+            />
+            <img
+              alt="visa"
               className="right top mark absolute"
               style={{
                 filter: `brightness(${colors[i][1] === "#ffffff" ? 0.5 : 1})`,
@@ -126,30 +131,30 @@ export const infos = (props, bind) =>
             </div>
           </div>
 
-          <label
+          <span
             className="property left absolute"
             style={{ color: colors[i][3] }}
           >
             Card holder
-          </label>
-          <label
+          </span>
+          <span
             className="property right absolute"
             style={{ color: colors[i][3] }}
           >
             Expires
-          </label>
-          <label
+          </span>
+          <span
             className="absolute bottom left value"
             style={{ color: colors[i][3] }}
           >
             SEONGLAE
-          </label>
-          <label
+          </span>
+          <span
             className="absolute bottom right value"
             style={{ color: colors[i][3] }}
           >
             4EVER
-          </label>
+          </span>
         </Card>
       </animated.div>
     </animated.div>

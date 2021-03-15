@@ -25,6 +25,7 @@ export const stats = (props, bind) =>
         }}
       >
         <iframe
+          title="vizydrop"
           style={{
             width: "80%",
             height: " 70vh",

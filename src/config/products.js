@@ -70,8 +70,8 @@ export const products = (props, bind) =>
               {texts[i][0]}
             </label>
             <div
+              className="card-subtitle"
               style={{
-                fontSize: "1vw",
                 color: `${fills[i] === "black" ? "white" : "black"}`,
               }}
             >
