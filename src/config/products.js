@@ -5,6 +5,7 @@ import { trans } from "../module/"
 export const urls = [
   "https://status.seongland.com",
   "https://live.seongland.com",
+  "https://account.seongland.com",
   "https://point.seongland.com",
   "https://github.com/seongland/intuiter",
 ]
@@ -12,16 +13,19 @@ export const urls = [
 const backgrounds = [
   "https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg",
   "/live.png",
+  "/seongland.jpg",
   "/pointland.jpg",
   "/intuiter.png",
 ]
 
-const fills = ["white", "black", "black", "white"]
-const ratio = ["200%", "75%", "150%", "75%"]
+const fills = ["white", "black", "white", "black", "white"]
+const colors = ["black", "white", "#232334", "white", "black"]
+const ratio = ["200%", "75%", "50%", "150%", "75%"]
 
 const texts = [
   ["Status", "all of my subdomains"],
   ["Live", "of seongland broadcast"],
+  ["Account", "of seongland services"],
   ["Pointland", "web metaverse"],
   ["Intuiter", "raise your productivity"],
 ]
@@ -64,7 +68,7 @@ export const products = (props, bind) =>
           <div className="card-title">
             <label
               style={{
-                color: `${fills[i] === "black" ? "white" : "black"}`,
+                color: colors[i],
               }}
             >
               {texts[i][0]}
@@ -72,7 +76,7 @@ export const products = (props, bind) =>
             <div
               className="card-subtitle"
               style={{
-                color: `${fills[i] === "black" ? "white" : "black"}`,
+                color: colors[i],
               }}
             >
               {texts[i][1]}
