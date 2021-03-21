@@ -11,7 +11,7 @@ export const urls = [
 ]
 
 const backgrounds = [
-  "https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg",
+  "/upptime.svg",
   "/live.png",
   "/seongland.jpg",
   "/pointland.jpg",
