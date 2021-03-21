@@ -14,14 +14,15 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: 'https://www.seonglae.com',
-        sitemap: 'https://www.seonglae.com/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
-      }
+        host: "https://www.seonglae.com",
+        sitemap: "https://www.seonglae.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
     },
-    `gatsby-plugin-sitemap`
-  ]
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-csp`,
+  ],
   // your another plugins
 }
