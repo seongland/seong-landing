@@ -1,4 +1,4 @@
-name: CI/CD Bucket
+name: Yarn Build
 
 on:
   push:
