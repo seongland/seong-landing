@@ -39,7 +39,7 @@ module.exports = {
             "'self' stats.g.doubleclick.net www.google-analytics.com 'unsafe-inline'",
           "frame-src": "'self' vizydrop.com 'unsafe-inline'",
           "img-src":
-            "'self' www.google-analytics.com 'unsafe-inline' 'img.buymeacoffee.com'",
+            "'self' www.google-analytics.com 'unsafe-inline' img.buymeacoffee.com",
         },
       },
     },
