@@ -64,7 +64,7 @@ export default () => {
 const Cover = () => (
   <ParallaxLayer
     factor={4}
-    style={{ backgroundColor: "rgb(32,32,32)", backgroundSize: "cover" }}
+    style={{ backgroundColor: "rgb(30,30,30)", backgroundSize: "cover" }}
   />
 )
 const Stars = () => (
