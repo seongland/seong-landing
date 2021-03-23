@@ -73,6 +73,7 @@ const Stars = () => (
     style={{
       backgroundImage: 'url("/stars.svg")',
       backgroundSize: "cover",
+      webkitMaskImage: "-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0.5)))"
     }}
   />
 )
