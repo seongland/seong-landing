@@ -1,25 +1,20 @@
 {
-  "name": "react-portfolio",
+  "name": "seong-land",
   "private": false,
-  "description": "seong-land",
-  "version": "1.3.1",
+  "description": "Seongland Main Landing Page",
+  "version": "1.4.0",
   "author": "seonglae cho <sungle3737@gmail.com>",
   "dependencies": {
     "gatsby": "^2.17.16",
-    "gatsby-image": "^2.2.33",
     "gatsby-plugin-csp": "^1.1.3",
     "gatsby-plugin-google-analytics": "^2.1.28",
-    "gatsby-plugin-printer": "^1.1.1",
     "gatsby-plugin-react-helmet": "^3.1.15",
     "gatsby-plugin-robots-txt": "^1.5.1",
-    "gatsby-plugin-sharp": "^2.3.1",
     "gatsby-plugin-sitemap": "^2.4.12",
-    "gatsby-source-filesystem": "^2.1.37",
     "react": "^16.12.0",
     "react-animated-3d-card": "^1.0.2",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "react-scripts": "^3.2.0",
     "react-spring": "^8.0.27",
     "react-typed": "^1.2.0",
     "react-use-gesture": "^7.0.15",
@@ -41,10 +36,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sungle3737/react-portfolio"
+    "url": "https://github.com/seongland/seong-landing"
   },
   "bugs": {
-    "url": "https://github.com/sungle3737/react-portfolio",
+    "url": "https://github.com/seongland/seong-landing",
     "email": "sungle3737@gmail.com"
   },
   "homepage": "react.seonglae.com"
