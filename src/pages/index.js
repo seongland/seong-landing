@@ -23,6 +23,11 @@ const IndexPage = () => (
       />
       <meta property="og:locale" content="ko_KR" />
       <meta property="og:type" content="website" />
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "c8b3924687ca4bdaaf9bd8f31abbd40b"}'
+      ></script>
     </OG>
     <Paral />
   </div>

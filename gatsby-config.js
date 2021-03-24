@@ -31,7 +31,7 @@ module.exports = {
         mergeStyleHashes: false,
         mergeDefaultDirectives: true,
         directives: {
-          "script-src": "'self' www.google-analytics.com 'unsafe-inline'",
+          "script-src": "'self' www.google-analytics.com static.cloudflareinsights.com 'unsafe-inline'",
           "style-src-elem": "'self' fonts.googleapis.com data: 'unsafe-inline'",
           "style-src": "'self' 'unsafe-inline'",
           "font-src": "'self' fonts.gstatic.com 'unsafe-inline'",
