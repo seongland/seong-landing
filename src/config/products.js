@@ -5,29 +5,29 @@ import { trans } from "../module/"
 export const urls = [
   "https://status.seongland.com",
   "https://live.seongland.com",
+  "https://github.com/seongland/intuiter",
   "https://account.seongland.com",
   "https://point.seongland.com",
-  "https://github.com/seongland/intuiter",
 ]
 
 const backgrounds = [
   "/upptime.svg",
   "/live.png",
+  "/intuiter.png",
   "/seongland.svg",
   "/pointland.jpg",
-  "/intuiter.png",
 ]
 
-const fills = ["white", "black", "white", "black", "white"]
-const colors = ["black", "white", "#232334", "white", "black"]
-const ratio = ["200%", "75%", "50%", "150%", "75%"]
+const fills = ["white", "black", "white", "#242526", "black"]
+const colors = ["black", "white", "black", "#fff", "white"]
+const ratio = ["200%", "75%", "75%", "50%", "150%"]
 
 const texts = [
   ["Status", "all of my subdomains"],
   ["Live", "of seongland broadcast"],
+  ["Intuiter", "raise your productivity"],
   ["Account", "of seongland services"],
   ["Pointland", "web metaverse"],
-  ["Intuiter", "raise your productivity"],
 ]
 
 export const products = (props, bind) =>
