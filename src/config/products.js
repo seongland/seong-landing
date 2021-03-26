@@ -13,7 +13,7 @@ export const urls = [
 const backgrounds = [
   "/upptime.svg",
   "/live.png",
-  "/seongland.jpg",
+  "/seongland.svg",
   "/pointland.jpg",
   "/intuiter.png",
 ]
