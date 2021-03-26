@@ -11,7 +11,7 @@ const IndexPage = () => (
       htmlAttributes={{
         lang: "en",
       }}
-      link={[{ rel: "shortcut icon", type: "image/png", href: "/favicon.png" }]}
+      link={[{ rel: "shortcut icon", type: "image/png", href: "/seongland.svg" }]}
     >
       <meta charSet="utf-8" />
       <title>Seong-Land</title>
