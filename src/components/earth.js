@@ -158,6 +158,6 @@ export default class Earth extends React.Component {
   }
 
   render() {
-    return <div ref="earth" />
+    return <div ref="earth" href="#main"/>
   }
 }
