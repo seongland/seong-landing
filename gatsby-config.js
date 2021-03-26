@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.seonglae.com`,
+    siteUrl: `https://www.seongland.com`,
   },
   plugins: [
     {
@@ -16,8 +16,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.seonglae.com",
-        sitemap: "https://www.seonglae.com/sitemap.xml",
+        host: "https://www.seongland.com",
+        sitemap: "https://www.seongland.com/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
