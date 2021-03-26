@@ -18,8 +18,8 @@ const backgrounds = [
   "/intuiter.png",
 ]
 
-const fills = ["white", "black", "white", "black", "white"]
-const colors = ["black", "white", "#232334", "white", "black"]
+const fills = ["white", "black", "#242526", "black", "white"]
+const colors = ["black", "white", "#fff", "white", "black"]
 const ratio = ["200%", "75%", "50%", "150%", "75%"]
 
 const texts = [
