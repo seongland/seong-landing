@@ -10,6 +10,11 @@ export const to = i => ({
   delay: i * 100,
 })
 
+export const isVertical = () => {
+  if (window.innerHeight > window.innerWidth) return true
+  return false
+}
+
 export const from = i => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
 
 export const trans = (r, s) =>

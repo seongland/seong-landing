@@ -1,7 +1,11 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import * as THREE from "three"
+import TWEEN from "@tweenjs/tween.js"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+
+const CAM_FAR = [-3000, 5550, 3000]
+const CAM_NEAR = [-300, 555, 300]
 
 export default class Earth extends React.Component {
   camera
@@ -16,6 +20,7 @@ export default class Earth extends React.Component {
   base
   componentDidMount() {
     this.makeEarth()
+    if (this.props.twen) this.tweenFocus(CAM_NEAR, 2000)
     window.addEventListener("resize", this.changeEarth)
   }
 
@@ -32,9 +37,21 @@ export default class Earth extends React.Component {
       this.base.rotation.y += 0.002
       this.controls.update()
       requestAnimationFrame(animate)
-      return this.renderer.render(this.scene, this.camera)
+      this.renderer.render(this.scene, this.camera)
+      TWEEN.update()
+      return 
     }
     return animate()
+  }
+
+  tweenFocus(position, time) {
+    const cam = this.camera
+    console.log(cam)
+    if (cam.tween) cam.tween.stop()
+    cam.tween = new TWEEN.Tween(cam.position)
+      .easing(TWEEN.Easing.Quintic.InOut)
+      .to(cam.position.clone().set(...position), time)
+      .start()
   }
 
   checkMobile = () => window.innerHeight > window.innerWidth
@@ -59,9 +76,9 @@ export default class Earth extends React.Component {
       1,
       10000
     )
-    this.camera.position.x = -300
-    this.camera.position.y = 555
-    this.camera.position.z = 300
+    this.props.tween
+      ? this.camera.position.set(...CAM_FAR)
+      : this.camera.position.set(...CAM_NEAR)
   }
 
   makeScene() {
@@ -158,6 +175,6 @@ export default class Earth extends React.Component {
   }
 
   render() {
-    return <div ref="earth" href="#main"/>
+    return <div ref="earth" href="#main" />
   }
 }
