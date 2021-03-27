@@ -1,7 +1,8 @@
 import React from "react"
 import { animated, interpolate } from "react-spring"
 import { trans } from "../module"
-import Card from "react-animated-3d-card"
+
+const Card = React.lazy(() => import("react-animated-3d-card"))
 
 export const urls = [
   "https://youtube.com/fpryrgna75q0",

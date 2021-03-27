@@ -1,18 +1,17 @@
 // meta - React
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, Suspense } from "react"
 import "react-hot-loader"
 
 // meta - Components
 import Intro from "./First/intro"
 import Cards from "../cards"
-import Earth from "../earth"
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import { urls as productURLs, products } from "../../config/products"
 import { urls as statURLs, stats } from "../../config/stats"
 import { urls as infoURLs, infos } from "../../config/infos"
 
-// meta - Other
-import "./paral.css"
+import { Parallax, ParallaxLayer }  from "react-spring/renderprops-addons"
+const Earth = React.lazy(() => import("../earth"))
+
 
 export default () => {
   useEffect(() => {
@@ -34,30 +33,32 @@ export default () => {
   }
 
   const EarthB = () => (
-    <ParallaxLayer
-      offset={offset}
-      speed={2}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Earth ratios={[1, 1]} />
-    </ParallaxLayer>
+      <ParallaxLayer
+        offset={offset}
+        speed={2}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+      <Suspense fallback={<div></div>}>
+        <Earth ratios={[1, 1]} />
+        </Suspense>
+      </ParallaxLayer>
   )
 
   return (
-    <Parallax ref={ref => (React.parallax = ref)} pages={3}>
-      <Cover />
-      <Stars />
-      <EarthT />
-      <Text />
-      <Products />
-      <Stats />
-      <EarthB />
-      <Infos />
-    </Parallax>
+      <Parallax ref={ref => (React.parallax = ref)} pages={3}>
+        <Cover />
+        <Stars />
+        <EarthT />
+        <Text />
+        <Products />
+        <Stats />
+        <EarthB />
+        <Infos />
+      </Parallax>
   )
 }
 
@@ -73,7 +74,8 @@ const Stars = () => (
     style={{
       backgroundImage: 'url("/stars.svg")',
       backgroundSize: "cover",
-      WebkitMaskImage: "-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0.5)))"
+      WebkitMaskImage:
+        "-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0.5)))",
     }}
   />
 )
@@ -101,7 +103,9 @@ const EarthT = () => (
       justifyContent: "center",
     }}
   >
+  <Suspense fallback={<div></div>}>
     <Earth ratios={[2 / 3, 1 / 2]} />
+    </Suspense>
   </ParallaxLayer>
 )
 
