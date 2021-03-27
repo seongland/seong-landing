@@ -4,7 +4,7 @@ import * as THREE from "three"
 import TWEEN from "@tweenjs/tween.js"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
-const CAM_FAR = [-3000, 5550, 3000]
+const CAM_FAR = [-30000, 55500, 30000]
 const CAM_NEAR = [-300, 555, 300]
 
 export default class Earth extends React.Component {
@@ -20,7 +20,7 @@ export default class Earth extends React.Component {
   base
   componentDidMount() {
     this.makeEarth()
-    if (this.props.twen) this.tweenFocus(CAM_NEAR, 2000)
+    if (this.props.tween) this.tweenFocus(CAM_NEAR, 1000)
     window.addEventListener("resize", this.changeEarth)
   }
 

@@ -5,7 +5,7 @@ import { trans } from "../module"
 const Card = React.lazy(() => import("react-animated-3d-card"))
 
 export const urls = [
-  "https://youtube.com/fpryrgna75q0",
+  "https://www.youtube.com/channel/UCKddxfCR3mlipyhweLnjGrQ",
   "https://soundcloud.com/fpryrgna75q0",
   "https://www.instagram.com/seonglaecho",
   "https://www.facebook.com/profile.php?id=100006296858033",
@@ -15,7 +15,7 @@ export const urls = [
 ]
 
 const colors = [
-  ["red", "red", "red", "#fff"],
+  ["#ff2211", "#ff2211", "#ff2211", "#fff"],
   ["orange", "#ff1100", "orange", "#fff"],
   ["purple", "#ee1153", "orange", "#fff"],
   ["#0066dd", "#0066ff", "#4455ff", "#fff"],
