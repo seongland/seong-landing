@@ -1,6 +1,7 @@
-import React from "react"
+import React, { Suspense } from "react"
 import ReactDOM from "react-dom"
-import Typed from "react-typed"
+
+const Typed = React.lazy(() => import("react-typed"))
 
 let intro, mobile
 
@@ -37,25 +38,27 @@ export default class Intro extends React.Component {
           textAlign: "center",
         }}
       >
-        <Typed
-          style={{ color: "#fff" }}
-          strings={[
-            "Welcome to Seong-Land",
-            "Welcome to Seong-Land",
-            "You can",
-            "Spin the earth",
-            "Swipe cards",
-            "Visit awesome projects",
-            "Visit awesome projects",
-            "All that things are below",
-            "All that things are below",
-            "Anyway, Welcome",
-            "Anyway, Welcome",
-            "Seong-Land",
-          ]}
-          typeSpeed={60}
-          backSpeed={50}
-        />
+        <Suspense fallback={<div></div>}>
+          <Typed
+            style={{ color: "#fff" }}
+            strings={[
+              "Welcome to Seong-Land",
+              "Welcome to Seong-Land",
+              "You can",
+              "Spin the Earth",
+              "Visit awesome projects",
+              "Visit awesome projects",
+              "All that things are below",
+              "All that things are below",
+              "Try Swipe Cards",
+              "Anyway, Welcome",
+              "Anyway, Welcome",
+              "Seong-Land",
+            ]}
+            typeSpeed={60}
+            backSpeed={50}
+          />
+        </Suspense>
       </div>
     )
   }
