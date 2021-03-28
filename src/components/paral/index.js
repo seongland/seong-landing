@@ -1,5 +1,5 @@
 // meta - React
-import React, { useEffect, useState, Suspense } from "react"
+import React, { useEffect, useState } from "react"
 import "react-hot-loader"
 
 // meta - Components
@@ -11,7 +11,7 @@ import { urls as infoURLs, infos } from "../../config/infos"
 import { isVertical } from "../../module"
 
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
-const Earth = React.lazy(() => import("../earth"))
+import Earth from "../earth"
 
 const classes = ["card-title", "card-subtitle", "parallax-card-layers"]
 
@@ -75,9 +75,7 @@ export default () => {
         justifyContent: "center",
       }}
     >
-      <Suspense fallback={<div></div>}>
-        <Earth tween={true} ratios={[2 / 3, 1 / 2]} />
-      </Suspense>
+      <Earth tween={true} ratios={[2 / 3, 1 / 2]} />
     </ParallaxLayer>
   )
 
@@ -133,9 +131,7 @@ export default () => {
         justifyContent: "center",
       }}
     >
-      <Suspense fallback={<div></div>}>
-        <Earth tween={false} ratios={[1, 1]} />
-      </Suspense>
+      <Earth tween={false} ratios={[1, 1]} />
     </ParallaxLayer>
   )
 
