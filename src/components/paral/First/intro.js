@@ -2,34 +2,33 @@ import React, { Suspense } from "react"
 import ReactDOM from "react-dom"
 
 const Typed = React.lazy(() => import("react-typed"))
-
-let intro, mobile
-
 export default class Intro extends React.Component {
+  intro
+  mobile
+  timeout
+  state = { show: false }
+
   componentDidMount() {
-    // meta - Three
-    intro = ReactDOM.findDOMNode(this.refs.intro)
-    window.addEventListener("resize", this.change_font)
-    this.change_font()
+    this.intro = ReactDOM.findDOMNode(this.refs.intro)
+    window.addEventListener("resize", this.changeFont)
+    this.changeFont()
+    this.timeout = setTimeout(() => this.setState({ show: true }), 1500)
   }
-  // meta - first make
 
-  change_font = () => {
-    // check mobile
-    if (window.innerHeight > window.innerWidth) mobile = true
-    else mobile = false
-
-    // set ratio
-    if (mobile) intro.style.fontSize = "9vw"
-    else intro.style.fontSize = "5vw"
+  changeFont = () => {
+    if (window.innerHeight > window.innerWidth) this.mobile = true
+    else this.mobile = false
+    if (this.mobile) this.intro.style.fontSize = "9vw"
+    else this.intro.style.fontSize = "5vw"
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.changeEarth)
+    clearTimeout(this.timeout)
+    window.removeEventListener("resize", this.changeFont)
   }
 
   render() {
-    return (
+    return this.state.show ? (
       <div
         ref="intro"
         style={{
@@ -60,6 +59,8 @@ export default class Intro extends React.Component {
           />
         </Suspense>
       </div>
+    ) : (
+      <div ref="intro" />
     )
   }
 }
