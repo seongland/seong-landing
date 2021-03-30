@@ -41,14 +41,14 @@ module.exports = {
         directives: {
           "script-src":
             "'self' www.googletagmanager.com www.google-analytics.com static.cloudflareinsights.com 'unsafe-inline'",
-          "style-src-elem": "'self' fonts.googleapis.com data: 'unsafe-inline'",
+          "style-src-elem": "'self' data: 'unsafe-inline'",
           "style-src": "'self' 'unsafe-inline'",
           "font-src": "'self' fonts.gstatic.com 'unsafe-inline'",
           "connect-src":
             "'self' www.googletagmanager.com cloudflareinsights.com stats.g.doubleclick.net www.google-analytics.com 'unsafe-inline'",
-          "frame-src": "'self' vizydrop.com 'unsafe-inline'",
+          "frame-src": "'self' 'unsafe-inline'",
           "img-src":
-            "'self' www.google-analytics.com 'unsafe-inline' img.buymeacoffee.com",
+            "'self' www.google-analytics.com 'unsafe-inline'",
         },
       },
     },
