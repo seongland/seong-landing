@@ -15,17 +15,17 @@ import Earth from "../earth"
 
 const classes = ["card-title", "card-subtitle", "parallax-card-layers"]
 
-export function applyVertical() {
-  const vertical = isVertical()
-  for (const className of classes)
-    for (const element of document.getElementsByClassName(className))
-      if (vertical) element.classList.add("vertical")
-      else element.classList.remove("vertical")
-}
-
 export default () => {
-  setTimeout(() => applyVertical())
+  function applyVertical() {
+    const vertical = isVertical()
+    for (const className of classes)
+      for (const element of document.getElementsByClassName(className))
+        if (vertical) element.classList.add("vertical")
+        else element.classList.remove("vertical")
+  }
+
   useEffect(() => {
+    setTimeout(() => applyVertical())
     window.addEventListener("resize", applyVertical)
     return function cleanup() {
       window.removeEventListener("resize", applyVertical)
