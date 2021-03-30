@@ -11,11 +11,29 @@ const IndexPage = () => (
       htmlAttributes={{
         lang: "en",
       }}
-      link={[{ rel: "shortcut icon", type: "image/png", href: "/seongland.svg" }]}
+      link={[
+        { rel: "shortcut icon", type: "image/png", href: "/seongland.svg" },
+      ]}
     >
       <meta charSet="utf-8" />
       <title>Seong-Land</title>
-      <meta name="description" content="Land Will Guide You to know Seong-lae"></meta>
+      <link
+        rel="preload"
+        as="image"
+        crossorigin="anonymous"
+        href="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=%E2%98%95&slug=seongland&button_colour=fff7&font_colour=000&font_family=Lato&outline_colour=&coffee_colour=424242"
+      />
+      <link
+        rel="preload"
+        as="style"
+        href="https://fonts.googleapis.com/css?family=Anton&display=swap"
+        type="text/css"
+        crossorigin="anonymous"
+      />
+      <meta
+        name="description"
+        content="Land Will Guide You to know Seong-lae"
+      ></meta>
       <meta property="fb:app_id" content="419108182355029" />
       <meta property="og:site_name" content="Seong-Land" />
       <meta property="og:url" content="https://www.seongland.com/" />
