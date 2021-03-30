@@ -34,7 +34,7 @@ export const stats = (props, bind) =>
             border: "none",
           }}
           src={urls[i]}
-        ></iframe>
+        />
       </animated.div>
     </animated.div>
   ))
