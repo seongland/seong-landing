@@ -24,8 +24,8 @@ export default () => {
         else element.classList.remove("vertical")
   }
 
-  setTimeout(() => applyVertical())
   useEffect(() => {
+    setTimeout(() => applyVertical())
     window.addEventListener("resize", applyVertical)
     return function cleanup() {
       window.removeEventListener("resize", applyVertical)
