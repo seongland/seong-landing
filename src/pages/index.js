@@ -15,13 +15,6 @@ const IndexPage = () => (
       <meta charSet="utf-8" />
       <title>Seong-Land</title>
       <link rel="icon" href="/seongland.svg" />
-      <link
-        rel="preload stylesheet prefetch"
-        as="style"
-        href="https://fonts.googleapis.com/css?family=Anton&display=swap"
-        type="text/css"
-        crossorigin="anonymous"
-      />
       <meta
         name="description"
         content="Land Will Guide You to know Seong-lae"
