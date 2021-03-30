@@ -1,7 +1,6 @@
 import React, { Suspense } from "react"
 import ReactDOM from "react-dom"
-
-const Typed = React.lazy(() => import("react-typed"))
+import Typed from "react-typed"
 export default class Intro extends React.Component {
   intro
   mobile

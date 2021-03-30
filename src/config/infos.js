@@ -1,8 +1,9 @@
 import React from "react"
 import { animated, interpolate } from "react-spring"
 import { trans } from "../module"
-
-const Card = React.lazy(() => import("react-animated-3d-card"))
+import Card from "react-animated-3d-card"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
+import { urls as previous } from "./products"
 
 export const urls = [
   "https://www.youtube.com/channel/UCKddxfCR3mlipyhweLnjGrQ",
@@ -118,16 +119,19 @@ export const infos = (props, bind) =>
             background: `linear-gradient(to right, ${colors[i][0]},${colors[i][1]}, ${colors[i][2]})`,
           }}
           isStatic={true}
-          onClick={() => {
-            if (window.dragging) return
-            window.open(urls[i])
-          }}
         >
-          <div className="card-title-wrapper">
-            <div className="card-title" style={{ color: colors[i][3] }}>
+          <div className="card-title-wrapper" style={{ zIndex: 10 }}>
+            <OutboundLink
+              className="card-title"
+              role="button"
+              tabIndex={i + previous.length}
+              onClick={() => window.open(urls[i])}
+              onKeyDown={() => ({})}
+              style={{ color: colors[i][3], cursor: "pointer" }}
+            >
               <label>{texts[i][0]}</label>
               <label>{texts[i][1]}</label>
-            </div>
+            </OutboundLink>
           </div>
         </Card>
       </animated.div>

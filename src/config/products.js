@@ -1,6 +1,7 @@
 import React from "react"
 import { animated, interpolate } from "react-spring"
 import { trans } from "../module/"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 export const urls = [
   "https://status.seongland.com",
@@ -54,7 +55,6 @@ export const products = (props, bind) =>
           overflow: "hidden",
           transform: interpolate([rot, scale], trans),
         }}
-        onClick={() => window.open(urls[i])}
       >
         <div
           className="card-title-wrapper"
@@ -65,9 +65,19 @@ export const products = (props, bind) =>
             backgroundRepeat: "no-repeat",
           }}
         >
-          <div className="card-title">
+          <OutboundLink
+            href={urls[i]}
+            role="button"
+            tabIndex={i}
+            className="card-title"
+            onKeyDown={() => ({})}
+            style={{
+              textDecoration: "none",
+            }}
+          >
             <label
               style={{
+                cursor: "pointer",
                 color: colors[i],
               }}
             >
@@ -75,13 +85,11 @@ export const products = (props, bind) =>
             </label>
             <div
               className="card-subtitle"
-              style={{
-                color: colors[i],
-              }}
+              style={{ cursor: "pointer", color: colors[i] }}
             >
               {texts[i][1]}
             </div>
-          </div>
+          </OutboundLink>
         </div>
       </animated.div>
     </animated.div>

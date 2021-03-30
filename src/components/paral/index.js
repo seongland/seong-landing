@@ -1,5 +1,5 @@
 // meta - React
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import "react-hot-loader"
 
 // meta - Components
@@ -15,24 +15,22 @@ import Earth from "../earth"
 
 const classes = ["card-title", "card-subtitle", "parallax-card-layers"]
 
+export function applyVertical() {
+  const vertical = isVertical()
+  for (const className of classes)
+    for (const element of document.getElementsByClassName(className))
+      if (vertical) element.classList.add("vertical")
+      else element.classList.remove("vertical")
+}
+
 export default () => {
+  setTimeout(() => applyVertical())
   useEffect(() => {
     window.addEventListener("resize", applyVertical)
-    setTimeout(() => applyVertical())
     return function cleanup() {
       window.removeEventListener("resize", applyVertical)
     }
   })
-  const [offset, setOffset] = useState(3)
-
-  function applyVertical() {
-    setOffset(window.innerHeight > window.innerWidth ? 2.8 : 2.99)
-    const vertical = isVertical()
-    for (const className of classes)
-      for (const element of document.getElementsByClassName(className))
-        if (vertical) element.classList.add("vertical")
-        else element.classList.remove("vertical")
-  }
 
   const Cover = () => (
     <ParallaxLayer
@@ -82,7 +80,7 @@ export default () => {
   const Infos = () => (
     <ParallaxLayer
       offset={2.0}
-      speed={3}
+      speed={1}
       style={{
         display: "flex",
         alignItems: "center",
@@ -120,21 +118,6 @@ export default () => {
       <Cards deck={stats} urls={statURLs} />
     </ParallaxLayer>
   )
-
-  const EarthB = () => (
-    <ParallaxLayer
-      offset={offset}
-      speed={2}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Earth tween={false} ratios={[1, 1]} />
-    </ParallaxLayer>
-  )
-
   return (
     <Parallax ref={ref => (React.parallax = ref)} pages={3}>
       <Cover />
@@ -143,7 +126,6 @@ export default () => {
       <Text />
       <Products />
       <Stats />
-      <EarthB />
       <Infos />
     </Parallax>
   )
