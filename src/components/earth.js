@@ -1,5 +1,4 @@
 import React from "react"
-import ReactDOM from "react-dom"
 import * as THREE from "three"
 import TWEEN from "@tweenjs/tween.js"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
@@ -31,7 +30,6 @@ export default class Earth extends React.Component {
     this.makeScene()
     this.makeRenderer()
     this.makeControl()
-    ReactDOM.findDOMNode(this.refs.earth).appendChild(this.renderer.domElement)
 
     const animate = () => {
       this.base.rotation.y += 0.002
@@ -39,7 +37,7 @@ export default class Earth extends React.Component {
       requestAnimationFrame(animate)
       this.renderer.render(this.scene, this.camera)
       TWEEN.update()
-      return 
+      return
     }
     return animate()
   }
@@ -138,9 +136,11 @@ export default class Earth extends React.Component {
 
   makeRenderer() {
     try {
+      var canvas = document.getElementById("canvas")
       this.renderer = new THREE.WebGLRenderer({
         alpha: true,
         antialias: true,
+        canvas,
       })
     } catch (error) {
       this.renderer = new THREE.CanvasRenderer()
@@ -158,7 +158,6 @@ export default class Earth extends React.Component {
     this.controls.enableDamping = true
     this.controls.maxPolarAngle = Math.PI / 5
     this.controls.minPolarAngle = Math.PI / 5
-    this.controls.update()
   }
 
   // meta - when window changed
@@ -174,6 +173,10 @@ export default class Earth extends React.Component {
   }
 
   render() {
-    return <div ref="earth" href="#main" />
+    return (
+      <div href="#main">
+        <canvas id="canvas" />
+      </div>
+    )
   }
 }
