@@ -65,7 +65,7 @@ export const products = (props, bind) =>
           <OutboundLink
             href={urls[i]}
             role="button"
-            tabIndex={i}
+            tabIndex={0}
             className="card-title"
             style={{
               color: colors[i],
