@@ -70,9 +70,8 @@ export const products = (props, bind) =>
             role="button"
             tabIndex={i}
             className="card-title"
-            onKeyDown={() => ({})}
             style={{
-              textDecoration: "none",
+              color: colors[i],
             }}
           >
             <label

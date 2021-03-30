@@ -1,7 +1,6 @@
 import React from "react"
 import { animated, interpolate } from "react-spring"
 import { trans } from "../module"
-import Card from "react-animated-3d-card"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 import { urls as previous } from "./products"
 
@@ -112,28 +111,32 @@ export const infos = (props, bind) =>
     >
       <animated.div
         {...bind(i)}
-        style={{ transform: interpolate([rot, scale], trans) }}
+        style={{
+          transform: interpolate([rot, scale], trans),
+          width: "80vw",
+          height: "40vh",
+          marginLeft: "20%",
+          marginRight: "20%",
+          border: "none",
+          overflow: "hidden",
+          background: `linear-gradient(to right, ${colors[i][0]},${colors[i][1]}, ${colors[i][2]})`,
+        }}
       >
-        <Card
-          style={{
-            background: `linear-gradient(to right, ${colors[i][0]},${colors[i][1]}, ${colors[i][2]})`,
-          }}
-          isStatic={true}
-        >
-          <div className="card-title-wrapper" style={{ zIndex: 10 }}>
-            <OutboundLink
-              className="card-title"
-              role="button"
-              tabIndex={i + previous.length}
-              onClick={() => window.open(urls[i])}
-              onKeyDown={() => ({})}
-              style={{ color: colors[i][3], cursor: "pointer" }}
-            >
-              <label>{texts[i][0]}</label>
-              <label>{texts[i][1]}</label>
-            </OutboundLink>
-          </div>
-        </Card>
+        <div className="card-title-wrapper">
+          <OutboundLink
+            href={urls[i]}
+            className="card-title"
+            role="button"
+            tabIndex={i + previous.length}
+            style={{
+              color: colors[i][3],
+              cursor: "pointer",
+            }}
+          >
+            <label>{texts[i][0]}</label>
+            <label>{texts[i][1]}</label>
+          </OutboundLink>
+        </div>
       </animated.div>
     </animated.div>
   ))
