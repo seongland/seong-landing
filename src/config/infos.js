@@ -2,7 +2,6 @@ import React from "react"
 import { animated, interpolate } from "react-spring"
 import { trans } from "../module"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
-import { urls as previous } from "./products"
 
 export const urls = [
   "https://www.youtube.com/channel/UCKddxfCR3mlipyhweLnjGrQ",
@@ -127,7 +126,7 @@ export const infos = (props, bind) =>
             href={urls[i]}
             className="card-title"
             role="button"
-            tabIndex={i + previous.length}
+            tabIndex={0}
             style={{
               color: colors[i][3],
               cursor: "pointer",
