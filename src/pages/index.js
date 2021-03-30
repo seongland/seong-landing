@@ -12,7 +12,7 @@ const IndexPage = () => (
         lang: "en",
       }}
       link={[
-        { rel: "shortcut icon", type: "image/png", href: "/seongland.svg" },
+        { rel: "icon", type: "image/svg+xml", href: "/seongland.svg" },
       ]}
     >
       <meta charSet="utf-8" />
