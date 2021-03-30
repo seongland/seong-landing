@@ -14,6 +14,12 @@ const IndexPage = () => (
     >
       <meta charSet="utf-8" />
       <title>Seong-Land</title>
+      <link
+        rel="preload prefetch"
+        as="image"
+        type="image/svg+xml"
+        href="https://www.seongland.com/buymeacoffee.svg"
+      />
       <link rel="icon" href="/seongland.svg" />
       <meta
         name="description"
