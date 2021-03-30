@@ -1,15 +1,23 @@
 import React from "react"
 import { animated, interpolate } from "react-spring"
 import { trans } from "../module/"
+import { OutboundLink } from "gatsby-plugin-google-gtag"
 
-export const urls = [
-  "https://vizydrop.com/shared/drop/5e3ea0f1b56e7c81523f39aa?authkey=85cc6617d521fe9b38a9",
-]
+export const urls = ["https://github.com/seongland/intuiter"]
+
+const backgrounds = ["/intuiter.png"]
+
+const fills = ["white"]
+const colors = ["black"]
+const ratio = ["75%"]
+
+const texts = [["Intuiter", "raise your productivity"]]
 
 export const stats = (props, bind) =>
   props.map(({ x, y, rot, scale }, i) => (
     <animated.div
       key={i}
+      className="card"
       style={{
         transform: interpolate(
           [x, y],
@@ -19,22 +27,51 @@ export const stats = (props, bind) =>
     >
       <animated.div
         {...bind(i)}
-        className="iframe"
         style={{
+          background: `${fills[i]}`,
+          width: "100vw",
+          height: " 50vh",
+          marginLeft: "20%",
+          marginRight: "20%",
+          border: "none",
+          overflow: "hidden",
           transform: interpolate([rot, scale], trans),
         }}
       >
-        <iframe
-          title="vizydrop"
+        <div
+          className="card-title-wrapper"
           style={{
-            width: "80%",
-            height: " 70vh",
-            marginLeft: "10%",
-            marginRight: "10%",
-            border: "none",
+            background: `url("${backgrounds[i]}")`,
+            backgroundPosition: "center center",
+            backgroundSize: `auto ${ratio[i]}`,
+            backgroundRepeat: "no-repeat",
           }}
-          src={urls[i]}
-        />
+        >
+          <OutboundLink
+            href={urls[i]}
+            role="button"
+            tabIndex={i}
+            className="card-title"
+            style={{
+              color: colors[i],
+            }}
+          >
+            <label
+              style={{
+                cursor: "pointer",
+                color: colors[i],
+              }}
+            >
+              {texts[i][0]}
+            </label>
+            <div
+              className="card-subtitle"
+              style={{ cursor: "pointer", color: colors[i] }}
+            >
+              {texts[i][1]}
+            </div>
+          </OutboundLink>
+        </div>
       </animated.div>
     </animated.div>
   ))

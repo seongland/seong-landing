@@ -60,7 +60,23 @@ export default () => {
         pointerEvents: "none",
       }}
     >
-      <Intro />
+      <Intro
+        cursor
+        strings={[
+          "Welcome to Seong-Land",
+          "Welcome to Seong-Land",
+          "You can",
+          "Spin the Earth",
+          "Visit awesome projects",
+          "Visit awesome projects",
+          "All that things are below",
+          "All that things are below",
+          "Try Swipe Cards",
+          "Anyway, Welcome",
+          "Anyway, Welcome",
+          "Seong-Land",
+        ]}
+      />
     </ParallaxLayer>
   )
 
@@ -77,20 +93,6 @@ export default () => {
     </ParallaxLayer>
   )
 
-  const Infos = () => (
-    <ParallaxLayer
-      offset={2.0}
-      speed={1}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <Cards deck={infos} urls={infoURLs} />
-    </ParallaxLayer>
-  )
-
   const Products = () => (
     <ParallaxLayer
       offset={1.0}
@@ -102,6 +104,7 @@ export default () => {
       }}
     >
       <Cards deck={products} urls={productURLs} />
+      <Intro strings={["Services"]} />
     </ParallaxLayer>
   )
 
@@ -116,8 +119,25 @@ export default () => {
       }}
     >
       <Cards deck={stats} urls={statURLs} />
+      <Intro strings={["Products"]} />
     </ParallaxLayer>
   )
+
+  const Infos = () => (
+    <ParallaxLayer
+      offset={2.0}
+      speed={1}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Cards deck={infos} urls={infoURLs} />
+      <Intro strings={["Informations"]} />
+    </ParallaxLayer>
+  )
+
   return (
     <Parallax ref={ref => (React.parallax = ref)} pages={3}>
       <Cover />
