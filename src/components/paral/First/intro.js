@@ -38,21 +38,9 @@ export default class Intro extends React.Component {
       >
         <Suspense fallback={<div></div>}>
           <Typed
+            showCursor={this.props.cursor}
             style={{ color: "#fff" }}
-            strings={[
-              "Welcome to Seong-Land",
-              "Welcome to Seong-Land",
-              "You can",
-              "Spin the Earth",
-              "Visit awesome projects",
-              "Visit awesome projects",
-              "All that things are below",
-              "All that things are below",
-              "Try Swipe Cards",
-              "Anyway, Welcome",
-              "Anyway, Welcome",
-              "Seong-Land",
-            ]}
+            strings={this.props.strings}
             typeSpeed={60}
             backSpeed={50}
           />

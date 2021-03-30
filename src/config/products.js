@@ -6,7 +6,6 @@ import { OutboundLink } from "gatsby-plugin-google-gtag"
 export const urls = [
   "https://status.seongland.com",
   "https://live.seongland.com",
-  "https://github.com/seongland/intuiter",
   "https://account.seongland.com",
   "https://point.seongland.com",
 ]
@@ -14,19 +13,17 @@ export const urls = [
 const backgrounds = [
   "/upptime.svg",
   "/live.png",
-  "/intuiter.png",
   "/seongland.svg",
   "/pointland.jpg",
 ]
 
-const fills = ["white", "black", "white", "#242526", "black"]
-const colors = ["black", "white", "black", "#fff", "white"]
-const ratio = ["200%", "75%", "75%", "50%", "150%"]
+const fills = ["white", "black", "#242526", "black"]
+const colors = ["black", "white", "#fff", "white"]
+const ratio = ["200%", "75%", "50%", "150%"]
 
 const texts = [
   ["Status", "all of my subdomains"],
   ["Live", "of seongland broadcast"],
-  ["Intuiter", "raise your productivity"],
   ["Account", "of seongland services"],
   ["Pointland", "web metaverse"],
 ]
