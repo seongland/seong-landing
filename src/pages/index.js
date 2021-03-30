@@ -15,20 +15,6 @@ const IndexPage = () => (
       <meta charSet="utf-8" />
       <title>Seong-Land</title>
       <link rel="icon" href="/seongland.svg" />
-      <link
-        rel="preload prefetch"
-        as="image"
-        type="image/svg+xml"
-        crossorigin="anonymous"
-        href="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=%E2%98%95&slug=seongland&button_colour=fff7&font_colour=000&font_family=Lato&outline_colour=&coffee_colour=424242"
-      />
-      <link
-        rel="preload stylesheet prefetch"
-        as="style"
-        href="https://fonts.googleapis.com/css?family=Anton&display=swap"
-        type="text/css"
-        crossorigin="anonymous"
-      />
       <meta
         name="description"
         content="Land Will Guide You to know Seong-lae"

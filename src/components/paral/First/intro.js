@@ -1,6 +1,7 @@
 import React, { Suspense } from "react"
 import ReactDOM from "react-dom"
 import Typed from "react-typed"
+import "./anton.css"
 export default class Intro extends React.Component {
   intro
   mobile

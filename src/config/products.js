@@ -69,22 +69,11 @@ export const products = (props, bind) =>
             className="card-title"
             style={{
               color: colors[i],
+              cursor: "pointer",
             }}
           >
-            <label
-              style={{
-                cursor: "pointer",
-                color: colors[i],
-              }}
-            >
-              {texts[i][0]}
-            </label>
-            <div
-              className="card-subtitle"
-              style={{ cursor: "pointer", color: colors[i] }}
-            >
-              {texts[i][1]}
-            </div>
+            <label>{texts[i][0]}</label>
+            <div className="card-subtitle">{texts[i][1]}</div>
           </OutboundLink>
         </div>
       </animated.div>
