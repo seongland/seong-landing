@@ -3,15 +3,21 @@ import { animated, interpolate } from "react-spring"
 import { trans } from "../module/"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 
-export const urls = ["https://github.com/seongland/intuiter"]
+export const urls = [
+  "https://github.com/seongland/intuiter",
+  "https://opensea.io/accounts/Seongland",
+]
 
-const backgrounds = ["/intuiter.png"]
+const backgrounds = ["/intuiter.png", "/image/worker.png"]
 
-const fills = ["white"]
-const colors = ["black"]
-const ratio = ["75%"]
+const fills = ["white", "white"]
+const colors = ["black", "white"]
+const ratio = ["75%", "150%"]
 
-const texts = [["Intuiter", "raise your productivity"]]
+const texts = [
+  ["Intuiter", "raise your productivity"],
+  ["NFT", "Unique Digital Photos"],
+]
 
 export const stats = (props, bind) =>
   props.map(({ x, y, rot, scale }, i) => (
