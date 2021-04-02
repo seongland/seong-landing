@@ -31,13 +31,6 @@ export default () => {
       window.removeEventListener("resize", applyVertical)
     }
   })
-
-  const Cover = () => (
-    <ParallaxLayer
-      factor={4}
-      style={{ backgroundColor: "rgb(30,30,30)", backgroundSize: "cover" }}
-    />
-  )
   const Stars = () => (
     <ParallaxLayer
       factor={3}
@@ -140,7 +133,6 @@ export default () => {
 
   return (
     <Parallax ref={ref => (React.parallax = ref)} pages={3}>
-      <Cover />
       <Stars />
       <EarthT />
       <Text />
