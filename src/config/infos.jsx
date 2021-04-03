@@ -1,6 +1,6 @@
 import React from "react"
 import { animated, interpolate } from "react-spring"
-import { trans } from "../module"
+import { trans } from "../module/index.jsx"
 import { OutboundLink } from "gatsby-plugin-google-gtag"
 
 export const urls = [

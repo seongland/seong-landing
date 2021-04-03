@@ -8,7 +8,7 @@ import Cards from "../cards"
 import { urls as productURLs, products } from "../../config/products"
 import { urls as statURLs, stats } from "../../config/stats"
 import { urls as infoURLs, infos } from "../../config/infos"
-import { isVertical } from "../../module"
+import { isVertical } from "../../module/index.jsx"
 
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import Earth from "../earth"
