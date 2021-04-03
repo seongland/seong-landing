@@ -1,5 +1,5 @@
 import React from "react"
-import Paral from "../components/paral/index.js"
+import Paral from "../components/paral/index.jsx"
 import { Helmet as OG } from "react-helmet"
 
 import "react-hot-loader"
