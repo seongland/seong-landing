@@ -10,16 +10,17 @@
     "gatsby-plugin-csp": "^1.1.3",
     "gatsby-plugin-google-analytics": "^2.1.28",
     "gatsby-plugin-google-gtag": "^3.1.0",
-    "gatsby-plugin-react-helmet-async": "^3.1.15",
+    "gatsby-plugin-react-helmet-async": "^1.2.0",
     "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sitemap": "^2.4.12",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-helmet-async": "^5.2.1",
+    "react-helmet-async": "^1.0.9",
     "react-spring": "^8.0.27",
     "react-typed": "^1.2.0",
     "react-use-gesture": "^7.0.15",
-    "three": "^0.125.0"
+    "three": "^0.125.0",
+    "use-sound": "^2.0.1"
   },
   "engines": {
     "node": "14.*.*"

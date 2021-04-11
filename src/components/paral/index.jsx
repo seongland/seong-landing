@@ -11,12 +11,19 @@ import { isVertical } from "../../module/index.jsx"
 
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import Earth from "../earth"
+import useSound from "use-sound"
+
+import bass from "../../sound/loop.mp3"
 
 import "./paral.css"
 
 const classes = ["card-title", "card-subtitle", "parallax-card-layers"]
 
 export default () => {
+  const [playActive] = useSound(bass, { volume: 0.25, loop: true })
+
+  setTimeout(() => playActive(), 1000)
+
   function applyVertical() {
     const vertical = isVertical()
     for (const className of classes)
