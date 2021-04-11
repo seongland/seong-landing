@@ -1,13 +1,12 @@
 import React from "react"
 import Paral from "../components/paral/index.jsx"
-import { Helmet as OG } from "react-helmet"
+import { Helmet as Header } from "react-helmet-async"
 
 import "react-hot-loader"
-import "../components/paral/paral.css"
 
 const IndexPage = () => (
   <main id="main">
-    <OG
+    <Header
       htmlAttributes={{
         lang: "en",
       }}
@@ -24,7 +23,7 @@ const IndexPage = () => (
       <meta
         name="description"
         content="Land Will Guide You to know Seong-lae"
-      ></meta>
+      />
       <meta property="fb:app_id" content="419108182355029" />
       <meta property="og:site_name" content="Seong-Land" />
       <meta property="og:url" content="https://www.seongland.com/" />
@@ -40,8 +39,8 @@ const IndexPage = () => (
         defer
         src="https://static.cloudflareinsights.com/beacon.min.js"
         data-cf-beacon='{"token": "c8b3924687ca4bdaaf9bd8f31abbd40b"}'
-      ></script>
-    </OG>
+      />
+    </Header>
     <Paral />
   </main>
 )

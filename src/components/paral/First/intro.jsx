@@ -1,4 +1,4 @@
-import React, { Suspense } from "react"
+import React from "react"
 import ReactDOM from "react-dom"
 import Typed from "react-typed"
 import "./anton.css"
@@ -37,15 +37,13 @@ export default class Intro extends React.Component {
           textAlign: "center",
         }}
       >
-        <Suspense fallback={<div></div>}>
-          <Typed
-            showCursor={this.props.cursor}
-            style={{ color: "#fff" }}
-            strings={this.props.strings}
-            typeSpeed={60}
-            backSpeed={50}
-          />
-        </Suspense>
+        <Typed
+          showCursor={this.props.cursor}
+          style={{ color: "#fff" }}
+          strings={this.props.strings}
+          typeSpeed={60}
+          backSpeed={50}
+        />
       </div>
     ) : (
       <div ref="intro" />

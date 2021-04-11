@@ -1,6 +1,5 @@
 // meta - React
 import React, { useEffect } from "react"
-import "react-hot-loader"
 
 // meta - Components
 import Intro from "./First/intro"
@@ -12,6 +11,8 @@ import { isVertical } from "../../module/index.jsx"
 
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import Earth from "../earth"
+
+import "./paral.css"
 
 const classes = ["card-title", "card-subtitle", "parallax-card-layers"]
 
@@ -64,7 +65,7 @@ export default () => {
           "Visit awesome projects",
           "All that things are below",
           "All that things are below",
-          "Try Swipe Cards",
+          "Try Swiping that Cards",
           "Anyway, Welcome",
           "Anyway, Welcome",
           "Seong-Land",
