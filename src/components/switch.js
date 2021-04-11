@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
 export default () => {
   const [state, dispatch] = useReducer(reducer, { on: false })
   const classes = useStyles()
-  const [start, { stop }] = useSound(loop, { loop: true, volume: 0.9 })
+  const [start, { stop }] = useSound(loop, { loop: true })
 
   const handleClick = () => {
     if (state.on) stop()
