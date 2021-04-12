@@ -1,6 +1,6 @@
 import React, { Suspense } from "react"
 import "./cards.css"
-import { Deck } from "../module"
+import { Deck } from "./module/index.jsx"
 
 export default class Cards extends React.Component {
   render() {

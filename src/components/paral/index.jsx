@@ -1,17 +1,19 @@
 // meta - React
 import React, { useEffect } from "react"
-import "react-hot-loader"
 
 // meta - Components
 import Intro from "./First/intro"
 import Cards from "../cards"
-import { urls as productURLs, products } from "../../config/products"
-import { urls as statURLs, stats } from "../../config/stats"
-import { urls as infoURLs, infos } from "../../config/infos"
-import { isVertical } from "../../module"
+import { urls as productURLs, products } from "../config/products"
+import { urls as statURLs, stats } from "../config/stats"
+import { urls as infoURLs, infos } from "../config/infos"
+import Switch from "../switch"
+import { isVertical } from "../module/index.jsx"
 
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import Earth from "../earth"
+
+import "./paral.css"
 
 const classes = ["card-title", "card-subtitle", "parallax-card-layers"]
 
@@ -64,7 +66,7 @@ export default () => {
           "Visit awesome projects",
           "All that things are below",
           "All that things are below",
-          "Try Swipe Cards",
+          "Try Swiping that Cards",
           "Anyway, Welcome",
           "Anyway, Welcome",
           "Seong-Land",
@@ -139,6 +141,7 @@ export default () => {
       <Products />
       <Stats />
       <Infos />
+      <Switch />
     </Parallax>
   )
 }

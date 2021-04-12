@@ -7,12 +7,10 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-97880882-3",
-        // this option places the tracking script into the head of the DOM
         head: true,
-        // other options
       },
     },
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet-async`,
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
@@ -24,9 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [
-          "G-7GYN10MKSW",
-        ],
+        trackingIds: ["G-7GYN10MKSW"],
       },
     },
     `gatsby-plugin-sitemap`,
@@ -45,13 +41,11 @@ module.exports = {
           "style-src": "'self' 'unsafe-inline'",
           "font-src": "'self' fonts.gstatic.com 'unsafe-inline'",
           "connect-src":
-            "'self' www.googletagmanager.com cloudflareinsights.com stats.g.doubleclick.net www.google-analytics.com 'unsafe-inline'",
+            "'self' www.googletagmanager.com *.seongland.com cloudflareinsights.com stats.g.doubleclick.net www.google-analytics.com 'unsafe-inline'",
           "frame-src": "'self' 'unsafe-inline'",
-          "img-src":
-            "'self' www.google-analytics.com 'unsafe-inline'",
+          "img-src": "'self' www.google-analytics.com 'unsafe-inline'",
         },
       },
     },
   ],
-  // your another plugins
 }
