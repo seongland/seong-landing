@@ -7,7 +7,12 @@ import { SnackbarProvider } from "notistack"
 
 import "react-hot-loader"
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
+  const ParalMemo = React.memo(
+    () => <Paral />,
+    () => true
+  )
+
   return (
     <main id="main">
       <Header
@@ -46,9 +51,9 @@ const IndexPage = () => {
         />
       </Header>
       <SnackbarProvider maxSnack={Infinity}>
-        <Paral />
+        <ParalMemo />
         <Switch />
-        <Snackbar />
+        <Snackbar location={location} />
       </SnackbarProvider>
     </main>
   )
