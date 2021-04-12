@@ -1,6 +1,7 @@
 import React from "react"
 import Paral from "../components/paral/index.jsx"
 import { Helmet as Header } from "react-helmet-async"
+import Switch from "../components/switch"
 
 import "react-hot-loader"
 
@@ -43,6 +44,7 @@ const IndexPage = () => {
         />
       </Header>
       <Paral />
+      <Switch />
     </main>
   )
 }

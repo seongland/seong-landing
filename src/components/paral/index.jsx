@@ -7,7 +7,6 @@ import Cards from "../cards"
 import { urls as productURLs, products } from "../config/products"
 import { urls as statURLs, stats } from "../config/stats"
 import { urls as infoURLs, infos } from "../config/infos"
-import Switch from "../switch"
 import { isVertical } from "../module/index.jsx"
 
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
@@ -141,7 +140,6 @@ export default () => {
       <Products />
       <Stats />
       <Infos />
-      <Switch />
     </Parallax>
   )
 }
