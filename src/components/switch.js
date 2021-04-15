@@ -11,7 +11,7 @@ const reducer = (_, action) => ({ on: action })
 
 const useStyles = makeStyles(theme => ({
   fab: {
-    position: "absolute",
+    position: "fixed",
     top: theme.spacing(3),
     right: theme.spacing(3),
   },
