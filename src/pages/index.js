@@ -1,18 +1,7 @@
 import React from "react"
-import Paral from "../components/paral/index.jsx"
 import { Helmet as Header } from "react-helmet-async"
-import Switch from "../components/switch"
-import Snackbar from "../components/snackbar"
-import { SnackbarProvider } from "notistack"
 
-import "react-hot-loader"
-
-const IndexPage = ({ location }) => {
-  const ParalMemo = React.memo(
-    () => <Paral />,
-    () => true
-  )
-
+const IndexPage = () => {
   return (
     <main id="main">
       <Header
@@ -50,11 +39,6 @@ const IndexPage = ({ location }) => {
           data-cf-beacon='{"token": "c8b3924687ca4bdaaf9bd8f31abbd40b"}'
         />
       </Header>
-      <SnackbarProvider maxSnack={Infinity}>
-        <ParalMemo />
-        <Switch />
-        <Snackbar location={location} />
-      </SnackbarProvider>
     </main>
   )
 }

@@ -25,6 +25,12 @@ module.exports = {
         trackingIds: ["G-7GYN10MKSW"],
       },
     },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout/default`),
+      },
+    },
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-csp`,
