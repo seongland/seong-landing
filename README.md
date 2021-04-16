@@ -33,3 +33,7 @@ docker run   --name seongland -p 54321:8080 -d ghcr.io/sungle3737/portfolio-reac
 ```
 
 ## Run Composer
+
+```
+docker-compose up
+```
