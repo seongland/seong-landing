@@ -1,4 +1,6 @@
-# portfolio
+# Seongland Landing Page
+![image](https://user-images.githubusercontent.com/27716524/114999344-badd6f80-9edc-11eb-8b48-9dd012ea0ffc.png)
+
 
 # Service
 - https://seongland.com
