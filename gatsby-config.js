@@ -42,12 +42,12 @@ module.exports = {
         mergeDefaultDirectives: true,
         directives: {
           "script-src":
-            "'self' www.googletagmanager.com www.google-analytics.com static.cloudflareinsights.com 'unsafe-inline'",
+            "'self' *.cloudflare.com www.googletagmanager.com www.google-analytics.com static.cloudflareinsights.com 'unsafe-inline'",
           "style-src-elem": "'self' data: 'unsafe-inline'",
           "style-src": "'self' 'unsafe-inline'",
           "font-src": "'self' fonts.gstatic.com 'unsafe-inline'",
           "connect-src":
-            "'self' www.googletagmanager.com *.seongland.com cloudflareinsights.com stats.g.doubleclick.net www.google-analytics.com 'unsafe-inline'",
+            "'self' *.cloudflare.com www.googletagmanager.com *.seongland.com cloudflareinsights.com stats.g.doubleclick.net www.google-analytics.com 'unsafe-inline'",
           "frame-src": "'self' 'unsafe-inline'",
           "img-src": "'self' www.google-analytics.com 'unsafe-inline'",
         },
