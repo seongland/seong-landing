@@ -1,59 +1,84 @@
 import React from "react"
-import ReactDOM from "react-dom"
 import * as THREE from "three"
+import TWEEN from "@tweenjs/tween.js"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
-let controls, camera, renderer, scene, width, height, base
-camera = scene = renderer = void 0
+const CAM_FAR = [-3000, 5550, 3000]
+const CAM_NEAR = [-300, 555, 300]
 
 export default class Earth extends React.Component {
+  camera
+  scene
+  renderer
+  controls
+  camera
+  renderer
+  scene
+  width
+  height
+  base
   componentDidMount() {
     this.makeEarth()
+    if (this.props.tween) this.tweenFocus(CAM_NEAR, 1500)
     window.addEventListener("resize", this.changeEarth)
   }
 
   // meta - first make
-  makeEarth = () => {
-    window.THREE = THREE
+  makeEarth() {
     this.setRatio()
     this.makeCamera()
     this.makeScene()
     this.makeRenderer()
     this.makeControl()
-    ReactDOM.findDOMNode(this.refs.earthB).appendChild(renderer.domElement)
 
-    const animate = function () {
-      base.rotation.y += 0.002
-      controls.update()
+    const animate = () => {
+      this.base.rotation.y += 0.002
+      this.controls.update()
       requestAnimationFrame(animate)
-      return renderer.render(scene, camera)
+      this.renderer.render(this.scene, this.camera)
+      TWEEN.update()
+      return
     }
     return animate()
   }
 
+  tweenFocus(position, time) {
+    const cam = this.camera
+    if (cam.tween) cam.tween.stop()
+    cam.tween = new TWEEN.Tween(cam.position)
+      .easing(TWEEN.Easing.Quintic.InOut)
+      .to(cam.position.clone().set(...position), time)
+      .start()
+  }
+
   checkMobile = () => window.innerHeight > window.innerWidth
 
-  setRatio = () => {
+  setRatio() {
     if (this.checkMobile())
-      if (width === window.innerWidth) return
+      if (this.width === window.innerWidth) return
       else {
-        height = window.innerWidth
-        width = window.innerWidth
+        this.height = window.innerWidth * this.props.ratios[0]
+        this.width = window.innerWidth * this.props.ratios[0]
         return
       }
-    if (height === window.innerWidth) return
-    height = window.innerWidth
-    width = height
+    if (this.height === window.innerWidth * this.props.ratios[1]) return
+    this.height = window.innerWidth * this.props.ratios[1]
+    this.width = this.height
   }
 
-  makeCamera = () => {
-    camera = new THREE.PerspectiveCamera(75, width / height, 1, 10000)
-    camera.position.x = -300
-    camera.position.y = 555
-    camera.position.z = 300
+  makeCamera() {
+    this.camera = new THREE.PerspectiveCamera(
+      75,
+      this.width / this.height,
+      1,
+      7000
+    )
+    this.props.tween
+      ? this.camera.position.set(...CAM_FAR)
+      : this.camera.position.set(...CAM_NEAR)
   }
 
-  makeScene = () => {
+  makeScene() {
     let baseMat,
       geometryBase,
       highTerran,
@@ -66,8 +91,7 @@ export default class Earth extends React.Component {
       light,
       round,
       all
-    scene = new THREE.Scene()
-    scene = new THREE.Scene()
+    this.scene = new THREE.Scene()
     geometryBase = new THREE.SphereGeometry(400, 30, 56)
     terranGeom = new THREE.SphereGeometry(398, 25, 30)
     terranHighGeom = new THREE.SphereGeometry(390, 25, 20)
@@ -97,50 +121,51 @@ export default class Earth extends React.Component {
     for (const position of round)
       for (const index in position) position[index] += Math.random() * 20
 
-    base = new THREE.Mesh(geometryBase, baseMat)
+    this.base = new THREE.Mesh(geometryBase, baseMat)
     terran = new THREE.Mesh(terranGeom, terranMat)
     highTerran = new THREE.Mesh(terranHighGeom, highTerranMat)
     light = new THREE.DirectionalLight(0xffffff)
     light.position.set(1, 1, 1)
     fillLight = new THREE.AmbientLight(0x2e1527)
-    scene.add(base)
-    base.add(terran)
-    base.add(highTerran)
-    scene.add(light)
-    scene.add(fillLight)
+    this.scene.add(this.base)
+    this.base.add(terran)
+    this.base.add(highTerran)
+    this.scene.add(light)
+    this.scene.add(fillLight)
   }
 
-  makeRenderer = () => {
+  makeRenderer() {
     try {
-      renderer = new THREE.WebGLRenderer({
+      var canvas = document.getElementById("canvas")
+      this.renderer = new THREE.WebGLRenderer({
         alpha: true,
         antialias: true,
+        canvas,
       })
     } catch (error) {
-      renderer = new THREE.CanvasRenderer()
+      this.renderer = new THREE.CanvasRenderer()
       alert("come back in chrome or whale! or enable webgl", error)
     }
-    renderer.setPixelRatio(window.devicePixelRatio)
-    renderer.setSize(width, height)
-    renderer.domElement.style.outline = "none"
+    this.renderer.setPixelRatio(window.devicePixelRatio)
+    this.renderer.setSize(this.width, this.height)
+    this.renderer.domElement.style.outline = "none"
   }
 
-  makeControl = () => {
-    controls = new OrbitControls(camera, renderer.domElement)
-    controls.enableZoom = false
-    controls.enablePan = false
-    controls.enableDamping = true
-    controls.maxPolarAngle = Math.PI / 5
-    controls.minPolarAngle = Math.PI / 5
-    controls.update()
+  makeControl() {
+    this.controls = new OrbitControls(this.camera, this.renderer.domElement)
+    this.controls.enableZoom = false
+    this.controls.enablePan = false
+    this.controls.enableDamping = true
+    this.controls.maxPolarAngle = Math.PI / 5
+    this.controls.minPolarAngle = Math.PI / 5
   }
 
   // meta - when window changed
   changeEarth = () => {
     this.setRatio()
-    camera.aspect = width / height
-    camera.updateProjectionMatrix()
-    renderer.setSize(width, height)
+    this.camera.aspect = this.width / this.height
+    this.camera.updateProjectionMatrix()
+    this.renderer.setSize(this.width, this.height)
   }
 
   componentWillUnmount() {
@@ -148,6 +173,10 @@ export default class Earth extends React.Component {
   }
 
   render() {
-    return <div ref="earthB"></div>
+    return (
+      <div href="#main">
+        <canvas id="canvas" />
+      </div>
+    )
   }
 }

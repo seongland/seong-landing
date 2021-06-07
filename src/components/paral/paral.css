@@ -5,8 +5,5 @@ body,
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	background: rgb(30, 30, 30);
 }
- html, body, div, a, i, button, select, option, optgroup, hr, br { -webkit-touch-callout: none; -webkit-user-select: none;
--khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; cursor: default; }
-
-@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');

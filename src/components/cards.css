@@ -15,6 +15,15 @@
   font-weight: bold;
 }
 
+.card-subtitle {
+  font-size: 1vw;
+}
+
+
+.card-subtitle.vertical {
+  font-size: 3vw;
+}
+
 .card-title.vertical {
   font-size: 5vw;
 }
@@ -27,65 +36,6 @@
 .parallax-card-layers.vertical {
   width: 80vw;
   height: 50vw;
-}
-
-.property {
-  bottom: 4vw;
-  font-size: 1vw;
-  opacity: 0.5;
-}
-
-.property.vertical {
-  bottom: 8vw;
-  font-size: 2vw;
-}
-
-.value {
-  font-size: 1.5vw;
-}
-
-.value.vertical {
-  font-size: 3vw;
-}
-
-.left {
-  left: 2vw;
-}
-
-.bottom {
-  bottom: 2vw;
-}
-
-.right {
-  right: 2vw;
-}
-
-.top {
-  top: 2vw;
-}
-
-.mark {
-  height: 4vw;
-}
-
-.left.vertical {
-  left: 4vw;
-}
-
-.bottom.vertical {
-  bottom: 4vw;
-}
-
-.right.vertical {
-  right: 4vw;
-}
-
-.top.vertical {
-  top: 4vw;
-}
-
-.mark.vertical {
-  height: 8vw;
 }
 
 .absolute {
@@ -125,11 +75,11 @@ body {
 }
 
 #card>div>div {
-  box-shadow: 10px 10px 20px 20px #24242499;
+  box-shadow: 1vw 1vw 2vw 2vw #20202099;
   background-size: auto 85%;
   background-repeat: no-repeat;
   background-position: center center;
-  max-width: 80vw;
+  max-width: 120vw;
   max-height: 80vh;
   will-change: transform;
   border-radius: 5vw;
@@ -147,12 +97,3 @@ body {
   box-shadow: 0 12.5px 40px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
   min-height: 60vh;
 }
-
-.react_tinylink_card {
-  margin-top: 10% !important;
-  margin-bottom: 10% !important;
-  margin-left: 10% !important;
-  margin-right: 10% !important;
-}
-
-@import url('https://fonts.googleapis.com/css?family=MalgunGothic&display=swap');

@@ -1,30 +1,36 @@
 {
-  "name": "react-portfolio",
+  "name": "seong-land",
   "private": false,
-  "description": "seong-land",
-  "version": "1.3.0",
+  "description": "Seongland Main Landing Page",
+  "version": "1.6.0",
   "author": "seonglae cho <sungle3737@gmail.com>",
   "dependencies": {
-    "@loadable/component": "^5.13.1",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@tweenjs/tween.js": "^18.6.4",
+    "axios": "^0.21.1",
+    "consola": "^2.15.3",
     "gatsby": "^2.17.16",
-    "gatsby-image": "^2.2.33",
+    "gatsby-plugin-csp": "^1.1.3",
     "gatsby-plugin-google-analytics": "^2.1.28",
-    "gatsby-plugin-printer": "^1.1.1",
-    "gatsby-plugin-react-helmet": "^3.1.15",
+    "gatsby-plugin-google-gtag": "^3.1.0",
+    "gatsby-plugin-layout": "^2.3.0",
+    "gatsby-plugin-react-helmet-async": "^1.2.0",
     "gatsby-plugin-robots-txt": "^1.5.1",
-    "gatsby-plugin-sharp": "^2.3.1",
     "gatsby-plugin-sitemap": "^2.4.12",
-    "gatsby-source-filesystem": "^2.1.37",
-    "proton-engine": "^4.1.0",
-    "react": "^16.12.0",
-    "react-animated-3d-card": "^1.0.2",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1",
-    "react-scripts": "^3.2.0",
+    "jwt-decode": "^3.1.2",
+    "notistack": "^1.0.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet-async": "^1.0.9",
+    "react-redux": "^7.2.3",
+    "react-router": "^5.2.0",
     "react-spring": "^8.0.27",
     "react-typed": "^1.2.0",
     "react-use-gesture": "^7.0.15",
-    "three": "^0.125.0"
+    "redux": "^4.0.5",
+    "three": "^0.125.0",
+    "use-sound": "^2.0.1"
   },
   "engines": {
     "node": "14.*.*"
@@ -38,15 +44,14 @@
     "dev": "gatsby develop",
     "start": "gatsby develop -p 8080 -H 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "g-serve": "gatsby serve"
+    "serve": "gatsby serve"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sungle3737/react-portfolio"
+    "url": "https://github.com/seongland/seong-landing"
   },
   "bugs": {
-    "url": "https://github.com/sungle3737/react-portfolio",
+    "url": "https://github.com/seongland/seong-landing",
     "email": "sungle3737@gmail.com"
-  },
-  "homepage": "react.seonglae.com"
+  }
 }

@@ -1,8 +1,8 @@
-name: CI/CD Bucket
+name: Yarn Build
 
 on:
   push:
-    branches: [release]
+    branches: [develop]
 
 jobs:
   build:
@@ -29,17 +29,3 @@ jobs:
 
       - name: Run build task
         run: yarn build
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: make artiface
-          path: public
-
-      - name: Authenticate on GCP
-        uses: google-github-actions/setup-gcloud@master
-        with:
-          service_account_email: ${{ secrets.GKE_EMAIL }}
-          service_account_key: ${{ secrets.GKE_KEY }}
-
-      - name: Depoly to Bucket
-        run: gsutil -m cp -r public/* gs://seonglae.com
