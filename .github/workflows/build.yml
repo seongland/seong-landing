@@ -2,7 +2,7 @@ name: Yarn Build
 
 on:
   push:
-    branches: [develop]
+    branches: [develop, test]
 
 jobs:
   build:
